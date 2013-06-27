@@ -1,0 +1,26 @@
+-cp src
+
+# Uncomment and place your main class with package
+-main net.josephlewis.creditcard.Validator
+
+# Uncomment the desirable target
+# JavaScript target
+#-js out/validator.js
+
+# SWF 9 target
+#-swf9 out/index.swf
+
+# ActionScript3 target
+# -as3 out
+
+# Neko target
+# -neko out/ForcTime Reference Implementation.n
+
+# PHP target
+# -php out
+
+# C++ target
+#-cpp out
+
+-java jar
+
