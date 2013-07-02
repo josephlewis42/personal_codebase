@@ -1,0 +1,19 @@
+==About==
+RepRap Franklin is a RepRap emulator able to parse GCode files and
+UNIX sockets.
+
+==License==
+GPL V2
+
+==Running==
+Make the start.sh file executable and run, alternativly double click the
+display.py file on Windows.
+
+==Samples==
+Samples are found in the samples directory, no copyright is claimed on
+these.  The original items were on the RepRap wiki or in other projects
+under the GPL.
+
+==Contact==
+I would love to have some feedback/help.
+Joe <joehms22@gmail.com>
