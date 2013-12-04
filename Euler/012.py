@@ -20,4 +20,11 @@ What is the value of the first triangle number to have over five hundred divisor
 '''
 import pymath
 
-
+i = 1
+while True:
+	triangle = pymath.triangluar_number(i)
+	if len(pymath.factor(triangle)) > 500:
+		print triangle
+		break
+	i += 1
+	pymath.print_prob(1000, "1000 done")

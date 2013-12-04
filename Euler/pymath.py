@@ -4,6 +4,7 @@ A small, general-purpose math library for Python
 - Joseph Lewis
 '''
 import math
+import random
 
 def factor(n):
 	''' Finds the factors of the given number.'''	
@@ -272,3 +273,38 @@ def greatest_product(numbers, length_of_chain):
 			largest = num
 	
 	return largest
+	
+def triangluar_number(n):
+	'''Generates the nth triangular number.'''
+	return (n * (n + 1)) / 2
+	
+def print_prob(how_often, *args):
+	if random.random() < (1.0 / how_often):
+		print args
+
+def factorial(n):
+	'''Calculates n factorial.'''
+	total = 1
+	
+	for i in range(n, 1, -1):
+		total *= i
+		
+	return total
+	
+def choose(n, k):
+	'''Calculates n choose k'''
+	return factorial(n) / (factorial(k) * factorial(n - k))
+
+def to_word(number, suffix=''):
+	'''changes a word to an english number.'''
+	number = str(number)
+	pre = number[:-3]
+	if len(pre != 0):
+		prefix = to_word
+	
+	whole_tens = ['ten','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']
+	ones = ['','one','two','three','four','five','six','seven','eight','nine']
+	tens_one = ['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']
+	suffixes = ['','thousand','million','billion','trillion']
+	
+	

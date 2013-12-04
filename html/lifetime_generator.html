@@ -1,0 +1,34 @@
+<html>
+<head>
+<script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type='text/javascript'>
+const NOUNS = ["fear", "terror", "secret", "advice", "hate", "rage", "regret", "peace", "thrill", "plot", "protest", "punishment", "smile", "trouble", "statement", "story", "suggestion", "pleasure",  "need", "mask", "kiss", "knowledge", "heart", "revenge", "loss", "rescue", "escape", "craze", "obsession","pregnancy", "journey","impulse","error","death","deception","murder"];
+const GROUPS = ["pact","club","organization"];
+
+const PEOPLE = ["mother", "sister", "housekeeper", "grandmother", "nanny", "niece", "teacher", "daughter", "neighbor", "husband", "preacher"];
+
+function generateLifetime()
+{
+	var noun = NOUNS[Math.floor(Math.random()*NOUNS.length)];
+	
+	if(Math.random() > .7)
+	{
+		var group = GROUPS[Math.floor(Math.random()*GROUPS.length)];
+		var title = "The " + noun + " " + group;
+	}
+	else
+	{
+		var person = PEOPLE[Math.floor(Math.random()*PEOPLE.length)];
+		var title = "A " + person + "'s " + noun;
+	}
+	
+	
+	$("#title").html(title + "<br>" + $("#title").html());
+}
+</script>
+</head>
+<body>
+<button onclick='generateLifetime();'>Generate Lifetime Movie Title</button><br>
+<span id='title'></span>
+</body>
+</html>
