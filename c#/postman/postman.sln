@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "postman", "postman\postman.csproj", "{BC0A6C14-D4F1-4EEE-B0AA-853A231069D9}"
+EndProject
+Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "Packages", "Packages.mdproj", "{F8DBB25F-9743-4CC5-A664-D1FC22E636E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC0A6C14-D4F1-4EEE-B0AA-853A231069D9}.Debug|x86.ActiveCfg = Debug|x86
+		{BC0A6C14-D4F1-4EEE-B0AA-853A231069D9}.Debug|x86.Build.0 = Debug|x86
+		{BC0A6C14-D4F1-4EEE-B0AA-853A231069D9}.Release|x86.ActiveCfg = Release|x86
+		{BC0A6C14-D4F1-4EEE-B0AA-853A231069D9}.Release|x86.Build.0 = Release|x86
+		{F8DBB25F-9743-4CC5-A664-D1FC22E636E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F8DBB25F-9743-4CC5-A664-D1FC22E636E1}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = postman\postman.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		version = 2.0
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1093 @@
+$date
+  Thu Apr  5 12:05:04 2012
+$end
+
+$version
+  Xcore C-Simulator + VcdTrace plugin (interface version: 1.8)
+$end
+
+$timescale
+  2.500000 ns
+$end
+
+$comment
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure>
+    <Date value="Thu Apr  5 12:05:04 2012"/>
+    <Hierarchy>
+    <Category name="Pads">
+        <Signal name="0_X0D00" radix="HEX"/>
+        <Signal name="0_X0D01" radix="HEX"/>
+        <Signal name="0_X0D02" radix="HEX"/>
+        <Signal name="0_X0D03" radix="HEX"/>
+        <Signal name="0_X0D04" radix="HEX"/>
+        <Signal name="0_X0D05" radix="HEX"/>
+        <Signal name="0_X0D06" radix="HEX"/>
+        <Signal name="0_X0D07" radix="HEX"/>
+        <Signal name="0_X0D08" radix="HEX"/>
+        <Signal name="0_X0D09" radix="HEX"/>
+        <Signal name="0_X0D10" radix="HEX"/>
+        <Signal name="0_X0D11" radix="HEX"/>
+        <Signal name="0_X0D12" radix="HEX"/>
+        <Signal name="0_X0D13" radix="HEX"/>
+        <Signal name="0_X0D14" radix="HEX"/>
+        <Signal name="0_X0D15" radix="HEX"/>
+        <Signal name="0_X0D16" radix="HEX"/>
+        <Signal name="0_X0D17" radix="HEX"/>
+        <Signal name="0_X0D18" radix="HEX"/>
+        <Signal name="0_X0D19" radix="HEX"/>
+        <Signal name="0_X0D20" radix="HEX"/>
+        <Signal name="0_X0D21" radix="HEX"/>
+        <Signal name="0_X0D22" radix="HEX"/>
+        <Signal name="0_X0D23" radix="HEX"/>
+        <Signal name="0_X0D24" radix="HEX"/>
+        <Signal name="0_X0D25" radix="HEX"/>
+        <Signal name="0_X0D26" radix="HEX"/>
+        <Signal name="0_X0D27" radix="HEX"/>
+        <Signal name="0_X0D28" radix="HEX"/>
+        <Signal name="0_X0D29" radix="HEX"/>
+        <Signal name="0_X0D30" radix="HEX"/>
+        <Signal name="0_X0D31" radix="HEX"/>
+        <Signal name="0_X0D32" radix="HEX"/>
+        <Signal name="0_X0D33" radix="HEX"/>
+        <Signal name="0_X0D34" radix="HEX"/>
+        <Signal name="0_X0D35" radix="HEX"/>
+        <Signal name="0_X0D36" radix="HEX"/>
+        <Signal name="0_X0D37" radix="HEX"/>
+        <Signal name="0_X0D38" radix="HEX"/>
+        <Signal name="0_X0D39" radix="HEX"/>
+        <Signal name="0_X0D40" radix="HEX"/>
+        <Signal name="0_X0D41" radix="HEX"/>
+        <Signal name="0_X0D42" radix="HEX"/>
+        <Signal name="0_X0D43" radix="HEX"/>
+        <Signal name="0_X0D49" radix="HEX"/>
+        <Signal name="0_X0D50" radix="HEX"/>
+        <Signal name="0_X0D51" radix="HEX"/>
+        <Signal name="0_X0D52" radix="HEX"/>
+        <Signal name="0_X0D53" radix="HEX"/>
+        <Signal name="0_X0D54" radix="HEX"/>
+        <Signal name="0_X0D55" radix="HEX"/>
+        <Signal name="0_X0D56" radix="HEX"/>
+        <Signal name="0_X0D57" radix="HEX"/>
+        <Signal name="0_X0D58" radix="HEX"/>
+        <Signal name="0_X0D61" radix="HEX"/>
+        <Signal name="0_X0D62" radix="HEX"/>
+        <Signal name="0_X0D63" radix="HEX"/>
+        <Signal name="0_X0D64" radix="HEX"/>
+        <Signal name="0_X0D65" radix="HEX"/>
+        <Signal name="0_X0D66" radix="HEX"/>
+        <Signal name="0_X0D67" radix="HEX"/>
+        <Signal name="0_X0D68" radix="HEX"/>
+        <Signal name="0_X0D69" radix="HEX"/>
+        <Signal name="0_X0D70" radix="HEX"/>
+    </Category>
+        <Core name="stdcore[0]">
+            <Category name="Ports">
+                <Group name="XS1_PORT_32A">
+                    <Signal name="stdcore[0]_XS1_PORT_32A" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_32A_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_32A_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_32A_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_32A_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_32A_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_16A">
+                    <Signal name="stdcore[0]_XS1_PORT_16A" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16A_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16A_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16A_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16A_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16A_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_16B">
+                    <Signal name="stdcore[0]_XS1_PORT_16B" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16B_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16B_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16B_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16B_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16B_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_8A">
+                    <Signal name="stdcore[0]_XS1_PORT_8A" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8A_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8A_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8A_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8A_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8A_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_8B">
+                    <Signal name="stdcore[0]_XS1_PORT_8B" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8B_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8B_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8B_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8B_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8B_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_8C">
+                    <Signal name="stdcore[0]_XS1_PORT_8C" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8C_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8C_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8C_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8C_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8C_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_8D">
+                    <Signal name="stdcore[0]_XS1_PORT_8D" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8D_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8D_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8D_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8D_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_8D_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_4A">
+                    <Signal name="stdcore[0]_XS1_PORT_4A" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4A_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4A_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4A_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4A_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4A_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_4B">
+                    <Signal name="stdcore[0]_XS1_PORT_4B" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4B_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4B_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4B_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4B_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4B_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_4C">
+                    <Signal name="stdcore[0]_XS1_PORT_4C" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4C_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4C_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4C_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4C_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4C_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_4D">
+                    <Signal name="stdcore[0]_XS1_PORT_4D" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4D_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4D_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4D_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4D_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4D_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_4E">
+                    <Signal name="stdcore[0]_XS1_PORT_4E" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4E_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4E_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4E_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4E_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4E_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_4F">
+                    <Signal name="stdcore[0]_XS1_PORT_4F" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4F_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4F_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4F_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4F_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_4F_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1A">
+                    <Signal name="stdcore[0]_XS1_PORT_1A" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1A_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1A_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1A_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1A_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1A_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1B">
+                    <Signal name="stdcore[0]_XS1_PORT_1B" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1B_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1B_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1B_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1B_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1B_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1C">
+                    <Signal name="stdcore[0]_XS1_PORT_1C" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1C_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1C_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1C_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1C_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1C_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1D">
+                    <Signal name="stdcore[0]_XS1_PORT_1D" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1D_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1D_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1D_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1D_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1D_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1E">
+                    <Signal name="stdcore[0]_XS1_PORT_1E" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1E_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1E_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1E_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1E_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1E_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1F">
+                    <Signal name="stdcore[0]_XS1_PORT_1F" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1F_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1F_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1F_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1F_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1F_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1G">
+                    <Signal name="stdcore[0]_XS1_PORT_1G" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1G_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1G_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1G_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1G_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1G_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1H">
+                    <Signal name="stdcore[0]_XS1_PORT_1H" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1H_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1H_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1H_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1H_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1H_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1I">
+                    <Signal name="stdcore[0]_XS1_PORT_1I" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1I_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1I_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1I_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1I_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1I_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1J">
+                    <Signal name="stdcore[0]_XS1_PORT_1J" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1J_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1J_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1J_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1J_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1J_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1K">
+                    <Signal name="stdcore[0]_XS1_PORT_1K" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1K_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1K_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1K_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1K_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1K_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1L">
+                    <Signal name="stdcore[0]_XS1_PORT_1L" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1L_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1L_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1L_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1L_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1L_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1M">
+                    <Signal name="stdcore[0]_XS1_PORT_1M" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1M_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1M_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1M_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1M_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1M_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1N">
+                    <Signal name="stdcore[0]_XS1_PORT_1N" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1N_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1N_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1N_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1N_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1N_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1O">
+                    <Signal name="stdcore[0]_XS1_PORT_1O" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1O_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1O_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1O_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1O_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1O_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_1P">
+                    <Signal name="stdcore[0]_XS1_PORT_1P" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1P_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1P_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1P_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1P_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_1P_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_32B">
+                    <Signal name="stdcore[0]_XS1_PORT_32B" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_32B_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_32B_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_32B_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_32B_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_32B_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_16C">
+                    <Signal name="stdcore[0]_XS1_PORT_16C" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16C_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16C_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16C_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16C_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16C_portDetails" radix="HEX"/>
+                </Group>
+                <Group name="XS1_PORT_16D">
+                    <Signal name="stdcore[0]_XS1_PORT_16D" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16D_inuse" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16D_tWaiting" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16D_direction" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16D_outputThreadPc" radix="HEX"/>
+                    <Signal name="stdcore[0]_XS1_PORT_16D_portDetails" radix="HEX"/>
+                </Group>
+            </Category>
+        </Core>
+    </Hierarchy>
+    <ValueAliases>
+    </ValueAliases>
+    <SignalDocs>
+        <SignalDoc name=".*Pad\d+" description="The value on the pad">
+            <ValueDocs>
+            </ValueDocs>
+        </SignalDoc>
+        <SignalDoc name="stdcore\[\d+\]_XS1_PORT_\d+[A-Z]_direction" description="High if the port is in output mode, low if in input mode">
+            <ValueDocs>
+                <ValueDoc value="0" text="The port is in input mode"/>
+                <ValueDoc value="1" text="The port is in output mode"/>
+            </ValueDocs>
+        </SignalDoc>
+        <SignalDoc name="stdcore\[\d+\]_XS1_PORT_\d+[A-Z]_inuse" description="High if the port is in use">
+            <ValueDocs>
+                <ValueDoc value="0" text="The port is not in use"/>
+                <ValueDoc value="1" text="The port is in use"/>
+            </ValueDocs>
+        </SignalDoc>
+        <SignalDoc name="stdcore\[\d+\]_XS1_PORT_\d+[A-Z]_tWaiting" description="High if any threads are waiting on the port">
+            <ValueDocs>
+                <ValueDoc value="0" text="No threads are waiting on this port"/>
+                <ValueDoc value="1" text="Threads are waiting on this port"/>
+            </ValueDocs>
+        </SignalDoc>
+        <SignalDoc name="stdcore\[\d+\]_XS1_PORT_\d+[A-Z]" description="Provides a view of the retimed pads for the port">
+            <ValueDocs>
+            </ValueDocs>
+        </SignalDoc>
+        <SignalDoc name="stdcore\[\d+\]_XS1_PORT_\d+[A-Z]_portTime" description="The value of the port counter">
+            <ValueDocs>
+            </ValueDocs>
+        </SignalDoc>
+        <SignalDoc name="stdcore\[\d+\]_XS1_PORT_\d+[A-Z]_timeReg" description="The value of the ports timestamp (XC's @ operator)">
+            <ValueDocs>
+            </ValueDocs>
+        </SignalDoc>
+        <SignalDoc name="stdcore\[\d+\]_XS1_PORT_\d+[A-Z]_transferReg" description="The data in the ports transfer register">
+            <ValueDocs>
+            </ValueDocs>
+        </SignalDoc>
+        <SignalDoc name="stdcore\[\d+\]_XS1_PORT_\d+[A-Z]_shiftReg" description="The data in the ports shift register">
+            <ValueDocs>
+            </ValueDocs>
+        </SignalDoc>
+    </SignalDocs>
+    <SignalAliases>
+        <SignalAliasMap coreName="stdcore[0]">
+            <Entry name="XS1_PORT_1I" alias="PORT_UART_RX"/>
+            <Entry name="XS1_PORT_1J" alias="PORT_UART_TX"/>
+            <Entry name="XS1_PORT_1K" alias="PORT_BUT_1"/>
+            <Entry name="XS1_PORT_1L" alias="PORT_BUT_2"/>
+            <Entry name="XS1_PORT_1M" alias="PORT_SPI_MISO"/>
+            <Entry name="XS1_PORT_1N" alias="PORT_SPI_SS"/>
+            <Entry name="XS1_PORT_1O" alias="PORT_SPI_CLK"/>
+            <Entry name="XS1_PORT_1P" alias="PORT_SPI_MOSI"/>
+            <Entry name="XS1_PORT_4F" alias="PORT_LED"/>
+        </SignalAliasMap>
+    </SignalAliases>
+</Structure>
+$end
+
+$var wire 1 paa0 0_X0D00 $end
+$var wire 1 paa1 0_X0D01 $end
+$var wire 1 paa2 0_X0D02 $end
+$var wire 1 paa3 0_X0D03 $end
+$var wire 1 paa4 0_X0D04 $end
+$var wire 1 paa5 0_X0D05 $end
+$var wire 1 paa6 0_X0D06 $end
+$var wire 1 paa7 0_X0D07 $end
+$var wire 1 paa8 0_X0D08 $end
+$var wire 1 paa9 0_X0D09 $end
+$var wire 1 paa10 0_X0D10 $end
+$var wire 1 paa11 0_X0D11 $end
+$var wire 1 paa12 0_X0D12 $end
+$var wire 1 paa13 0_X0D13 $end
+$var wire 1 paa14 0_X0D14 $end
+$var wire 1 paa15 0_X0D15 $end
+$var wire 1 paa16 0_X0D16 $end
+$var wire 1 paa17 0_X0D17 $end
+$var wire 1 paa18 0_X0D18 $end
+$var wire 1 paa19 0_X0D19 $end
+$var wire 1 paa20 0_X0D20 $end
+$var wire 1 paa21 0_X0D21 $end
+$var wire 1 paa22 0_X0D22 $end
+$var wire 1 paa23 0_X0D23 $end
+$var wire 1 paa24 0_X0D24 $end
+$var wire 1 paa25 0_X0D25 $end
+$var wire 1 paa26 0_X0D26 $end
+$var wire 1 paa27 0_X0D27 $end
+$var wire 1 paa28 0_X0D28 $end
+$var wire 1 paa29 0_X0D29 $end
+$var wire 1 paa30 0_X0D30 $end
+$var wire 1 paa31 0_X0D31 $end
+$var wire 1 paa32 0_X0D32 $end
+$var wire 1 paa33 0_X0D33 $end
+$var wire 1 paa34 0_X0D34 $end
+$var wire 1 paa35 0_X0D35 $end
+$var wire 1 paa36 0_X0D36 $end
+$var wire 1 paa37 0_X0D37 $end
+$var wire 1 paa38 0_X0D38 $end
+$var wire 1 paa39 0_X0D39 $end
+$var wire 1 paa40 0_X0D40 $end
+$var wire 1 paa41 0_X0D41 $end
+$var wire 1 paa42 0_X0D42 $end
+$var wire 1 paa43 0_X0D43 $end
+$var wire 1 paa44 0_X0D49 $end
+$var wire 1 paa45 0_X0D50 $end
+$var wire 1 paa46 0_X0D51 $end
+$var wire 1 paa47 0_X0D52 $end
+$var wire 1 paa48 0_X0D53 $end
+$var wire 1 paa49 0_X0D54 $end
+$var wire 1 paa50 0_X0D55 $end
+$var wire 1 paa51 0_X0D56 $end
+$var wire 1 paa52 0_X0D57 $end
+$var wire 1 paa53 0_X0D58 $end
+$var wire 1 paa54 0_X0D61 $end
+$var wire 1 paa55 0_X0D62 $end
+$var wire 1 paa56 0_X0D63 $end
+$var wire 1 paa57 0_X0D64 $end
+$var wire 1 paa58 0_X0D65 $end
+$var wire 1 paa59 0_X0D66 $end
+$var wire 1 paa60 0_X0D67 $end
+$var wire 1 paa61 0_X0D68 $end
+$var wire 1 paa62 0_X0D69 $end
+$var wire 1 paa63 0_X0D70 $end
+$var wire 32 po00a0 stdcore[0]_XS1_PORT_32A $end
+$var wire 1 po00b0 stdcore[0]_XS1_PORT_32A_inuse $end
+$var wire 1 po00c0 stdcore[0]_XS1_PORT_32A_tWaiting $end
+$var wire 1 po00d0 stdcore[0]_XS1_PORT_32A_direction $end
+$var wire 32 po00l0 stdcore[0]_XS1_PORT_32A_outputThreadPc $end
+$var wire 32 po00m0 stdcore[0]_XS1_PORT_32A_portDetails $end
+$var wire 16 po00a1 stdcore[0]_XS1_PORT_16A $end
+$var wire 1 po00b1 stdcore[0]_XS1_PORT_16A_inuse $end
+$var wire 1 po00c1 stdcore[0]_XS1_PORT_16A_tWaiting $end
+$var wire 1 po00d1 stdcore[0]_XS1_PORT_16A_direction $end
+$var wire 32 po00l1 stdcore[0]_XS1_PORT_16A_outputThreadPc $end
+$var wire 32 po00m1 stdcore[0]_XS1_PORT_16A_portDetails $end
+$var wire 16 po00a2 stdcore[0]_XS1_PORT_16B $end
+$var wire 1 po00b2 stdcore[0]_XS1_PORT_16B_inuse $end
+$var wire 1 po00c2 stdcore[0]_XS1_PORT_16B_tWaiting $end
+$var wire 1 po00d2 stdcore[0]_XS1_PORT_16B_direction $end
+$var wire 32 po00l2 stdcore[0]_XS1_PORT_16B_outputThreadPc $end
+$var wire 32 po00m2 stdcore[0]_XS1_PORT_16B_portDetails $end
+$var wire 8 po00a3 stdcore[0]_XS1_PORT_8A $end
+$var wire 1 po00b3 stdcore[0]_XS1_PORT_8A_inuse $end
+$var wire 1 po00c3 stdcore[0]_XS1_PORT_8A_tWaiting $end
+$var wire 1 po00d3 stdcore[0]_XS1_PORT_8A_direction $end
+$var wire 32 po00l3 stdcore[0]_XS1_PORT_8A_outputThreadPc $end
+$var wire 32 po00m3 stdcore[0]_XS1_PORT_8A_portDetails $end
+$var wire 8 po00a4 stdcore[0]_XS1_PORT_8B $end
+$var wire 1 po00b4 stdcore[0]_XS1_PORT_8B_inuse $end
+$var wire 1 po00c4 stdcore[0]_XS1_PORT_8B_tWaiting $end
+$var wire 1 po00d4 stdcore[0]_XS1_PORT_8B_direction $end
+$var wire 32 po00l4 stdcore[0]_XS1_PORT_8B_outputThreadPc $end
+$var wire 32 po00m4 stdcore[0]_XS1_PORT_8B_portDetails $end
+$var wire 8 po00a5 stdcore[0]_XS1_PORT_8C $end
+$var wire 1 po00b5 stdcore[0]_XS1_PORT_8C_inuse $end
+$var wire 1 po00c5 stdcore[0]_XS1_PORT_8C_tWaiting $end
+$var wire 1 po00d5 stdcore[0]_XS1_PORT_8C_direction $end
+$var wire 32 po00l5 stdcore[0]_XS1_PORT_8C_outputThreadPc $end
+$var wire 32 po00m5 stdcore[0]_XS1_PORT_8C_portDetails $end
+$var wire 8 po00a6 stdcore[0]_XS1_PORT_8D $end
+$var wire 1 po00b6 stdcore[0]_XS1_PORT_8D_inuse $end
+$var wire 1 po00c6 stdcore[0]_XS1_PORT_8D_tWaiting $end
+$var wire 1 po00d6 stdcore[0]_XS1_PORT_8D_direction $end
+$var wire 32 po00l6 stdcore[0]_XS1_PORT_8D_outputThreadPc $end
+$var wire 32 po00m6 stdcore[0]_XS1_PORT_8D_portDetails $end
+$var wire 4 po00a7 stdcore[0]_XS1_PORT_4A $end
+$var wire 1 po00b7 stdcore[0]_XS1_PORT_4A_inuse $end
+$var wire 1 po00c7 stdcore[0]_XS1_PORT_4A_tWaiting $end
+$var wire 1 po00d7 stdcore[0]_XS1_PORT_4A_direction $end
+$var wire 32 po00l7 stdcore[0]_XS1_PORT_4A_outputThreadPc $end
+$var wire 32 po00m7 stdcore[0]_XS1_PORT_4A_portDetails $end
+$var wire 4 po00a8 stdcore[0]_XS1_PORT_4B $end
+$var wire 1 po00b8 stdcore[0]_XS1_PORT_4B_inuse $end
+$var wire 1 po00c8 stdcore[0]_XS1_PORT_4B_tWaiting $end
+$var wire 1 po00d8 stdcore[0]_XS1_PORT_4B_direction $end
+$var wire 32 po00l8 stdcore[0]_XS1_PORT_4B_outputThreadPc $end
+$var wire 32 po00m8 stdcore[0]_XS1_PORT_4B_portDetails $end
+$var wire 4 po00a9 stdcore[0]_XS1_PORT_4C $end
+$var wire 1 po00b9 stdcore[0]_XS1_PORT_4C_inuse $end
+$var wire 1 po00c9 stdcore[0]_XS1_PORT_4C_tWaiting $end
+$var wire 1 po00d9 stdcore[0]_XS1_PORT_4C_direction $end
+$var wire 32 po00l9 stdcore[0]_XS1_PORT_4C_outputThreadPc $end
+$var wire 32 po00m9 stdcore[0]_XS1_PORT_4C_portDetails $end
+$var wire 4 po00a10 stdcore[0]_XS1_PORT_4D $end
+$var wire 1 po00b10 stdcore[0]_XS1_PORT_4D_inuse $end
+$var wire 1 po00c10 stdcore[0]_XS1_PORT_4D_tWaiting $end
+$var wire 1 po00d10 stdcore[0]_XS1_PORT_4D_direction $end
+$var wire 32 po00l10 stdcore[0]_XS1_PORT_4D_outputThreadPc $end
+$var wire 32 po00m10 stdcore[0]_XS1_PORT_4D_portDetails $end
+$var wire 4 po00a11 stdcore[0]_XS1_PORT_4E $end
+$var wire 1 po00b11 stdcore[0]_XS1_PORT_4E_inuse $end
+$var wire 1 po00c11 stdcore[0]_XS1_PORT_4E_tWaiting $end
+$var wire 1 po00d11 stdcore[0]_XS1_PORT_4E_direction $end
+$var wire 32 po00l11 stdcore[0]_XS1_PORT_4E_outputThreadPc $end
+$var wire 32 po00m11 stdcore[0]_XS1_PORT_4E_portDetails $end
+$var wire 4 po00a12 stdcore[0]_XS1_PORT_4F $end
+$var wire 1 po00b12 stdcore[0]_XS1_PORT_4F_inuse $end
+$var wire 1 po00c12 stdcore[0]_XS1_PORT_4F_tWaiting $end
+$var wire 1 po00d12 stdcore[0]_XS1_PORT_4F_direction $end
+$var wire 32 po00l12 stdcore[0]_XS1_PORT_4F_outputThreadPc $end
+$var wire 32 po00m12 stdcore[0]_XS1_PORT_4F_portDetails $end
+$var wire 1 po00a13 stdcore[0]_XS1_PORT_1A $end
+$var wire 1 po00b13 stdcore[0]_XS1_PORT_1A_inuse $end
+$var wire 1 po00c13 stdcore[0]_XS1_PORT_1A_tWaiting $end
+$var wire 1 po00d13 stdcore[0]_XS1_PORT_1A_direction $end
+$var wire 32 po00l13 stdcore[0]_XS1_PORT_1A_outputThreadPc $end
+$var wire 32 po00m13 stdcore[0]_XS1_PORT_1A_portDetails $end
+$var wire 1 po00a14 stdcore[0]_XS1_PORT_1B $end
+$var wire 1 po00b14 stdcore[0]_XS1_PORT_1B_inuse $end
+$var wire 1 po00c14 stdcore[0]_XS1_PORT_1B_tWaiting $end
+$var wire 1 po00d14 stdcore[0]_XS1_PORT_1B_direction $end
+$var wire 32 po00l14 stdcore[0]_XS1_PORT_1B_outputThreadPc $end
+$var wire 32 po00m14 stdcore[0]_XS1_PORT_1B_portDetails $end
+$var wire 1 po00a15 stdcore[0]_XS1_PORT_1C $end
+$var wire 1 po00b15 stdcore[0]_XS1_PORT_1C_inuse $end
+$var wire 1 po00c15 stdcore[0]_XS1_PORT_1C_tWaiting $end
+$var wire 1 po00d15 stdcore[0]_XS1_PORT_1C_direction $end
+$var wire 32 po00l15 stdcore[0]_XS1_PORT_1C_outputThreadPc $end
+$var wire 32 po00m15 stdcore[0]_XS1_PORT_1C_portDetails $end
+$var wire 1 po00a16 stdcore[0]_XS1_PORT_1D $end
+$var wire 1 po00b16 stdcore[0]_XS1_PORT_1D_inuse $end
+$var wire 1 po00c16 stdcore[0]_XS1_PORT_1D_tWaiting $end
+$var wire 1 po00d16 stdcore[0]_XS1_PORT_1D_direction $end
+$var wire 32 po00l16 stdcore[0]_XS1_PORT_1D_outputThreadPc $end
+$var wire 32 po00m16 stdcore[0]_XS1_PORT_1D_portDetails $end
+$var wire 1 po00a17 stdcore[0]_XS1_PORT_1E $end
+$var wire 1 po00b17 stdcore[0]_XS1_PORT_1E_inuse $end
+$var wire 1 po00c17 stdcore[0]_XS1_PORT_1E_tWaiting $end
+$var wire 1 po00d17 stdcore[0]_XS1_PORT_1E_direction $end
+$var wire 32 po00l17 stdcore[0]_XS1_PORT_1E_outputThreadPc $end
+$var wire 32 po00m17 stdcore[0]_XS1_PORT_1E_portDetails $end
+$var wire 1 po00a18 stdcore[0]_XS1_PORT_1F $end
+$var wire 1 po00b18 stdcore[0]_XS1_PORT_1F_inuse $end
+$var wire 1 po00c18 stdcore[0]_XS1_PORT_1F_tWaiting $end
+$var wire 1 po00d18 stdcore[0]_XS1_PORT_1F_direction $end
+$var wire 32 po00l18 stdcore[0]_XS1_PORT_1F_outputThreadPc $end
+$var wire 32 po00m18 stdcore[0]_XS1_PORT_1F_portDetails $end
+$var wire 1 po00a19 stdcore[0]_XS1_PORT_1G $end
+$var wire 1 po00b19 stdcore[0]_XS1_PORT_1G_inuse $end
+$var wire 1 po00c19 stdcore[0]_XS1_PORT_1G_tWaiting $end
+$var wire 1 po00d19 stdcore[0]_XS1_PORT_1G_direction $end
+$var wire 32 po00l19 stdcore[0]_XS1_PORT_1G_outputThreadPc $end
+$var wire 32 po00m19 stdcore[0]_XS1_PORT_1G_portDetails $end
+$var wire 1 po00a20 stdcore[0]_XS1_PORT_1H $end
+$var wire 1 po00b20 stdcore[0]_XS1_PORT_1H_inuse $end
+$var wire 1 po00c20 stdcore[0]_XS1_PORT_1H_tWaiting $end
+$var wire 1 po00d20 stdcore[0]_XS1_PORT_1H_direction $end
+$var wire 32 po00l20 stdcore[0]_XS1_PORT_1H_outputThreadPc $end
+$var wire 32 po00m20 stdcore[0]_XS1_PORT_1H_portDetails $end
+$var wire 1 po00a21 stdcore[0]_XS1_PORT_1I $end
+$var wire 1 po00b21 stdcore[0]_XS1_PORT_1I_inuse $end
+$var wire 1 po00c21 stdcore[0]_XS1_PORT_1I_tWaiting $end
+$var wire 1 po00d21 stdcore[0]_XS1_PORT_1I_direction $end
+$var wire 32 po00l21 stdcore[0]_XS1_PORT_1I_outputThreadPc $end
+$var wire 32 po00m21 stdcore[0]_XS1_PORT_1I_portDetails $end
+$var wire 1 po00a22 stdcore[0]_XS1_PORT_1J $end
+$var wire 1 po00b22 stdcore[0]_XS1_PORT_1J_inuse $end
+$var wire 1 po00c22 stdcore[0]_XS1_PORT_1J_tWaiting $end
+$var wire 1 po00d22 stdcore[0]_XS1_PORT_1J_direction $end
+$var wire 32 po00l22 stdcore[0]_XS1_PORT_1J_outputThreadPc $end
+$var wire 32 po00m22 stdcore[0]_XS1_PORT_1J_portDetails $end
+$var wire 1 po00a23 stdcore[0]_XS1_PORT_1K $end
+$var wire 1 po00b23 stdcore[0]_XS1_PORT_1K_inuse $end
+$var wire 1 po00c23 stdcore[0]_XS1_PORT_1K_tWaiting $end
+$var wire 1 po00d23 stdcore[0]_XS1_PORT_1K_direction $end
+$var wire 32 po00l23 stdcore[0]_XS1_PORT_1K_outputThreadPc $end
+$var wire 32 po00m23 stdcore[0]_XS1_PORT_1K_portDetails $end
+$var wire 1 po00a24 stdcore[0]_XS1_PORT_1L $end
+$var wire 1 po00b24 stdcore[0]_XS1_PORT_1L_inuse $end
+$var wire 1 po00c24 stdcore[0]_XS1_PORT_1L_tWaiting $end
+$var wire 1 po00d24 stdcore[0]_XS1_PORT_1L_direction $end
+$var wire 32 po00l24 stdcore[0]_XS1_PORT_1L_outputThreadPc $end
+$var wire 32 po00m24 stdcore[0]_XS1_PORT_1L_portDetails $end
+$var wire 1 po00a25 stdcore[0]_XS1_PORT_1M $end
+$var wire 1 po00b25 stdcore[0]_XS1_PORT_1M_inuse $end
+$var wire 1 po00c25 stdcore[0]_XS1_PORT_1M_tWaiting $end
+$var wire 1 po00d25 stdcore[0]_XS1_PORT_1M_direction $end
+$var wire 32 po00l25 stdcore[0]_XS1_PORT_1M_outputThreadPc $end
+$var wire 32 po00m25 stdcore[0]_XS1_PORT_1M_portDetails $end
+$var wire 1 po00a26 stdcore[0]_XS1_PORT_1N $end
+$var wire 1 po00b26 stdcore[0]_XS1_PORT_1N_inuse $end
+$var wire 1 po00c26 stdcore[0]_XS1_PORT_1N_tWaiting $end
+$var wire 1 po00d26 stdcore[0]_XS1_PORT_1N_direction $end
+$var wire 32 po00l26 stdcore[0]_XS1_PORT_1N_outputThreadPc $end
+$var wire 32 po00m26 stdcore[0]_XS1_PORT_1N_portDetails $end
+$var wire 1 po00a27 stdcore[0]_XS1_PORT_1O $end
+$var wire 1 po00b27 stdcore[0]_XS1_PORT_1O_inuse $end
+$var wire 1 po00c27 stdcore[0]_XS1_PORT_1O_tWaiting $end
+$var wire 1 po00d27 stdcore[0]_XS1_PORT_1O_direction $end
+$var wire 32 po00l27 stdcore[0]_XS1_PORT_1O_outputThreadPc $end
+$var wire 32 po00m27 stdcore[0]_XS1_PORT_1O_portDetails $end
+$var wire 1 po00a28 stdcore[0]_XS1_PORT_1P $end
+$var wire 1 po00b28 stdcore[0]_XS1_PORT_1P_inuse $end
+$var wire 1 po00c28 stdcore[0]_XS1_PORT_1P_tWaiting $end
+$var wire 1 po00d28 stdcore[0]_XS1_PORT_1P_direction $end
+$var wire 32 po00l28 stdcore[0]_XS1_PORT_1P_outputThreadPc $end
+$var wire 32 po00m28 stdcore[0]_XS1_PORT_1P_portDetails $end
+$var wire 32 po00a29 stdcore[0]_XS1_PORT_32B $end
+$var wire 1 po00b29 stdcore[0]_XS1_PORT_32B_inuse $end
+$var wire 1 po00c29 stdcore[0]_XS1_PORT_32B_tWaiting $end
+$var wire 1 po00d29 stdcore[0]_XS1_PORT_32B_direction $end
+$var wire 32 po00l29 stdcore[0]_XS1_PORT_32B_outputThreadPc $end
+$var wire 32 po00m29 stdcore[0]_XS1_PORT_32B_portDetails $end
+$var wire 16 po00a30 stdcore[0]_XS1_PORT_16C $end
+$var wire 1 po00b30 stdcore[0]_XS1_PORT_16C_inuse $end
+$var wire 1 po00c30 stdcore[0]_XS1_PORT_16C_tWaiting $end
+$var wire 1 po00d30 stdcore[0]_XS1_PORT_16C_direction $end
+$var wire 32 po00l30 stdcore[0]_XS1_PORT_16C_outputThreadPc $end
+$var wire 32 po00m30 stdcore[0]_XS1_PORT_16C_portDetails $end
+$var wire 16 po00a31 stdcore[0]_XS1_PORT_16D $end
+$var wire 1 po00b31 stdcore[0]_XS1_PORT_16D_inuse $end
+$var wire 1 po00c31 stdcore[0]_XS1_PORT_16D_tWaiting $end
+$var wire 1 po00d31 stdcore[0]_XS1_PORT_16D_direction $end
+$var wire 32 po00l31 stdcore[0]_XS1_PORT_16D_outputThreadPc $end
+$var wire 32 po00m31 stdcore[0]_XS1_PORT_16D_portDetails $end
+
+$enddefinitions $end
+
+$dumpvars
+0paa0
+0paa1
+0paa2
+0paa3
+0paa4
+0paa5
+0paa6
+0paa7
+0paa8
+0paa9
+0paa10
+0paa11
+0paa12
+0paa13
+0paa14
+0paa15
+0paa16
+0paa17
+0paa18
+0paa19
+0paa20
+0paa21
+0paa22
+0paa23
+0paa24
+0paa25
+0paa26
+0paa27
+0paa28
+0paa29
+0paa30
+0paa31
+0paa32
+0paa33
+0paa34
+0paa35
+0paa36
+0paa37
+0paa38
+0paa39
+0paa40
+0paa41
+0paa42
+0paa43
+0paa44
+0paa45
+0paa46
+0paa47
+0paa48
+0paa49
+0paa50
+0paa51
+0paa52
+0paa53
+0paa54
+0paa55
+0paa56
+0paa57
+0paa58
+0paa59
+0paa60
+0paa61
+0paa62
+0paa63
+$end
+
+$dumpvars
+b00000000000000000000000000000000 po00a0
+0po00b0
+0po00c0
+0po00d0
+b00000000000000000000000000000000 po00l0
+b00000000000000000010000000000000 po00m0
+b0000000000000000 po00a1
+0po00b1
+0po00c1
+0po00d1
+b00000000000000000000000000000000 po00l1
+b00000000000000000001000000000000 po00m1
+b0000000000000000 po00a2
+0po00b2
+0po00c2
+0po00d2
+b00000000000000000000000000000000 po00l2
+b00000000000000000001000000000001 po00m2
+b00000000 po00a3
+0po00b3
+0po00c3
+0po00d3
+b00000000000000000000000000000000 po00l3
+b00000000000000000000100000000000 po00m3
+b00000000 po00a4
+0po00b4
+0po00c4
+0po00d4
+b00000000000000000000000000000000 po00l4
+b00000000000000000000100000000001 po00m4
+b00000000 po00a5
+0po00b5
+0po00c5
+0po00d5
+b00000000000000000000000000000000 po00l5
+b00000000000000000000100000000010 po00m5
+b00000000 po00a6
+0po00b6
+0po00c6
+0po00d6
+b00000000000000000000000000000000 po00l6
+b00000000000000000000100000000011 po00m6
+b0000 po00a7
+0po00b7
+0po00c7
+0po00d7
+b00000000000000000000000000000000 po00l7
+b00000000000000000000010000000000 po00m7
+b0000 po00a8
+0po00b8
+0po00c8
+0po00d8
+b00000000000000000000000000000000 po00l8
+b00000000000000000000010000000001 po00m8
+b0000 po00a9
+0po00b9
+0po00c9
+0po00d9
+b00000000000000000000000000000000 po00l9
+b00000000000000000000010000000010 po00m9
+b0000 po00a10
+0po00b10
+0po00c10
+0po00d10
+b00000000000000000000000000000000 po00l10
+b00000000000000000000010000000011 po00m10
+b0000 po00a11
+0po00b11
+0po00c11
+0po00d11
+b00000000000000000000000000000000 po00l11
+b00000000000000000000010000000100 po00m11
+b0000 po00a12
+0po00b12
+0po00c12
+0po00d12
+b00000000000000000000000000000000 po00l12
+b00000000000000000000010000000101 po00m12
+0po00a13
+0po00b13
+0po00c13
+0po00d13
+b00000000000000000000000000000000 po00l13
+b00000000000000000000000100000010 po00m13
+0po00a14
+0po00b14
+0po00c14
+0po00d14
+b00000000000000000000000000000000 po00l14
+b00000000000000000000000100000000 po00m14
+0po00a15
+0po00b15
+0po00c15
+0po00d15
+b00000000000000000000000000000000 po00l15
+b00000000000000000000000100000001 po00m15
+0po00a16
+0po00b16
+0po00c16
+0po00d16
+b00000000000000000000000000000000 po00l16
+b00000000000000000000000100000011 po00m16
+0po00a17
+0po00b17
+0po00c17
+0po00d17
+b00000000000000000000000000000000 po00l17
+b00000000000000000000000100000110 po00m17
+0po00a18
+0po00b18
+0po00c18
+0po00d18
+b00000000000000000000000000000000 po00l18
+b00000000000000000000000100000100 po00m18
+0po00a19
+0po00b19
+0po00c19
+0po00d19
+b00000000000000000000000000000000 po00l19
+b00000000000000000000000100000101 po00m19
+0po00a20
+0po00b20
+0po00c20
+0po00d20
+b00000000000000000000000000000000 po00l20
+b00000000000000000000000100000111 po00m20
+0po00a21
+0po00b21
+0po00c21
+0po00d21
+b00000000000000000000000000000000 po00l21
+b00000000000000000000000100001010 po00m21
+0po00a22
+0po00b22
+0po00c22
+0po00d22
+b00000000000000000000000000000000 po00l22
+b00000000000000000000000100001000 po00m22
+0po00a23
+0po00b23
+0po00c23
+0po00d23
+b00000000000000000000000000000000 po00l23
+b00000000000000000000000100001001 po00m23
+0po00a24
+0po00b24
+0po00c24
+0po00d24
+b00000000000000000000000000000000 po00l24
+b00000000000000000000000100001011 po00m24
+0po00a25
+0po00b25
+0po00c25
+0po00d25
+b00000000000000000000000000000000 po00l25
+b00000000000000000000000100001100 po00m25
+0po00a26
+0po00b26
+0po00c26
+0po00d26
+b00000000000000000000000000000000 po00l26
+b00000000000000000000000100001101 po00m26
+0po00a27
+0po00b27
+0po00c27
+0po00d27
+b00000000000000000000000000000000 po00l27
+b00000000000000000000000100001110 po00m27
+0po00a28
+0po00b28
+0po00c28
+0po00d28
+b00000000000000000000000000000000 po00l28
+b00000000000000000000000100001111 po00m28
+b00000000000000000000000000000000 po00a29
+0po00b29
+0po00c29
+0po00d29
+b00000000000000000000000000000000 po00l29
+b00000000000000000010000000000001 po00m29
+b0000000000000000 po00a30
+0po00b30
+0po00c30
+0po00d30
+b00000000000000000000000000000000 po00l30
+b00000000000000000001000000000010 po00m30
+b0000000000000000 po00a31
+0po00b31
+0po00c31
+0po00d31
+b00000000000000000000000000000000 po00l31
+b00000000000000000001000000000011 po00m31
+$end
+
+#1594
+1po00b24
+
+#1642
+1po00b23
+
+#1730
+1po00b14
+
+#1778
+1po00b13
+
+#2936
+b00000000000000010000001000100000 po00l13
+
+#2937
+1po00d13
+
+#2939
+1paa0
+
+#2940
+1paa34
+
+#2942
+1po00a13
+
+#2943
+1po00a23
+
+#2948
+b00000000000000010000001000101000 po00l14
+
+#2949
+1po00d14
+
+#2951
+1paa1
+
+#2952
+1paa35
+
+#2954
+1po00a14
+
+#2955
+1po00a24
+
+#403052
+b00000000000000010000001001111010 po00l14
+
+#403055
+0paa1
+
+#403056
+0paa35
+
+#403058
+0po00a14
+
+#403059
+0po00a24
+
+#403274
+1po00c24
+
+#803100
+b00000000000000010000001010111100 po00l13
+
+#803112
+b00000000000000010000001011000100 po00l14
+
+#803115
+1paa1
+
+#803116
+1paa35
+
+#803118
+1po00a14
+
+#803119
+1po00a24
+
+#803122
+0po00c24
+
+#803204
+b00000000000000010000001010000100 po00l13
+
+#803207
+0paa0
+
+#803208
+0paa34
+
+#803210
+0po00a13
+
+#803211
+0po00a23
+
+#803422
+1po00c23
+
+#1203244
+b00000000000000010000001010111100 po00l13
+
+#1203247
+1paa0
+
+#1203248
+1paa34
+
+#1203250
+1po00a13
+
+#1203251
+1po00a23
+
+#1203254
+0po00c23
+
+#1203344
+b00000000000000010000001001111010 po00l14
+
+#1203347
+0paa1
+
+#1203348
+0paa35
+
+#1203350
+0po00a14
+
+#1203351
+0po00a24
+
+#1603404
+b00000000000000010000001011000100 po00l14
+
+#1603407
+1paa1
+
+#1603408
+1paa35
+
+#1603410
+1po00a14
+
+#1603411
+1po00a24
+
+#1603681
+0po00b13
+
+#1603725
+0po00b14
+
+#1603813
+0po00b23
+
+#1603857
+0po00b24
+
+#1603934

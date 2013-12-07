@@ -1,0 +1,227 @@
+* {
+	padding:0px;
+	margin:0px;
+}
+
+body {
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#fff;
+	font-family:Arial,Helvetica,Sans-Serif;
+	padding:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+#HEADER {
+	text-align:center;
+	background-color:#BFBFBF;
+	padding-bottom:1em;
+	padding-top:1em;
+}
+
+#HEADER H1 { }
+#HEADER H2 {
+	font-size:1em;
+	margin-top:.5em;
+}
+
+.category {
+	color:#000;
+	width:100%;
+}
+
+.category H3 {
+	font-size:1em;
+	display: inline;
+}
+
+.category H4 {
+	font-size:1em;
+	display:inline;
+	color:#4D4D4D;
+	margin-left:.5em;
+}
+
+.category a {
+	padding-top:1em;
+	padding-bottom:1em;
+	padding-left:1em;
+	display:block;
+}
+
+.category a:nth-of-type(even) {
+	background-color:#bfbfbf;
+}
+
+.category a:hover {
+	background-color:#8ff2ff;
+}
+
+
+/** == Listings is for the category.php page, where a title is shown for each listing == */
+ 
+/** The category date dividers **/
+.listings h3 {
+	background-color:#baff8f;
+	padding:1em;
+}
+
+.listings div {
+	display:block;
+	width:100%;
+	overflow:hidden;
+}
+
+.listings div:nth-of-type(even) {
+	background-color:#bfbfbf;
+}
+
+.listings a {
+	width:100%;
+	padding-left:1em;
+	display:block;
+	padding-top:1em;
+	padding-bottom:1em;
+}
+.listings a:hover {
+	background-color:#8ff2ff;
+}
+
+
+
+
+
+
+
+a {
+	color:#000;
+	text-decoration:none;
+}
+
+#menu {
+	width:100%;
+	height:1.5em;
+	background-color:#bfbfbf;
+}
+
+#menu .choice {
+	display:block;
+	height:100%;
+	font-size:1em;
+	display:inline;
+	margin-left:1em;
+}
+
+#menu .choice:hover{
+	background-color:#baff8f;
+}
+
+.notification {
+	display:block;
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#d48fff;
+	text-align:center;
+	padding-top:1em;
+	padding-bottom:1em;
+}
+
+.notification table {
+	margin-left:auto;
+	margin-right:auto;
+	text-align:right;
+}
+
+.notification table tr td {
+	vertical-align:top;
+}
+
+.notification a {
+	color:#fff;
+	text-decoration:underline;
+}
+
+.error {
+	display:block;
+	width:100%;
+	background-color:#ff9c8f;
+	text-align:center;
+	
+	padding-top:1em;
+	padding-bottom:1em;
+	margin-top:1em;
+	margin-bottom:1em;
+}
+
+.error a {
+	color:#fff;
+	text-decoration:underline;
+}
+
+.error p {
+}
+
+
+.article {
+	padding:0px;
+	margin:0px;
+	width:100%;
+}
+
+.header {
+	display:block;
+	width:100%;
+	background-color:#d48fff;
+	margin-bottom:1em;
+	padding-top:1em;
+	padding-bottom:1em;
+	position:relative;
+}
+
+.header * {
+	padding:0px;
+}
+
+.header h3, h4 {
+	width:50%;
+	display:inline;
+	padding-left:1em;
+}
+
+.header h4 {
+	text-align:right;
+	float:right;
+	padding-right:1em;
+
+}
+.article img {
+	display:block;
+	}
+	
+	
+
+/**
+ * This style is used for any text that needs to be displayed without
+ * all of the strange formatting used for the rest of the site.
+ **/
+.text * {
+	padding-bottom:1em;
+}
+
+.text ul {
+	padding-left:1em;
+}
+
+
+
+/**
+ * Used for the footers.
+ */
+.footer {
+	text-align:center;
+	padding-bottom:.5em;
+	padding-top:.5em;
+}

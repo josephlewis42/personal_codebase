@@ -1,0 +1,39 @@
+<?php
+// These are shown throughout the site.
+$SITE_NAME = "";	// i.e. "Not Craigslist"
+$SITE_TAGLINE = "";	// i.e. "The best place to post not craigslist ads"
+$SITE_IMG_PATH = "";	// i.e. "/resources/imgs/small_img.png"
+
+// This is the information to conenct to the database, be sure to edit it properly.
+$user = "root";
+$host = "localhost";
+$password = "";
+$database = "test2";
+
+
+// This information is used to validate email addresses people come from
+// If you wish to restrict who can use this applicaiton, i.e. only people
+// who have @yoursite.com domain email addresses, you would add yoursite.com
+// An empty list means anyone can join.
+// Because this application is built around communities and trust within them
+// it is recommended you are exclusive. I originally wrote this site to try
+// out student -> student book resales within my college.
+
+$validation = [''];	// Default registration is [''] == anyone.
+
+
+/**
+ * A simple function to connect to the Database and execute the query given
+ * returns the result of the query.
+**/
+function exec_query($query){
+	$connection = mysql_connect($host,$user,$password) 
+		or die ("Couldnt connect to server.")
+	$db = mysql_select_db($database,$connection) 
+		or die ("Couldnt select db.");
+	$result = mysql_query($query) 
+		or die ("Couldnt execute query.");
+	return $result;
+}
+
+?>

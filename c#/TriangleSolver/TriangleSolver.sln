@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleSolver", "TriangleSolver\TriangleSolver.csproj", "{02DA93A5-8D11-4AEB-B14B-CD6B9854BFF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02DA93A5-8D11-4AEB-B14B-CD6B9854BFF2}.Debug|x86.ActiveCfg = Debug|x86
+		{02DA93A5-8D11-4AEB-B14B-CD6B9854BFF2}.Debug|x86.Build.0 = Debug|x86
+		{02DA93A5-8D11-4AEB-B14B-CD6B9854BFF2}.Release|x86.ActiveCfg = Release|x86
+		{02DA93A5-8D11-4AEB-B14B-CD6B9854BFF2}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = TriangleSolver\TriangleSolver.csproj
+	EndGlobalSection
+EndGlobal

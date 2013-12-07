@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+   <mime-type type="application/x-azulwikidocument">
+     <comment>Azul Wiki document</comment>
+     <magic priority="50">
+       <match value="search-string" type="string" offset="10:140"/>
+     </magic>
+     <glob pattern="*.wiki"/>
+   </mime-type>
+</mime-info>

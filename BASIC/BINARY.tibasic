@@ -1,0 +1,14 @@
+PROGRAM:BINARY
+"A Binary to Dec converter Copyright 2007 Joseph Lewis | TIBASIC"
+
+0->X
+0->Y
+Disp "BINARY?"
+Prompt Str1
+
+
+For(X,1,length(Str1))
+If sub(Str1,X,1)="1"
+Y+(2^(length(Str1)-X)->Y
+END
+Disp Y

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=AzulWiki
+Comment=Write and organize documents
+GenericName=Wiki
+Exec=azulwiki %f
+Icon=azulwiki
+Terminal=false
+Categories=GNOME;GTK;Utility;
+MimeType=application/x-azulwikidocument
+Name[en_US]=azulwiki.desktop

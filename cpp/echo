@@ -1,0 +1,205 @@
+/* Copyright 2010 Joseph Lewis <joehms22@gmail.com>
+ * GNU GPL v 3.0
+ * 
+ * TO COMPILE:
+ * cc -lpthread echo.c
+ * Sat 11 Dec 2010 12:06:51 PM MST
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <string.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+#include <sys/socket.h>
+
+void *print_message_function( void *ptr );
+void *tcp_server( void *ptr );
+void *udp_server( void *ptr );
+
+void error(char *msg)
+{
+    perror(msg);
+    exit(1);
+}
+
+/*Compares two strings for equality*/
+int compare(char one[], char two[])
+{
+    int j = strncmp(one, two, 100);
+    return (j == 0);
+}
+
+/*Show the help menu with the given program path.*/
+void show_help(char name[])
+{
+    printf( "\n" );    
+    printf( "Usage: %s [-t][-u] [-p portumber] \n", name);
+    printf( "Starts a RFC 862 compliant echo server.\n");
+    printf( "  -t  Start on TCP\n");
+    printf( "  -u  Start on UDP\n");
+    printf( "  -p  Start on port (number) Default: 7\n");
+    printf( "  -?  Show this menu\n");
+    printf( "Example:\n");
+    printf( " %s -t -u -p 7\n", name);
+    printf( "\n" );    
+    exit(1);
+}
+
+//Globals
+int tcp = 0;
+int udp = 0;
+int portnumber = 7;
+
+int main ( int argc, char *argv[] )
+{
+    /*Parse command line arguments*/
+    
+    if ( argc != 1 ) /* If there are arguments parse them. */
+    {
+        int loc = 1; /* argv[0] should be program name */
+        
+        while( loc < argc )
+        {
+            //Display the help menu
+            if( compare(argv[loc], "--help") || 
+                compare(argv[loc], "-?") ||
+                compare(argv[loc], "-h") )
+            {
+                show_help(argv[0]);
+            }
+            
+            //The port number
+            if( compare(argv[loc], "-p") )
+            {
+                if( loc + 1 >= argc ) //Too few arguments, display help
+                {
+                    argv[loc] = "--help";
+                } else {
+                    portnumber = atoi( argv[loc+1] );
+                    loc += 1;
+                }
+            }
+            
+            if( compare(argv[loc], "-t") )
+               tcp = 1;
+            
+            if( compare(argv[loc], "-u") )
+               udp = 1;
+            
+            loc += 1;
+        }
+    }else{
+        show_help(argv[0]);
+    }
+    
+    
+    pthread_t thread1, thread2;
+    char *message1 = "Thread 1";
+
+    /* Create independent threads each of which will execute function */
+
+    pthread_create( &thread2, NULL, udp_server, (void*) message1);
+    pthread_create( &thread1, NULL, tcp_server, (void*) message1);
+
+
+    /* Wait untill threads are complete before main exits. */
+
+    pthread_join( thread1, NULL);
+    pthread_join( thread2, NULL); 
+
+    exit(0);
+}
+
+void *print_message_function( void *ptr )
+{
+     char *message;
+     message = (char *) ptr;
+     printf("%s \n", message);
+}
+
+void *tcp_server( void *ptr )
+{
+     if(tcp)
+     {
+        printf("TCP started on port %i\n",portnumber);
+        
+        int sockfd, newsockfd, portno, clilen;
+        char buffer[256];
+        struct sockaddr_in serv_addr, cli_addr;
+        int n;
+        
+        sockfd = socket(AF_INET, SOCK_STREAM, 0);
+        if (sockfd < 0) error("ERROR opening socket");
+        
+        bzero((char *) &serv_addr, sizeof(serv_addr));
+        
+        portno = portnumber;
+        serv_addr.sin_family = AF_INET;
+        serv_addr.sin_addr.s_addr = INADDR_ANY;
+        serv_addr.sin_port = htons(portnumber);
+        if (bind(sockfd, (struct sockaddr *) &serv_addr,
+              sizeof(serv_addr)) < 0) 
+              error("ERROR on binding");
+        while( 1 )
+        {      
+            listen(sockfd,5);
+            clilen = sizeof(cli_addr);
+            newsockfd = accept(sockfd, 
+                     (struct sockaddr *) &cli_addr, 
+                     &clilen);
+            if (newsockfd < 0) 
+              error("ERROR on accept");
+            do
+            {  
+                bzero(buffer,256);
+                n = read(newsockfd,buffer,255);
+                if (n < 0) error("ERROR reading from socket");
+                n = write(newsockfd,buffer,n);
+                if (n < 0) error("ERROR writing to socket");
+            }while( n > 0 );
+        }
+          
+    }
+}
+
+void *udp_server( void *ptr )
+{
+     if(udp)
+     {
+         printf("UDP started on port %i\n",portnumber);
+         
+        int sock, length, fromlen, n;
+        struct sockaddr_in server;
+        struct sockaddr_in from;
+        char buf[1024];
+
+        sock = socket(AF_INET, SOCK_DGRAM, 0);
+        if (sock < 0) 
+            error("Problem opening socket");
+        
+        length = sizeof(server);
+        bzero(&server,length);
+        
+        server.sin_family = AF_INET;
+        server.sin_addr.s_addr = INADDR_ANY;
+        server.sin_port = htons(portnumber);
+        
+        if (bind(sock,(struct sockaddr *)&server,length)<0)
+           error("Problem binding UDP");
+        fromlen = sizeof(struct sockaddr_in);
+        
+        while( 1 ) 
+        {
+            n = recvfrom(sock,buf,1024,0,(struct sockaddr *)&from,&fromlen);
+            if (n < 0) 
+                error("recvfrom");
+            n = sendto(sock,buf,n,0,(struct sockaddr *)&from,fromlen); //echo
+            if (n < 0) 
+                error("sendto");
+        }
+     }
+}

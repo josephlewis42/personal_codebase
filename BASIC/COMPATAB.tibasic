@@ -1,0 +1,187 @@
+PROGRAM:COMPATABILITY
+"A love calculator, guaranteed to be acturate :) Copyright 2007 Joseph Lewis | TIBASIC"
+"Press the + key (95) when it says to press enter to get 100%, press enter to get a math"
+"value, trick your friends, the + key is right above enter, so they won't figure it out ;)"
+
+0->X
+Disp "COMPATABILITY:"
+Input "UR NAME?",Str1
+Input "NAME 2?",Str2
+
+sub(Str1,1,1)->Str3
+sub(Str2,1,1)->Str4
+
+If Str3="A"
+1->A
+If Str4="A"
+1->B
+
+
+If Str3="B"
+2->A
+If Str4="B"
+2->B
+
+
+If Str3="C"
+3->A
+If Str4="C"
+3->B
+
+
+If Str3="D"
+4->A
+If Str4="D"
+4->B
+
+
+If Str3="E"
+5->A
+If Str4="E"
+5->B
+
+
+If Str3="F"
+6->A
+If Str4="F"
+6->B
+
+
+If Str3="G"
+7->A
+If Str4="G"
+7->B
+
+
+If Str3="H"
+8->A
+If Str4="H"
+8->B
+
+
+If Str3="I"
+9->A
+If Str4="I"
+9->B
+
+
+If Str3="J"
+10->A
+If Str4="J"
+10->B
+
+
+If Str3="K"
+11->A
+If Str4="K"
+11->B
+
+
+If Str3="L"
+12->A
+If Str4="L"
+12->B
+
+
+If Str3="M"
+13->A
+If Str4="M"
+13->B
+
+
+If Str3="N"
+1->A
+If Str4="N"
+1->B
+
+
+If Str3="O"
+2->A
+If Str4="O"
+2->B
+
+
+If Str3="P"
+3->A
+If Str4="P"
+3->B
+
+
+If Str3="Q"
+4->A
+If Str4="Q"
+4->B
+
+
+If Str3="R"
+5->A
+If Str4="R"
+5->B
+
+
+If Str3="S"
+6->A
+If Str4="S"
+6->B
+
+
+If Str3="T"
+7->A
+If Str4="T"
+7->B
+
+
+If Str3="U"
+8->A
+If Str4="U"
+8->B
+
+
+If Str3="V"
+9->A
+If Str4="V"
+9->B
+
+
+If Str3="W"
+10->A
+If Str4="W"
+10->B
+
+
+If Str3="X"
+11->A
+If Str4="X"
+11->B
+
+
+If Str3="Y"
+12->A
+If Str4="Y"
+12->B
+
+
+If Str3="Z"
+13->A
+If Str4="Z"
+13->B
+
+
+ClrHome
+Disp "READY?"
+Disp "PRESS ENTER:"
+While getKey=0
+getKey->Z
+End
+
+ClrHome
+
+Disp "COMPATABILITY OF:"
+Disp Str1+"+"+Str2
+
+If Z=95
+Disp 100
+
+If A-B!=0
+Disp round(abs(A-B)/13)*100+randInt(-9,9),0)
+

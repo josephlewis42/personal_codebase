@@ -1,0 +1,1 @@
+{"revision_control": {}, "name": "Conway's Game Of Life CPP", "license": "Apache License 2.0", "notes": "Conway's game of life in C++", "languages": ["C++"], "date": "2012-01-15", "downloads": [{"Date": "2012-01-15", "Notes": "", "name": "Main File", "location": "conway.cpp"}]}

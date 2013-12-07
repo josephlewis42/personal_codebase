@@ -1,0 +1,51 @@
+<?php
+// These are shown throughout the site.
+$SITE_NAME = "SimpleList";	// i.e. "Not Craigslist"
+$SITE_TAGLINE = "A listing site for humans";	// i.e. "The best place to post not craigslist ads"
+$SITE_IMG_PATH = "";	// i.e. "/resources/imgs/small_img.png"
+
+// This is the information to conenct to the database, be sure to edit it properly.
+$DB_USER = "www-data";
+$host = "localhost";
+$DB_PASSWORD = "password";
+$database = "test2";
+
+
+// This information is used to validate email addresses people come from
+// If you wish to restrict who can use this applicaiton, i.e. only people
+// who have @yoursite.com domain email addresses, you would add yoursite.com
+// An empty list means anyone can join.
+// Because this application is built around communities and trust within them
+// it is recommended you are exclusive. I originally wrote this site to try
+// out student -> student book resales within my college.
+
+$validation = array();	// Default registration is array() == anyone.
+
+$login_msg = "Please log in to see this.";	// Shown at places where the user needs to be logged in to see, i.e. contact info.
+
+
+// Control over the length of messages goes here, the default amount of time to show them
+// is 30 days.
+$MESSAGE_EXPIRE_DAYS = 30;
+
+
+function throwException($message = null,$code = null) {
+    throw new Exception($message,$code);
+}
+
+/**
+ * A simple function to connect to the Database and execute the query given
+ * returns the result of the query or throws an exception.
+**/
+function exec_query($query){
+	global $host, $DB_USER, $DB_PASSWORD, $database;
+	//$connection = mysql_connect($host,$DB_USER,$DB_PASSWORD) 
+	$connection = mysql_connect($host,$DB_USER,$DB_PASSWORD) 
+		or die ("Couldn't connect to server.");
+	$db = mysql_select_db($database,$connection) 
+		or die ("Couldn't select db.");
+	$result = mysql_query($query)
+		or die(mysql_error());
+	return $result;
+}
+?>

@@ -1,0 +1,12 @@
+To install
+
+1. Create a database, and read the "setup.sql" file in to it.
+2. Edit the includes/global.php settings to your liking.
+3. Push on to a php enabled webserver.
+4. Open a webbrowser to the "yoursite.com/clean.php" page, this will
+   setup a user with the same username and password as your database.
+  
+5. Logon and add some categories/posts.
+6. Set up a script to do a fetch on the yoursite.com/clean.php page 
+   daily, this function cleans out the database of old listings etc.
+7. Publish your website.

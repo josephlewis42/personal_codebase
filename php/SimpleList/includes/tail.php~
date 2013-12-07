@@ -1,0 +1,21 @@
+<?php
+/* set the cache limiter to 'private' */
+session_cache_limiter('private');
+session_start();
+
+include 'global.php';
+?>
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+	<meta charset="utf-8" />
+	<title><?php echo $SITE_NAME." - ".$SITE_TAGLINE; ?> </title>
+	<link href="assets/style.css" rel="stylesheet" />
+    </head>
+<body>
+<div id="HEADER">
+	<h1><a href='index.php'><?php echo $SITE_NAME; ?></a></h1>
+	<h2><?php echo $SITE_TAGLINE; ?></h2>
+</div>
