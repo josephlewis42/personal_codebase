@@ -1,0 +1,1 @@
+{"revision_control": {}, "name": "AutoSummary", "license": "BSD style license", "notes": "A command line tool that creates (good) summaries of text documents.", "languages": ["python"], "date": "2011-09-21 00:00:00", "downloads": [{"Date": "2011-09-21 00:00:00", "Notes": "", "name": "Main File", "location": "AutoSummary.py"}]}

@@ -1,0 +1,33 @@
+
+
+
+WINDOWS
+=======
+You will need python, and wxpython installed.
+
+http://www.python.org/download/
+
+Look about halfway down the page for the windows installer
+http://www.wxpython.org/download.php
+
+Double click the MAIN.pyw file.
+
+MAC
+===
+You should allready have python and wxpython installed.
+
+Try double clicking the Run.Command file, if this gives you an error, try Ctrl+Clicking it and chooseing open in iTerm.app. If this option does 
+not appear, try running iTerm.app first, which is found in the bin directory of the project.
+
+For some older macs you may be able to just double click MAIN.pyw, and have the project start.
+
+If this does not work, open the bin folder, and run iTerm.app (or your systems terminal found in Applications>Utilities>Terminal, then drag and drop the Run.Command file into the iTerm.app/Terminal and press return.
+
+LINUX
+=====
+You need python and wxpython installed.
+You can do this by running:
+sudo apt-get install python
+sudo easy_install wxpython
+
+Then either run the MAIN.pyw, or Run.sh file.

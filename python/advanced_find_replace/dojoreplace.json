@@ -1,0 +1,28 @@
+{
+	"version": 2.0,
+	"replace": {"" : {
+		"jsId":"data-dojo-id",
+		"dojoType":"data-dojo-type",
+		"dojoAttachEvent":"data-dojo-attach-event",
+		"dojoAttachPoint":"data-dojo-attach-point"
+		},
+		"<script": {
+			"var djConfig":"var dojoConfig",
+			"djConfig":"data-dojo-config"
+		},
+		"dojo.require":{
+			"djConfig":"dojoConfig"
+		}
+	},
+	"regex" : {},
+	"variables" : [],
+	"lines":{"dojo/method":{
+				"event":"data-dojo-event",
+				"args":"data-dojo-args"
+				},
+			"dojo/connect":{
+				"event":"data-dojo-event",
+				"args":"data-dojo-args"
+				}
+			}
+}
