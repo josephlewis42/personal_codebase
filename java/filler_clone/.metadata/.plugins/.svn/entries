@@ -1,0 +1,49 @@
+10
+
+dir
+38
+https://javafiller.googlecode.com/svn/trunk/.metadata/.plugins
+https://javafiller.googlecode.com/svn
+
+
+
+2010-10-21T19:27:57.358520Z
+29
+joehms22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1e7f07b9-462e-bc5a-ba05-fc29a017b67b
+
+org.eclipse.ui.intro
+dir
+
+org.eclipse.jdt.core
+dir
+
+org.eclipse.core.runtime
+dir
+
+org.eclipse.jdt.ui
+dir
+
+org.eclipse.ui.ide
+dir
+
+org.eclipse.ui.workbench
+dir
+
+org.eclipse.core.resources
+dir
+

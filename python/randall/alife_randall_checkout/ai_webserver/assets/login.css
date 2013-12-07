@@ -1,0 +1,228 @@
+body
+{
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+    font:bold 80% 'helvetica neue', Arial, sans-serif;
+}
+
+iframe
+{
+    border-style:none;
+    margin-top:10px;
+}
+
+.widget
+{
+    width:100%;
+    background-color:#222;
+    color:#000;
+}
+
+/**Used for titles**/
+.widget h1, h2, h3
+{
+    background-color:#0D5995;
+    width:100%;
+    padding-top:5px;
+    padding-bottom:5px;
+    margin:0px;
+    text-align:center;
+    color:#FFF;
+    font-size:16px;
+    border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+}
+/*Inner widget sectional header*/
+.widget h4
+{
+    margin:0px;
+    padding:0px;
+    font-weight:bold;
+}
+
+.widget p
+{
+    background-color:#FFF;
+    width:100%;
+    margin:0px;
+    padding:0px;
+    min-height:50px;
+    margin:0px;
+    padding:0px;
+    font-weight:normal;
+}
+
+.small_widget_container
+{
+    width:300px;
+    height:100%;
+    float:right;
+}
+.large_widget_container
+{
+    width:680px;
+    height:100%;
+    float:left;
+}
+
+#main_panel
+{
+    background-color:#222;
+    margin-left:auto;
+    margin-right:auto;
+    width:1000px;
+}
+
+#login_page h1,h2
+{
+    color:#FFF;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:10px;
+    text-align:left;
+    float:left;
+    display:block;
+    padding:50;
+}
+
+/*A streching background*/
+img#bg
+{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-990;
+}
+
+/* For fade in from black effect.  This is a screen that
+ * is on top, but is hidden until javascript unhides it to change the
+ * whole page black, so if you don't have js the page won't just
+ * sit there black...
+ */
+#fg
+{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:990;
+    background-color:#000;
+    display:hidden;
+    color:#FFF;
+}
+
+div#login
+{
+    background:#333;
+    color:#FFF;
+    text-align:right;
+    float:right;
+    padding:20px;
+    border-bottom-left-radius: 20px;
+    -moz-border-radius-bottomleft: 20px;
+}
+
+.sidebyside{background-color:#FFF; margin:0px; padding:0px; width:100%;}
+
+.sidebyside ul
+{
+    padding-left:10px;
+    background-color:#FFF;
+    list-style-type: none;
+}
+.sidebyside li
+{
+  float: left;
+  width: 50%;
+  list-style: none;
+  background-color:#FFF;
+}
+
+#progresscontainer
+{
+    position:relative;
+    background-color:#FFF;
+    width:100%;
+    font-weight:normal;
+}
+
+.progressbar
+{
+    margin-left:auto;
+    margin-right:auto;
+    color:#FFF;
+    text-align:center;
+    width:98%;
+    background-color:#BFBFBF;
+    position:relative;
+    border: 1px solid #FFF;
+    z-index:1;
+
+    -moz-border-radius: 8px 8px 8px 8px;
+    border-raidus:8px 8px 8px 8px 8px 8px 8px 8px;
+    height:16px;
+}
+.progressbartext
+{
+    position:relative;
+    z-index:3;
+    margin:0px;
+    padding:0px;
+    height:auto;
+    color:#000;
+}
+.progressbarinner
+{
+    z-index:2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    -moz-border-radius: 8px 8px 8px 8px;
+    border-raidus:8px 8px 8px 8px 8px 8px 8px 8px;
+    background-color:#0D5995;
+}
+
+
+.pavlov table, th, td
+{
+    border: 0px solid black;
+}
+
+.pavlov tr:first-child
+{
+    background-color:#BFBFBF;
+    padding:2px;
+}
+.pavlov tr:nth-child(even)
+{
+    background-color:#ADD8E6;
+}
+.pavlov tr:hover
+{
+    background-color:#90EE90;
+}
+
+//All stuff for the map display.
+.mapcontainer
+{
+    overflow:auto;
+    background-color:#FFC0CB;
+    position:absolute;
+}
+
+.map div { width:28px; height:28px; text-align:center;
+        border:1px solid #FFF; float:left; font-size:8pt;
+        background-color:#FFFFFF; }
+.map .unknown { background-color:#999; font-size:28px;}
+.map .n { border-top:1px solid #000; }
+.map .s { border-bottom:1px solid #000; }
+.map .e { border-right:1px solid #000; }
+.map .w { border-left:1px solid #000; }

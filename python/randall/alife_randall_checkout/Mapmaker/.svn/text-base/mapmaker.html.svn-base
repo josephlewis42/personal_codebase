@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="mapmakerstyle.css" /> <!--No type in html5, default is css-->
+        <title>AI Map Generator</title>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type='text/javascript'>
+            function getParameter(paramName)
+            {
+                var searchString = window.location.search.substring(1),
+                i, val, params = searchString.split("&");
+
+                for (i=0; i < params.length; i++)
+                {
+                    val = params[i].split("=");
+                    if (val[0] == paramName)
+                    {
+                        return unescape(val[1]);
+                    }
+                }
+                return null;
+            }
+
+            function layout_grid()
+            {
+                 x = getParameter('x');
+                 y = getParameter('y');
+                 if(x != null && y != null)
+                 {
+                     x = parseInt(x);
+                     y = parseInt(y);
+
+                     $("#designerarea").width(40*x);
+
+                     for(var j = 0; j < y; j = j+1)
+                     {
+                        for(var k = 0; k < x; k = k+1)
+                        {
+                            myid = "x"+k+"y"+j+"z0";
+                            $("#designerarea").append("<div class='maptile' id='"+myid+"' alt=''></div>");
+
+                            //Apply classes if is an edge.
+                            if(k == 0)
+                                $("#"+myid).addClass('w');
+                            if(k == x-1)
+                                $("#"+myid).addClass('e');
+                            if(j == 0)
+                                $("#"+myid).addClass('n');
+                            if(j == y-1)
+                                $("#"+myid).addClass('s');
+
+                        }
+                     }
+
+                     $(".maptile").hover(function () {
+                        if(click == false)
+                        {
+                            if(mode)
+                            {
+                                if(add == true)
+                                {
+                                    $(this).addClass(cls_to_add);
+                                }else{
+                                    $(this).removeClass(cls_to_add);
+                                }
+                                apply_double($(this).attr('id'));
+                            }
+                            else
+                            {
+                                var ilist = $(this).attr("alt");
+                                ilist = ilist.split(",");
+
+                                if(add)
+                                {
+                                    if (ilist.indexOf(item) < 0) //dont add if already exists.
+                                        ilist.push(item);
+                                }else{
+                                    var j = ilist.indexOf(item);
+                                    if(j > 0)
+                                        ilist.pop(j);
+                                }
+                                $(this).attr("alt", ilist.toString());
+                                var j = ilist.toString();
+                                j = j.replace(",","");//Replace first comma.
+                                j = j.replace(/\,/gi,"<br />");
+                                $(this).html(j);
+                            }
+                        }
+                        });
+
+                        $(".maptile").click(function () {
+                        if(click)
+                        {
+                            if(mode)
+                            {
+                                if(add == true)
+                                {
+                                    $(this).addClass(cls_to_add);
+                                }else{
+                                    $(this).removeClass(cls_to_add);
+                                }
+                                apply_double($(this).attr('id'));
+                            }
+                            else
+                            {
+                                var ilist = $(this).attr("alt");
+                                ilist = ilist.split(",");
+
+                                if(add)
+                                {
+                                    if (ilist.indexOf(item) < 0) //dont add if already exists.
+                                        ilist.push(item);
+                                }else{
+                                    var j = ilist.indexOf(item);
+                                    if(j > 0)
+                                        ilist.pop(j);
+                                }
+                                $(this).attr("alt", ilist.toString());
+                                var j = ilist.toString();
+                                j = j.replace(",","");//Replace first comma.
+                                j = j.replace(/\,/gi,"<br />");
+                                $(this).html(j);
+                            }
+                        }
+                        });
+                 }
+            }
+            var click = true;  //Click on (true) or hover on (false)
+            var cls_to_add = "n";  //Class to add
+            var add = true; //Add = True, subtract = False
+            var double_line = true;  //add double lines
+            var mode = true; //True for walls, false for items
+            var item = ""; //Item to be putting in cells.
+
+            function click_hover()
+            {
+                if(click == true){
+                    click = false;
+                    $("#hoverbtn").attr("value", "Hover");
+                }else{
+                    click = true;
+                    $("#hoverbtn").attr("value", "Click");
+                }
+            }
+            function editmode()
+            {
+                if(mode){
+                    mode = false;
+                    $("#editbtn").attr("value", "Items");
+
+                }else{
+                    mode = true;
+                    $("#editbtn").attr("value", "Walls");
+
+                }
+            }
+            function linestyle()
+            {
+                if(double_line == true){
+                    double_line = false;
+                    $("#linebtn").attr("value", "One-Way");
+
+                }else{
+                    double_line = true;
+                    $("#linebtn").attr("value", "Solid");
+                }
+            }
+            function add_sub()
+            {
+                if(add == true){
+                    add = false;
+                    $("#addsubbtn").attr("value", "Erase");
+                }else{
+                    add = true;
+                    $("#addsubbtn").attr("value", "Add");
+                }
+            }
+            function class_change()
+            {
+                cls_to_add = $("#clsslct").val();
+            }
+            function item_change()
+            {
+                item = $("#iteminput").val();
+                if(item == null)
+                    item = ""
+            }
+            function apply_double( currentcellid )
+            {
+                if( double_line )
+                {
+                    //Get x and y for the current cell based on its id.
+                    var x = currentcellid.split('y')[0].split('x')[1];
+                    var y = currentcellid.split('z')[0].split('y')[1];
+                    x = parseInt(x);
+                    y = parseInt(y);
+
+                    switch(cls_to_add)
+                    {
+                    case 'n':
+                      var target_id = "#x"+x+"y"+(y-1)+"z0";
+                      if(add)
+                        $(target_id).addClass('s');
+                      else
+                        $(target_id).removeClass('s');
+                      break;
+                    case 's':
+                      var target_id = "#x"+x+"y"+(y+1)+"z0";
+                      if(add)
+                        $(target_id).addClass('n');
+                      else
+                        $(target_id).removeClass('n');
+                      break;
+                    case 'e':
+                      var target_id = "#x"+(x+1)+"y"+y+"z0";
+                      if(add)
+                        $(target_id).addClass('w');
+                      else
+                        $(target_id).removeClass('w');
+                      break;
+                    case 'w':
+                      var target_id = "#x"+(x-1)+"y"+y+"z0";
+                      if(add)
+                        $(target_id).addClass('e');
+                      else
+                        $(target_id).removeClass('e');
+                      break;
+                    }
+                }
+            }
+            /**Generates a map from the items in the designer. **/
+            function generate_map()
+            {
+                var mytext = "";
+                x = getParameter('x');
+                y = getParameter('y');
+                name = $("#mapname").val();
+                if (name == "" || name == null)
+                    name="Map-Maker generated map";
+
+                //General map title stuff
+                mytext += "#MAP 1.0 Used by AI mapper class\n";
+                mytext += "#Generation Time UTC: 0000-00-00 00.00.00\n";
+                mytext += "#Name: "+name+"\n";
+                mytext += "#Size: ("+x+","+y+",1)\n"
+
+                //Mapitems
+                $("#designerarea").children().each(function(){
+                    var kid = $(this);
+
+                    //Get location
+                    var x = kid.attr('id').split('y')[0].split('x')[1];
+                    var y = kid.attr('id').split('z')[0].split('y')[1];
+                    var z = '0';
+                    //Get directions
+                    var directions = "";
+                    if (! kid.hasClass('n'))  //Is kid accessable from north?
+                        directions += "n";
+                    if (! kid.hasClass('s'))
+                        directions += "s";
+                    if (! kid.hasClass('e'))
+                        directions += "e";
+                    if (! kid.hasClass('w'))
+                        directions += "w";
+                    //Get items
+                    var items = "[";
+                    ilist = $(this).attr("alt").split(",");
+                    for(i in ilist)
+                    {
+                         if(i != "0")
+                            items += "'"+ilist[i]+"',";
+                    }
+                    items += "]";
+
+                    //Put it all together
+                    mytext += "("+x+","+y+","+z+")\t"+directions+"\t"+items+"\n";
+
+                    });
+                $('#output').val(mytext);
+            }
+
+        </script>
+    </head>
+
+    <body onLoad="layout_grid();">
+
+        <h1>AI Map Generator</h1>
+
+        <h2>1) Size your world:</h2>
+        <div class="windowarea">
+        <form>
+            X-Size:<input type="text" name="x" /> <br />
+            Y-Size:<input type="text" name="y" /> <br />
+            <input type="submit" value="Submit"/>
+        </form>
+        </div>
+
+        <h2>2) Design your world:</h2>
+        <div class="windowarea">
+            <div id="designermenu">
+                <b>General:</b> Edit Mode:<input id="editbtn" type="button" value="Walls" OnClick="editmode()" />
+                Add or remove:<input id="addsubbtn" type="button" value="Add" OnClick="add_sub()" />
+                How walls/items are added:<input id="hoverbtn" type="button" value="Click" OnClick="click_hover()" />
+                <br/><b>Lines:</b>
+
+                Wall-Style:<input id="linebtn" type="button" value="Solid" OnClick="linestyle()" />
+                Direction:<select id="clsslct" OnChange="class_change()">
+                    <option value="n" selected="selected">North</option>
+                    <option value="s">South</option>
+                    <option value="e">East</option>
+                    <option value="w">West</option>
+                </select>
+                <br />
+                <b>Items:</b>
+                Item Name:<input id="iteminput" onChange="item_change()" onMouseout="item_change()" />
+
+            </div>
+            <div id="designerbkg">
+                <div id="designerarea" class="map">
+                </div>
+            </div>
+        </div>
+
+        <h2>3) Generate your world:</h2>
+        <div class="windowarea">
+
+        What do you want to call this map? <input id="mapname" /><br />
+        <input type="button" value="Generate" OnClick="generate_map()" /><br />
+        <textarea id="output" cols="100" rows="10"></textarea>
+        </div>
+        <footer>
+            <p>&#169; 2011 Joseph Lewis</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,214 @@
+
+                <html><head>
+                <script type="text/javascript">
+                                var orig = "";
+                var current = null;
+                var list = [];
+                var i = 0;
+                
+                function play()
+                {
+                    clearInterval();
+                    var all = document.getElementById('commands').value;
+                    list = all.split("\n");
+                    i = 0;
+                    setInterval(next, 200);
+                }
+                
+                function next()
+                {
+                    if( current != null)
+                    {
+                        document.getElementById(current).innerHTML = orig;
+                    }
+                    current = list[i];
+                    
+                    orig = document.getElementById(current).innerHTML;
+                    document.getElementById(current).innerHTML = "<:3)~";
+                    i++;
+                    if( i > list.length - 1)
+                    {
+                        clearInterval();
+                    }
+                }
+                </script>
+                <style>
+                div {
+                    width:28px;
+                    height:28px;
+                    text-align:center;
+                    border:1px solid #FFF;
+                    float:left;
+                    font-size:8pt;
+                }
+                #entire {
+                    width:300px;
+                    text-align:left;
+                    margin:0px;
+                    padding:0px;
+                }
+                .unknown { background-color:#999; 
+                           font-size:28px;}
+                .n { border-top:1px solid #000; }
+                .s { border-bottom:1px solid #000; }
+                .e { border-right:1px solid #000; }
+                .w { border-left:1px solid #000; }
+                </style></head>
+                <body><div id="entire"><div id='x0y0z0' class='n w'></div>
+<div id='x1y0z0' class='n e '></div>
+<div id='x2y0z0' class='n w'></div>
+<div id='x3y0z0' class='n s '></div>
+<div id='x4y0z0' class='n e '></div>
+<div id='x5y0z0' class='n e w'></div>
+<div id='x6y0z0' class='n w'></div>
+<div id='x7y0z0' class='n s '></div>
+<div id='x8y0z0' class='n s '></div>
+<div id='x9y0z0' class='n e '></div>
+<div id='x0y1z0' class='e s w'></div>
+<div id='x1y1z0' class='e w'></div>
+<div id='x2y1z0' class='e w'></div>
+<div id='x3y1z0' class='n w'></div>
+<div id='x4y1z0' class='e s '></div>
+<div id='x5y1z0' class='s w'></div>
+<div id='x6y1z0' class='s '></div>
+<div id='x7y1z0' class='n e '></div>
+<div id='x8y1z0' class='n w'></div>
+<div id='x9y1z0' class='e '></div>
+<div id='x0y2z0' class='n w'></div>
+<div id='x1y2z0' class='e s '></div>
+<div id='x2y2z0' class='e w'></div>
+<div id='x3y2z0' class='e w'></div>
+<div id='x4y2z0' class='n s w'></div>
+<div id='x5y2z0' class='n '></div>
+<div id='x6y2z0' class='n e '></div>
+<div id='x7y2z0' class='e s w'></div>
+<div id='x8y2z0' class='e w'></div>
+<div id='x9y2z0' class='e w'></div>
+<div id='x0y3z0' class='s w'></div>
+<div id='x1y3z0' class='n e '></div>
+<div id='x2y3z0' class='e w'></div>
+<div id='x3y3z0' class='s w'></div>
+<div id='x4y3z0' class='n s '></div>
+<div id='x5y3z0' class='e s '></div>
+<div id='x6y3z0' class='s w'></div>
+<div id='x7y3z0' class='n e '></div>
+<div id='x8y3z0' class='e w'></div>
+<div id='x9y3z0' class='e w'></div>
+<div id='x0y4z0' class='n w'></div>
+<div id='x1y4z0' class='e s '></div>
+<div id='x2y4z0' class='s w'></div>
+<div id='x3y4z0' class='n e '></div>
+<div id='x4y4z0' class='n w'></div>
+<div id='x5y4z0' class='n s '></div>
+<div id='x6y4z0' class='n e '></div>
+<div id='x7y4z0' class='s w'></div>
+<div id='x8y4z0' class='e s '></div>
+<div id='x9y4z0' class='e w'></div>
+<div id='x0y5z0' class='s w'></div>
+<div id='x1y5z0' class='n s '></div>
+<div id='x2y5z0' class='n s '></div>
+<div id='x3y5z0' class='e s '></div>
+<div id='x4y5z0' class='s w'></div>
+<div id='x5y5z0' class='n e s '></div>
+<div id='x6y5z0' class='w'></div>
+<div id='x7y5z0' class='n e s '></div>
+<div id='x8y5z0' class='n w'></div>
+<div id='x9y5z0' class='e s '></div>
+<div id='x0y6z0' class='n w'></div>
+<div id='x1y6z0' class='n s '></div>
+<div id='x2y6z0' class='n s '></div>
+<div id='x3y6z0' class='n s '></div>
+<div id='x4y6z0' class='n s '></div>
+<div id='x5y6z0' class='n '></div>
+<div id='x6y6z0' class='e s '></div>
+<div id='x7y6z0' class='n w'></div>
+<div id='x8y6z0' class='e s '></div>
+<div id='x9y6z0' class='n e w'></div>
+<div id='x0y7z0' class='s w'></div>
+<div id='x1y7z0' class='n s '></div>
+<div id='x2y7z0' class='n s '></div>
+<div id='x3y7z0' class='n s '></div>
+<div id='x4y7z0' class='n e '></div>
+<div id='x5y7z0' class='e s w'></div>
+<div id='x6y7z0' class='n w'></div>
+<div id='x7y7z0' class='e s '></div>
+<div id='x8y7z0' class='n w'></div>
+<div id='x9y7z0' class='e '></div>
+<div id='x0y8z0' class='n w'></div>
+<div id='x1y8z0' class='n s '></div>
+<div id='x2y8z0' class='n s '></div>
+<div id='x3y8z0' class='n s '></div>
+<div id='x4y8z0' class='e s '></div>
+<div id='x5y8z0' class='n w'></div>
+<div id='x6y8z0' class='e s '></div>
+<div id='x7y8z0' class='n s w'></div>
+<div id='x8y8z0' class='e s '></div>
+<div id='x9y8z0' class='e w'></div>
+<div id='x0y9z0' class='s w'></div>
+<div id='x1y9z0' class='n s '></div>
+<div id='x2y9z0' class='n s '></div>
+<div id='x3y9z0' class='n s '></div>
+<div id='x4y9z0' class='n s '></div>
+<div id='x5y9z0' class='s '></div>
+<div id='x6y9z0' class='n s '></div>
+<div id='x7y9z0' class='n s '></div>
+<div id='x8y9z0' class='n s '></div>
+<div id='x9y9z0' class='e s '></div>
+</div>
+                <textarea cols="50" rows="4" id="commands">x0y0z0
+x1y0z0
+x1y1z0
+x1y2z0
+x0y2z0
+x0y3z0
+x1y3z0
+x1y4z0
+x0y4z0
+x0y5z0
+x1y5z0
+x2y5z0
+x3y5z0
+x3y4z0
+x2y4z0
+x2y3z0
+x2y2z0
+x2y1z0
+x2y0z0
+x3y0z0
+x4y0z0
+x4y1z0
+x3y1z0
+x3y2z0
+x3y3z0
+x4y3z0
+x5y3z0
+x5y2z0
+x6y2z0
+x6y3z0
+x7y3z0
+x7y4z0
+x8y4z0
+x8y3z0
+x8y2z0
+x8y1z0
+x9y1z0
+x9y2z0
+x9y3z0
+x9y4z0
+x9y5z0
+x8y5z0
+x8y6z0
+x7y6z0
+x7y7z0
+x6y7z0
+x6y8z0
+x5y8z0
+x5y9z0
+x6y9z0
+x7y9z0
+x8y9z0
+x9y9z0
+</textarea>
+                <button type="button" onClick="javascript:play();">Play</button>
+                </body></html>
+                

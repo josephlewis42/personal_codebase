@@ -1,0 +1,75 @@
+body
+{
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+    font:bold 80% 'helvetica neue', Arial, sans-serif;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+h2
+{
+    background-color:#0D5995;
+    width:100%;
+    padding:5px;
+    margin:0px;
+    text-align:left;
+    color:#FFF;
+    font-size:16px;
+    border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+}
+
+.windowarea
+{
+    position:relative;
+    background-color:#FFF;
+    width:100%;
+    font-weight:normal;
+    color:#000;
+    padding:5px;
+    margin-bottom:20px;
+}
+
+#designermenu
+{
+    background-color:#BFBFBF;
+    width:100%;
+    min-height:20px;
+}
+
+#designerarea
+{
+    background-color:#BFBFBF;
+    width:100%;
+    overflow:auto;
+}
+#designerbkg
+{
+    background-color:#BFBFBF;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/*All stuff for the map display.*/
+.mapcontainer
+{
+    overflow:auto;
+    background-color:#FFC0CB;
+    position:absolute;
+}
+
+.map div { width:36px; height:36px; text-align:center;
+        border:2px solid #E6E6FA; float:left; font-size:8pt;
+        background-color:#fff; }
+.map .unknown { background-color:#999; font-size:38px;}
+.map .n { border-top:2px solid #000; }
+.map .s { border-bottom:2px solid #000; }
+.map .e { border-right:2px solid #000; }
+.map .w { border-left:2px solid #000; }

@@ -1,0 +1,657 @@
+<!--
+Copyright 2011 Joseph Lewis
+
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are
+        met:
+        
+        * Redistributions of source code must retain the above copyright
+          notice, this list of conditions and the following disclaimer.
+        * Redistributions in binary form must reproduce the above
+          copyright notice, this list of conditions and the following disclaimer
+          in the documentation and/or other materials provided with the
+          distribution.
+        * Neither the name of the  nor the names of its
+          contributors may be used to endorse or promote products derived from
+          this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+        "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+        LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+        A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+        OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+        SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+        LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<html>
+<head>
+    <title>4D Pong!</title>
+
+    <!--To keep things portable everything is embedded, sure it is going to be a 
+    maintainers nightmare, but for this situation I think that it is excusable.
+    -->
+    <style>
+        body
+        {
+            background-color:#333;
+            background-image:url(data:image/png;base64,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%3D);
+            margin:0px;  
+            padding:0px;  
+            text-align:center;
+
+            color:#FFF;
+            font-family:Arial,Helvitica,Sans-serif;
+        }
+        canvas
+        {
+            background-color:#000;
+            margin-left: auto;  
+            margin-right: auto;
+            cursor: none;
+        }
+
+        .error
+        {
+            color:#FFF;
+            text-align:left;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        const FPS = 25;
+        
+        var canvas;
+        var context;
+        var buffer;
+        var buffer_context;
+        var width = 0;
+        var height = 0;
+
+        const paddle_width = 100;
+        const paddle_height = 10;
+        var paddle_x = 0;
+
+        //Colors
+        const DARK_BLUE = "#000066";
+        const BLUE = "#0000AA";
+        const LIGHT_BLUE = "#0000FF";
+        const DARK_RED = "#660000";
+        const RED = "#AA0000";
+        const LIGHT_RED = "#FF0000";
+        const DARK_GREEN = "#006600";
+        const GREEN = "#00AA00";
+        const LIGHT_GREEN = "#00FF00";
+        const DARK_PURPLE = "#660066";
+        const PURPLE = "#6600AA";
+        const LIGHT_PURPLE = "#6600FF";
+        const WHITE = "#FFF";
+        const BLACK = "#000";
+        const LIGHT_GRAY = "#999";
+        const GRAY = "#666";
+        const DARK_GRAY = "#333";
+
+        //Keyboard Keys
+        const A = 65;
+        const S = 83;
+        const D = 68;
+        const F = 70;
+        const P = 80;
+        const SPACE = 32;
+        const RIGHT_ARROW = 39;
+        const LEFT_ARROW = 37;
+
+        //Game stuff
+        const FIRST_3D_LEVEL = 3;
+        const FIRST_4D_LEVEL = 5;
+
+        //Player variables (Instantiate here so testing is easier).
+        var score = 0;
+        var level = 0;
+        var lives = 5;
+        var streak = 0;
+        var current_streak = 0;
+
+        //Level settings
+        var points_until_next_level;  //The number of needed points until the next level is reached.
+        var frames_between_balls;  //The number of frames to wait before adding a new ball.
+        var current_frame;  //The current number of frames drawn since the last ball was added.
+
+        //Title screen information.
+        var level_started = false;
+        var leveltext = "4D Pong. To begin click the screen.";
+
+        //The arrays for holding the sprites.
+        var ballstack = [];
+        var textstack = [];
+
+
+
+
+        //DRAWING FUNCTIONS
+        //Draw a circle at the x y given with radius r that is the color color
+        function circle(x,y,r,color) 
+        {
+            buffer_context.beginPath();
+            buffer_context.fillStyle = color;
+            buffer_context.beginPath();
+            buffer_context.arc(x, y, r, 0, Math.PI*2, true);
+            buffer_context.closePath();
+            buffer_context.fill();
+        }
+        //Draw a rectangle at the xy given with width w and heght h with the color color
+        function rect(x,y,w,h,color) 
+        {
+            buffer_context.beginPath();
+            buffer_context.fillStyle = color;
+            buffer_context.beginPath();
+            buffer_context.rect(x,y,w,h);
+            buffer_context.closePath();
+            buffer_context.fill();
+        }
+        //Draw a horizontal line at y with width w and color c
+        function hline(y,w,c)
+        {
+            buffer_context.beginPath();
+            buffer_context.moveTo(0, y);
+            buffer_context.lineTo(w, y);
+            buffer_context.strokeStyle = c;
+            buffer_context.stroke();
+        }
+        //Draw a vertical line at the xy given with height height and the color color
+        function vline(x,y,height,color)
+        {
+            buffer_context.beginPath();
+            buffer_context.moveTo(x, y);
+            buffer_context.strokeStyle = color;
+            buffer_context.lineTo(x, height);
+            buffer_context.stroke();
+        }
+        //Draw the text with the given value at (x,y) with pointsize size and the color given.
+        function text(value,x,y,size,color)
+        {
+            buffer_context.fillStyle = color;
+            buffer_context.font = size + "pt Arial";
+            buffer_context.beginPath();
+            buffer_context.fillText(value, x, y);
+            buffer_context.closePath();
+        }
+
+
+        //Returns the appropriate gray outline for the given 3D distance.
+        function get_gray_outline(dist)
+        {
+            if(dist == 0) return null;
+            if(dist == 1) return LIGHT_GRAY;
+            return GRAY;
+        }
+
+        //Gets the location of the ball hit horizontal for the given 3D distance.
+        function time_y_value(dist)
+        {
+            if (dist == 0) return height - paddle_height;
+            return height-(dist*75);
+        }
+
+        //CREATES INSTANCES OF BALLS.
+        function Ball(dx,dy,x,color,dist)
+        {
+            var dx = dx;
+            var dy = dy;
+            var base_color = color;
+            var gray_outline = get_gray_outline(dist);
+            var dist = dist;
+            var y = 0;
+
+            this.move = function() 
+            {
+                //Move x and y positions
+                y += dy;
+                x += dx;
+
+                //Bounce off walls
+                if (x > width || x < 0) dx = -dx;
+
+                //If ball has hit it's 3D target (bottom).
+                if (y > time_y_value(dist) && y < height)
+                {
+                    var c = get_color_by_key(color_key);
+
+                    //If ball is same color as paddle, and within the paddle's 
+                    //bounds.
+                    if(c == base_color && x < paddle_x + paddle_width && x > paddle_x)
+                    {
+                        streak += 1;
+                        score += 5;
+
+                        //Display the text
+                        textstack.push(new FloatingText("+5",x,y,12,GREEN));
+
+                        //Bounce back toward space.
+                        dy = -dy;
+                    }
+                    else
+                    {
+                        lives -= 1;
+                        streak = 0;
+
+                        //Display the text
+                        textstack.push(new FloatingText("-Life",x,y,12,RED));
+
+                        //Make the ball dissappear.
+                        y = -1000;
+                        dy = 0;
+                    }
+                }
+            }
+            
+            this.display = function() 
+            {
+                //Don't bother drawing if ball is off screen. (speed)
+                if( y < height && y > 0 )
+                {
+                    //Draw gray circle around so the player knows where the ball
+                    //will hit if this is a 3D level.
+                    if (level >= FIRST_3D_LEVEL && gray_outline != null) circle(x,y,13,gray_outline);
+
+                    circle(x,y,10,color);
+                }
+            }
+        }
+
+        //Creates some text that floats up and dissapears after a given number
+        //of frames.
+        function FloatingText(value, x, y, size, color)
+        {
+            var t = value;
+            var x = x;
+            var y = y;
+            var c = color;
+            var i = FPS;
+            var s = size;
+            var del = false;
+
+            this.display = function()
+            {
+                if(i > 0)
+                {
+                    i -= 1;
+                    text(t,x,y,s,c);
+                    y -= 1;
+                }
+                else
+                {
+                    del = true;
+                }
+            }
+        }
+        
+        //KEYBOARD EVENTS
+        var rightDown = false;
+        var leftDown = false;
+        var color_key = A;  //The currently pressed color key (asdf)
+
+
+        //Sets the right and left arrow keys, also changes colors if possible.
+        function onKeyDown(evt) 
+        {
+            if (evt.keyCode == RIGHT_ARROW) rightDown = true;
+            if (evt.keyCode == LEFT_ARROW) leftDown = true;
+            if(evt.keyCode == 113)
+            {
+                level++;
+                textstack.push(new FloatingText("Cheater! :D",500,500,12,WHITE));
+            }
+
+            
+            if (level >= FIRST_4D_LEVEL)  //Dont allow colors until 4D. 
+            {
+                if (evt.keyCode == A) color_key = A;
+                else if (evt.keyCode == S) color_key = S;
+                else if (evt.keyCode == D) color_key = D;
+                else if (evt.keyCode == F) color_key = F;
+            }
+
+            //Pause if game is playing, unpause if it is currently paused.
+            var pausetext = "Paused";
+            if (level_started == true || leveltext == pausetext)
+            {
+                if (evt.keyCode == SPACE || evt.keyCode == P)  //P or space
+                {
+                    level_started = !level_started;
+                    leveltext = pausetext;
+                }
+            }
+        }
+
+        //Unset the right and left arrow variables if they are lifted.
+        function onKeyUp(evt) 
+        {
+            if (evt.keyCode == RIGHT_ARROW) rightDown = false;
+            if (evt.keyCode == LEFT_ARROW) leftDown = false;
+        }
+
+        //MOUSE EVENTS
+        var canvasMinX;
+        var canvasMaxX;
+
+        function onMouseMove(evt) 
+        {
+            if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX) 
+            {
+                //The mouse should be in the center of the paddle to keep corners
+                //easily accessable.
+                paddle_x = evt.pageX - canvasMinX - (.5*paddle_width);
+            }
+        }
+
+        function onMouseClick(evt)
+        {
+            if (level >= FIRST_4D_LEVEL)  //Dont allow color changes until 4D.
+            {
+                //TODO make ipad compatable by finding the y location of the click
+                //to determine color :)  Steve Jobs better say thanks.
+                if (color_key == A) color_key = S;
+                else if (color_key == S) color_key = D;
+                else if (color_key == D) color_key = F;
+                else color_key = A;
+            }
+
+            //Start the game if it is not allready.
+            level_started = true;
+        }
+
+        //Returns the color based off the given ASDF keyCode.
+        function get_color_by_key(key)
+        {
+            if(key == A) return RED;
+            else if(key == S) return GREEN;
+            else if(key == D) return BLUE;
+            return PURPLE;   
+        }
+
+        //Adds a ball based off the level.
+        function add_ball()
+        {
+            basecolors = [A, S, D, F];
+            new_x = Math.floor(Math.random()*width);  //Anywhere along the top.
+            new_dx = Math.floor(-(level*2) + Math.random()*(level*4));  //Faster with higher levels.
+            new_dy = Math.floor(level + Math.random()*(level*5));  //Faster with higher levels.
+            new_color = basecolors[Math.floor(Math.random()*5)];
+            new_color = get_color_by_key(new_color);
+            new_d = Math.floor(Math.random()*3);
+
+
+            if(level == 1)  //Same color as paddle, same time.
+            {
+                new_color = get_color_by_key(color_key);
+                ballstack.push(new Ball(new_dx,10,new_x,new_color,0));
+            }
+            if(level == 2)  //Same color, same time, more balls per screen.
+            {
+                new_color = get_color_by_key(color_key);
+                ballstack.push(new Ball(new_dx,7,new_x,new_color,0));
+            }
+            if(level == 3)  //3D
+            {
+                new_color = get_color_by_key(color_key);
+                ballstack.push(new Ball(new_dx,5,new_x,new_color,new_d));
+            }
+            if(level == 4) //Faster 3D
+            {
+                new_color = get_color_by_key(color_key);
+                ballstack.push(new Ball(new_dx,10,new_x,new_color,new_d));
+            }
+            if(level == 5) //4D Two colors
+            {
+                new_color = get_color_by_key(basecolors[Math.floor(Math.random()*2)]);
+                ballstack.push(new Ball(new_dx,3,new_x,new_color,new_d));
+            }
+            if(level >= 6) //4D all colors
+            {
+                new_dx = Math.floor(-(level) + Math.random()*(level*2));  //Faster with higher levels.
+                ballstack.push(new Ball(new_dx,3,new_x,new_color,new_d));
+            }
+         }
+
+         /*
+            Increments the level, sets the next level's goals, clears the 
+            stacks, and sets up the between-level screen.
+         */
+         function setup_next_level()
+         {
+            level += 1;
+            textstack = [];
+            ballstack = [];
+
+            //Pause display.
+            level_started = false;
+            
+            if ( level == 1 )
+            {
+                score = 0;
+                lives = 5;
+                streak = 0;
+                frames_between_balls = 75;  //Speed at which new balls are created.
+                points_until_next_level = 15;  //The number of points until the next level starts.
+                leveltext = "4D Pong. To begin click the screen.";
+                color_key = A;
+            }
+            if(level == 2)
+            {
+                frames_between_balls = 50;
+                points_until_next_level = 50;
+                leveltext = "More than one ball.";
+                color_key = S;
+            }
+            if(level == 3)
+            {
+                frames_between_balls = 50;
+                points_until_next_level = 100;
+                leveltext = "Introducing 3D (Look at the rings to see which location balls will hit).";
+                color_key = D;
+            }
+            if(level == 4)
+            {
+                frames_between_balls = 50;
+                points_until_next_level = 200;
+                leveltext = "Second verse, same as the first.";
+                color_key = F;
+            }
+            if(level == 5)
+            {
+                frames_between_balls = 50;
+                points_until_next_level = 300;
+                leveltext = "The 4D spectacular (Click to change colors, or use ASDF)";
+            }
+            if(level == 6)
+            {
+                frames_between_balls = 100;
+                points_until_next_level = 500;
+                leveltext = "All Together Now!"; 
+            }
+            if(level > 6)
+            {
+                frames_between_balls -= 2;
+                leveltext = "Autopilot.";
+                points_until_next_level += 500;
+            }
+
+            current_frame = frames_between_balls; //Send the next ball right away.
+        }
+
+        function init()
+        {
+            canvas = document.getElementById('canvas');
+
+            //The 2d context is the only "official" one, yet.
+            context = canvas.getContext('2d'); 
+
+            width = canvas.width;
+            height = canvas.height;
+
+            //Set up mouse variables.
+            canvasMinX = canvas.offsetLeft;
+            canvasMaxX = canvasMinX + width;
+
+            canvasMinY = canvas.offsetTop;
+            canvasMaxY = canvasMinY + height;
+
+            //Set up a double buffer.
+            buffer = document.createElement('canvas');
+            buffer.width = width;
+            buffer.height = height;
+            buffer_context = buffer.getContext('2d');
+
+            //Set up the first level.
+            setup_next_level();
+
+            //Start calling the draw function.
+            setInterval(draw, 1000 / FPS);
+        }
+        
+        function draw()
+        {
+            //Clear the buffer before drawing.
+            buffer_context.clearRect(0, 0, width, height);
+
+            if(level_started == false)
+            {
+                text(leveltext,50,50,12,WHITE);
+                text("Click to continue...",width -150,height,12,WHITE);
+            }
+            else
+            {
+                //Check for streaks.  Current streak keeps it from being registered more than once.
+                if(streak % 15 == 0 && streak != current_streak )
+                {
+                    lives += (streak/15);
+                    if(streak > 0)
+                    {
+                        textstack.push(new FloatingText("+" + (streak/15) + " Life, " + streak + " Streak",paddle_x,height-100,12,WHITE));
+                    }
+                    current_streak = streak;
+                }
+                
+                //Move and display paddle.
+                var color = get_color_by_key(color_key);
+
+                if(rightDown) paddle_x += 10;
+                if(leftDown) paddle_x -= 10;
+
+                if(paddle_x < 0) paddle_x = 0;
+                if(paddle_x > width-paddle_width) paddle_x = width-paddle_width;
+
+                rect(paddle_x, height-paddle_height, paddle_width, paddle_height, color);
+
+                //Display balls.
+                for(i=0; i < ballstack.length; i++)
+                { 
+                    ballstack[i].move();
+                    ballstack[i].display();
+                }
+
+                //Display text.
+                for(i=0; i < textstack.length; i++)
+                { 
+                    textstack[i].display();
+                }
+                
+                //Display ball crossing lines.
+                if(level >= FIRST_3D_LEVEL)
+                {
+                    hline(time_y_value(2), width, get_gray_outline(2));
+                    hline(time_y_value(1), width, get_gray_outline(1));
+                }
+                //Display the vertical color click lines.  TODO ipad support.
+                /*vline(0,0,189, RED);
+                vline(0,189,378, GREEN);
+                vline(0,378,567, BLUE);
+                vline(0,567,height, PURPLE);*/
+                
+                //Display text.
+                text("Score: " + score + " Level: " + level + " Lives: " + lives + " Streak: " + streak, 20, 20, 10, WHITE)
+
+                //Add more balls if it is time.
+                current_frame += 1;
+                if( current_frame >= frames_between_balls ) 
+                {
+                    add_ball();
+                    current_frame = 0;
+                }
+
+                //Check for level stoppers.
+                if( score >= points_until_next_level )
+                {
+                    setup_next_level();
+                }
+                //Perform after score checking so that it doesn't erase this 
+                //leveltext.
+                if( lives <= 0 )
+                {
+                    leveltext = "Game Over, Score: " + score + " Level: " + level + " Click to restart.";
+                    level = 0;
+                    score = 0;
+                    points_until_next_level = 0;
+                    
+                    level_started = false;
+                }
+            }
+
+            context.clearRect(0, 0, width, height);
+            context.drawImage(buffer, 0, 0);
+        }
+
+        //Start the game on load.
+        window.onload = init;        
+    </script>
+</head>
+
+<body onkeydown="onKeyDown(event);" onkeyup="onKeyUp(event);" onmousemove="onMouseMove(event);" onclick="onMouseClick(event);">
+
+    <canvas id="canvas" width="1024" height="768">
+        <p class="error">Bummer, your browser does not support the canvas element.
+        <br />
+        You might want to try:
+            <ul class="error">
+                <li>Firefox</li>
+                <li>Chrome</li>
+                <li>Opera</li>
+                <li>Internet Explorer 9</li>
+            </ul>
+        </p>
+    </canvas>
+    <br> <br>
+    <audio src="world_of_dylith.ogg" controls="controls" autoplay>
+    Your browser does not support the audio element.
+    </audio>
+
+    <h1>Level Guide</h1>
+    <h2>One:</h2>
+    <p>Just reflect the balls back!  You have certainly played this game before.
+    </p>
+    <h2>Two:</h2>
+    <p>Huh, there can be more than one ball?</p>
+    <h2>Three:</h2>
+    <p>Introducing the 3D spectacular.</p>
+    <h2>Four:</h2>
+    <p> Faster!</p>
+    <h2>Five:</h2>
+    <p>The future is now! Use A S D F to change colors they are in snazzy Roy G. Biv order. (Or you can click the mouse.)</p>
+    <h2>Six to Fifty-Six:</h2>
+    <p>Faster!</p>
+    <h2>Fifty-Seven:</h2>
+    <p>Impossible</p>
+
+<br /> <br /><hr><br /> <br />
+    <p>Creator: Joseph Lewis &lt;joehms22@gmail.com&gt; <br /> <br />
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+<br />
+    <p> "World of Dylith" by The Dada Weatherman Creative Commons Attribution-ShareAlike 3.0</p>
+</body>
+</html>

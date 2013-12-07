@@ -1,0 +1,19 @@
+Hi there, thanks for showing your interest in Randall :)
+
+Two things:
+1 As this is my first AI creation, I regard him as a son; treat him well
+2 I'll be happy to help you out in any way I can :)
+
+
+To start the program, open the alife_randall_checkout folder and run 
+cgi_threaded_webserver.py, then point your web browser to http://localhost:8000
+
+You can login with the username and password "admin" "admin", more can 
+be configured in ai_webserver/login/login.py (just enter a username, and md5
+for the password in the user_pass dictionary). You will need an internet connection
+for the webserver to work.
+
+You can choose the map randall uses by opening Randall.py and changing line 122.
+You can make new maps using the MapMaker.
+
+- Joseph Lewis <joehms22@gmail.com>

@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Card()
+comment0.text=\nConstructor\ for\ objects\ of\ class\ Card\n\n
+comment1.params=tit\ frt\ bak
+comment1.target=Card(String,\ String,\ String)
+comment2.target=String\ getTitle()
+comment2.text=\nGet\ and\ set\ for\ the\ private\ items\n\n
+comment3.target=String\ getFront()
+comment4.target=String\ getBack()
+comment5.params=tit
+comment5.target=void\ setTitle(String)
+comment6.params=frt
+comment6.target=void\ setFront(String)
+comment7.params=bak
+comment7.target=void\ setBack(String)
+comment8.params=tit\ frt\ bak
+comment8.target=int\ saveIfNececary(String,\ String,\ String)
+comment8.text=\nSave\ Changes\ if\ Nececary\n\n@param\ \ title,\ front,\ and\ back\n\n\n
+comment9.params=s
+comment9.target=boolean\ searchCard(String)
+comment9.text=\nSearch\ Card\n\n@param\ \ \ \ \ \ s,\ the\ string\ to\ search\ for\n@return\ \ \ \ \ A\ boolean\ saying\ if\ it\ was\ found\ or\ not\n\n
+numComments=10

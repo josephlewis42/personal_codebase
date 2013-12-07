@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Dialogs()
+comment0.text=\nConstructor\ for\ objects\ of\ class\ Dialogs\n\n
+comment1.params=extentions\ currentLocation\ folderSelect\ folderShow\ allFiles
+comment1.target=String\ showSaveDialog(String[],\ String,\ boolean,\ boolean,\ boolean)
+comment1.text=\nShow\ Save\ Dialog\ shows\ an\ open\ dialog\ that\ has\ an\ array\ of\nfile\ extention\ options\n@param\ string[]\ (Each\ Element\ is\ An\ Acceptable\ extention,\ first\ is\ description)\n@param\ boolean\ \ if\ entire\ folders\ are\ selectable\n@param\ boolean\ \ if\ folders\ are\ shown\ (to\ navigate)\ but\ not\ selctable\n@param\ boolean\ \ all\ files\ is\ acceptable\n@return\ filePath\nThis\ will\ be\ null\ if\ the\ user\ quit\ the\ dialog\n\n
+comment2.params=extentions\ currentLocation\ folderSelect\ folderShow\ allFiles
+comment2.target=String\ showOpenDialog(String[],\ String,\ boolean,\ boolean,\ boolean)
+comment2.text=\nShow\ Open\ Dialog\ shows\ an\ open\ dialog\ that\ has\ an\ array\ of\nfile\ extention\ options\n@param\ string[]\ (Each\ Element\ is\ An\ Acceptable\ extention,\ first\ is\ description)\n@param\ boolean\ \ if\ entire\ folders\ are\ selectable\n@param\ boolean\ \ if\ folders\ are\ shown\ (to\ navigate)\ but\ not\ selctable\n@param\ boolean\ \ all\ files\ is\ acceptable\n@return\ filePath\nThis\ will\ be\ null\ if\ the\ user\ quit\ the\ dialog\n\n
+comment3.target=int\ showQuitDialog()
+comment3.text=\nShows\ a\ quit\ dialog\ and\ returns\ the\ option\n\n@return\ \ \ \ \ option\ (yes\ no\ cancel)\n\n
+comment4.params=title\ body
+comment4.target=void\ showErrorDialog(String,\ String)
+comment4.text=\nError\ Dialog\ -\ allerts\ the\ user\ of\ an\ error\n\n@param\ A\ string\ to\ tell\ the\ user\ of\ the\ error\ title,body\n\n
+comment5.params=title\ body
+comment5.target=void\ showWarningDialog(String,\ String)
+comment5.text=\nWarning\ Dialog\ -\ allerts\ the\ user\ of\ an\ warning\n\n@param\ A\ string\ to\ tell\ the\ user\ of\ the\ warning\ title,body\n\n
+comment6.params=title\ body
+comment6.target=void\ showInformationDialog(String,\ String)
+comment6.text=\nInformation\ Dialog\ -\ shows\ Information\ to\ the\ user\n\n@param\ A\ string\ to\ tell\ the\ user\ of\ the\ information\ title,body\n\n
+comment7.params=title\ body
+comment7.target=int\ showYesNoQuestionDialog(String,\ String)
+comment7.text=\nYes/No\ Dialog\ -\ shows\ Information\ to\ the\ user\n\n@param\ A\ string\ to\ tell\ the\ user\ of\ the\ question\ title,body\n@return\ The\ values\ for\ this\ integer\ are\ YES_OPTION,\ NO_OPTION,\ CANCEL_OPTION,\ OK_OPTION,\ and\ CLOSED_OPTION\n\n
+numComments=8

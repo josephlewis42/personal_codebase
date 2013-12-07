@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/29/trunk/.metadata/.plugins/org.eclipse.ui.workbench
+END
+workbench.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/29/trunk/.metadata/.plugins/org.eclipse.ui.workbench/workbench.xml
+END
+dialog_settings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/29/trunk/.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml
+END
+workingsets.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/29/trunk/.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml
+END

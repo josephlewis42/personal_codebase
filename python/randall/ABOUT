@@ -1,0 +1,123 @@
+Randall is an AI/ALife mouse written in Python.  The directory called
+alife_randall is an svn repository that I used periodically to check
+in my work.  The checkout is just the latest revision of that repository
+for quick access.
+
+Randall is GPL V2 or greater and was written my me (Joseph Lewis <joehms22@gmail.com>)
+while on winter break from the University of Denver 2010-2011.
+
+Today is: 2011/01/13
+
+==Changelog==
+------------------------------------------------------------------------
+r18 | joseph | 2011-01-13 18:10:25 -0700 (Thu, 13 Jan 2011) | 2 lines
+
+Last commit for now, update svn for GPL.
+
+------------------------------------------------------------------------
+r17 | joseph | 2011-01-13 18:07:53 -0700 (Thu, 13 Jan 2011) | 9 lines
+
+Removed a bunch of hidden crap that Ubuntu One left behind, removed some other
+hidden test files, modified all python files to reflect the GPL license they
+are now under.
+
+If I'm not mistaken this project is now closed.  Goodbye Randall.
+Hannah and I shall remember you fondly.
+
+ - Joe Lewis III <joehms22@gmail.com>
+
+------------------------------------------------------------------------
+r16 | joseph | 2011-01-13 17:45:08 -0700 (Thu, 13 Jan 2011) | 2 lines
+
+General cleanup, removed old todo lists, and old unittests that shouldn't work anymore.
+
+------------------------------------------------------------------------
+r15 | joseph | 2011-01-13 17:28:56 -0700 (Thu, 13 Jan 2011) | 2 lines
+
+Cleaned up extra and duplicate mazes.
+
+------------------------------------------------------------------------
+r14 | joseph | 2011-01-13 17:26:15 -0700 (Thu, 13 Jan 2011) | 2 lines
+
+Updated the scripts to reflect their licenses, Removed the useless replay_generator and the pixmaps which are not going to be used.
+
+------------------------------------------------------------------------
+r13 | joseph | 2011-01-13 15:09:28 -0700 (Thu, 13 Jan 2011) | 2 lines
+
+Cleaned up the Pavlov class a tad, it now uses globals that can be changed easily.
+
+------------------------------------------------------------------------
+r12 | joseph | 2011-01-10 09:02:11 -0700 (Mon, 10 Jan 2011) | 1 line
+
+Updated Randall to be easier to configure and more cross-platform (not just Unix and Windows anymore!, but honestly what else would you be using?)  Added a new map made by the generator.
+------------------------------------------------------------------------
+r11 | joseph | 2011-01-08 21:32:48 -0700 (Sat, 08 Jan 2011) | 3 lines
+
+Slowed down hunger for Randall.
+Removed one blank line in webserver.
+Created a gui for generating maps in HTML, Javascript and Jquery.
+------------------------------------------------------------------------
+r10 | joseph | 2011-01-08 21:31:44 -0700 (Sat, 08 Jan 2011) | 3 lines
+
+Slowed down hunger for Randall.
+Removed one blank line in webserver.
+Created a gui for generating maps in HTML, Javascript and Jquery.
+------------------------------------------------------------------------
+r9 | joseph | 2011-01-08 16:36:16 -0700 (Sat, 08 Jan 2011) | 1 line
+
+De-Integrated the chat with the webserver, this makes things much cleaner.
+------------------------------------------------------------------------
+r8 | joseph | 2011-01-08 16:22:51 -0700 (Sat, 08 Jan 2011) | 1 line
+
+Removed deepcopy from the world which was causing a maximum recursion error for unknown reasons.  Add the actor_chooser.py module because I forgot earlier.
+------------------------------------------------------------------------
+r7 | joseph | 2011-01-06 23:45:39 -0700 (Thu, 06 Jan 2011) | 1 line
+
+Added the ability to add a function call after the server closes to kill any threads started in the session variables.  Added utilization of this in index.py, removed todo entries in the todo list.
+------------------------------------------------------------------------
+r6 | joseph | 2011-01-06 22:23:28 -0700 (Thu, 06 Jan 2011) | 3 lines
+
+Added the ability to choose which actor the currently displayed statistics are for.  Safer handling and general cleanup of all site pages that needed to be actor-dynamic.
+
+Removed world generation code from webserver and placed it in the index page.  In doing so a bug was fixed where a new world was generated for *every* new index page, causing hundreds of threads to be opened and hung.
+------------------------------------------------------------------------
+r5 | joseph | 2011-01-06 19:43:07 -0700 (Thu, 06 Jan 2011) | 18 lines
+
+logos.py
+Added a generic search mode to logos, that way events are easy to generate and add to actors.  The default mode seeks items associated with the current need finds the closest and goes there.
+The explore mode now interacts with the items on the square it was initialized with.
+
+Randall.py
+About sixty lines cut out of randall by using the new generic mode.
+
+world.py
+Update the Actor's map every time it moves.
+
+mapper.py
+Changed some test cases.
+
+map.py
+Removed a line that was printing out a variable, messing up output.
+
+actor_map.py
+Displays the internal map for an actor.
+------------------------------------------------------------------------
+r4 | joseph | 2011-01-03 15:40:01 -0700 (Mon, 03 Jan 2011) | 2 lines
+
+Removed unnecessary files.
+
+------------------------------------------------------------------------
+r3 | joseph | 2011-01-03 15:36:42 -0700 (Mon, 03 Jan 2011) | 2 lines
+
+Shortened hunger span so we get some real neurological activity.  Added items to todo list.
+
+------------------------------------------------------------------------
+r2 | joseph | 2011-01-03 11:21:18 -0700 (Mon, 03 Jan 2011) | 2 lines
+
+Added ability to hide zero cells in HTML export, also changed row and col headers to use the <th> rather than the <td> tag.
+
+------------------------------------------------------------------------
+r1 | joseph | 2011-01-03 11:07:16 -0700 (Mon, 03 Jan 2011) | 1 line
+
+Initial Import
+------------------------------------------------------------------------

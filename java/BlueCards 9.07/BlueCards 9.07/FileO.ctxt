@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=FileO()
+comment0.text=\nConstructor\ for\ objects\ of\ class\ FileO\n\n
+comment1.params=filePath\ cardDeck
+comment1.target=void\ writeFile(String,\ ArrayList<Card>)
+comment1.text=\nWrite\ File\ -\ The\ most\ important\ method,\ writes\ the\ file\ to\ a\ destination\n\n@param\ filePath(String)\ the\ path\n\n
+comment2.params=out
+comment2.target=void\ printHeadder(PrintWriter)
+comment2.text=\nPrint\ Headder\ -\ Prints\ the\ document\ type\ definition\ to\ the\ top\ of\ the\ document\n\n@param\ PrintWriter\ so\ it\ prints\ to\ the\ same\ file\ with\ no\ overwrites\n\n
+comment3.params=out\ cardDeck
+comment3.target=void\ printBody(PrintWriter,\ ArrayList<Card>)
+comment3.text=\nPrint\ Body\ -\ Prints\ the\ body\ of\ the\ XML\ document\n\n@param\ \ cardDeck\ a\ list\ of\ cards\ to\ be\ printed\n@param\ \ PrintWriter\ so\ it\ prints\ to\ the\ same\ file\n\n
+comment4.params=s
+comment4.target=String\ replaceSpecial(String)
+comment4.text=\nreplaceSpecial\ replaces\ tabs\ and\ newlines\ as\ their\nxml\ equivilent\n@param\ String\n@return\ String\n\n
+numComments=5

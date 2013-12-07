@@ -1,0 +1,20 @@
+About Blue Cards
+	What it is
+		What Blue Is
+		Version Number
+	Licence
+	
+Using The Deck Functions
+	Creating A New Deck
+	Opening A Deck
+	Importing A Deck
+Troubleshooting
+	Blank Screen
+
+Technical Specifications
+	.crdx
+	XML
+	Version Number
+
+Licence
+	News

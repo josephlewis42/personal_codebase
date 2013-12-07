@@ -1,0 +1,417 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module mapper</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>mapper</strong></big></big> (version 1.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/joseph/alife_randall/randallai/AI/mapper.py">/home/joseph/alife_randall/randallai/AI/mapper.py</a></font></td></tr></table>
+    <p><tt>The&nbsp;mapper&nbsp;module&nbsp;is&nbsp;used&nbsp;to&nbsp;maintain&nbsp;a&nbsp;map&nbsp;of&nbsp;places.<br>
+&nbsp;<br>
+Copyright&nbsp;(c)&nbsp;2011&nbsp;Joseph&nbsp;Lewis&nbsp;&lt;joehms22@gmail.com&gt;<br>
+&nbsp;<br>
+This&nbsp;program&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify<br>
+it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by<br>
+the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2&nbsp;of&nbsp;the&nbsp;License,&nbsp;or<br>
+(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.<br>
+&nbsp;<br>
+This&nbsp;program&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,<br>
+but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of<br>
+MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the<br>
+GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.<br>
+&nbsp;<br>
+You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License<br>
+along&nbsp;with&nbsp;this&nbsp;program;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software<br>
+Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;Street,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,<br>
+MA&nbsp;02110-1301,&nbsp;USA.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="copy.html">copy</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="threading.html">threading</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="mapper.html#Cell">Cell</a>
+</font></dt><dt><font face="helvetica, arial"><a href="mapper.html#Grid">Grid</a>
+</font></dt><dt><font face="helvetica, arial"><a href="mapper.html#ItemEventInterface">ItemEventInterface</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Cell">class <strong>Cell</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;representation&nbsp;of&nbsp;a&nbsp;square&nbsp;of&nbsp;the&nbsp;map,&nbsp;has&nbsp;an&nbsp;x&nbsp;y&nbsp;and&nbsp;z&nbsp;axis<br>
+to&nbsp;allow&nbsp;better&nbsp;representaiton&nbsp;of&nbsp;the&nbsp;map.&nbsp;&nbsp;Each&nbsp;square&nbsp;can&nbsp;have<br>
+extra&nbsp;variables&nbsp;attached&nbsp;to&nbsp;it&nbsp;such&nbsp;as&nbsp;temperature,&nbsp;humidity,&nbsp;etc.<br>
+Map&nbsp;squares&nbsp;can&nbsp;also&nbsp;have&nbsp;objects&nbsp;attached&nbsp;to&nbsp;them,&nbsp;usually&nbsp;things<br>
+identified&nbsp;by&nbsp;the&nbsp;senses&nbsp;that&nbsp;the&nbsp;Actor&nbsp;can&nbsp;interact&nbsp;with.&nbsp;&nbsp;These<br>
+can&nbsp;be&nbsp;stored&nbsp;in&nbsp;a&nbsp;list&nbsp;in&nbsp;the&nbsp;map&nbsp;square.<br>
+&nbsp;<br>
+&nbsp;<br>
+Variables:<br>
+north&nbsp;--&nbsp;Can&nbsp;this&nbsp;cell&nbsp;access&nbsp;the&nbsp;one&nbsp;to&nbsp;the&nbsp;north?&nbsp;(boolean)<br>
+south&nbsp;--&nbsp;Can&nbsp;this&nbsp;cell&nbsp;access&nbsp;the&nbsp;one&nbsp;to&nbsp;the&nbsp;south?&nbsp;(boolean)<br>
+east&nbsp;--&nbsp;Can&nbsp;this&nbsp;cell&nbsp;access&nbsp;the&nbsp;one&nbsp;to&nbsp;the&nbsp;east?&nbsp;(boolean)<br>
+west&nbsp;--&nbsp;Can&nbsp;this&nbsp;cell&nbsp;access&nbsp;the&nbsp;one&nbsp;to&nbsp;the&nbsp;west?&nbsp;(boolean)<br>
+up&nbsp;--&nbsp;Can&nbsp;this&nbsp;cell&nbsp;access&nbsp;the&nbsp;one&nbsp;above?&nbsp;(boolean)<br>
+down&nbsp;--&nbsp;Can&nbsp;this&nbsp;cell&nbsp;access&nbsp;the&nbsp;one&nbsp;below?&nbsp;(boolean)<br>
+x&nbsp;--&nbsp;The&nbsp;x&nbsp;(E/W)&nbsp;location&nbsp;of&nbsp;this&nbsp;cell&nbsp;in&nbsp;the&nbsp;world.&nbsp;(int)<br>
+y&nbsp;--&nbsp;The&nbsp;y&nbsp;(N/S)&nbsp;location&nbsp;of&nbsp;this&nbsp;cell&nbsp;in&nbsp;the&nbsp;world.&nbsp;(int)<br>
+z&nbsp;--&nbsp;The&nbsp;z&nbsp;(U/D)&nbsp;location&nbsp;of&nbsp;this&nbsp;cell&nbsp;in&nbsp;the&nbsp;world.&nbsp;(int)<br>
+items&nbsp;--&nbsp;A&nbsp;list&nbsp;of&nbsp;items&nbsp;this&nbsp;cell&nbsp;holds&nbsp;that&nbsp;Actors&nbsp;can&nbsp;interact<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with.&nbsp;&nbsp;(List&nbsp;of&nbsp;Strings)<br>
+css_id&nbsp;--&nbsp;A&nbsp;unique&nbsp;id&nbsp;for&nbsp;representing&nbsp;this&nbsp;<a href="#Cell">Cell</a>&nbsp;when&nbsp;it&nbsp;is&nbsp;placed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;an&nbsp;HTML&nbsp;file.&nbsp;Format:&nbsp;x00,y00,z00&nbsp;Where&nbsp;the&nbsp;zeros<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;are&nbsp;replaced&nbsp;by&nbsp;the&nbsp;x,y,&nbsp;and&nbsp;z&nbsp;of&nbsp;the&nbsp;<a href="#Cell">Cell</a>.&nbsp;(String)<br>
+&nbsp;<br>
+&nbsp;<br>
+Note:<br>
+Just&nbsp;because&nbsp;this&nbsp;cell&nbsp;can&nbsp;access&nbsp;another&nbsp;doesn't&nbsp;mean&nbsp;the&nbsp;reverse<br>
+is&nbsp;true.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Cell-__init__"><strong>__init__</strong></a>(self, x, y, z, north, south, east, west, up<font color="#909090">=False</font>, down<font color="#909090">=False</font>)</dt><dd><tt>Creates&nbsp;a&nbsp;new&nbsp;map&nbsp;square,&nbsp;with&nbsp;the&nbsp;x&nbsp;y&nbsp;and&nbsp;z&nbsp;location,&nbsp;as&nbsp;well&nbsp;as<br>
+the&nbsp;movement&nbsp;variables.<br>
+&nbsp;<br>
+Paramaters:<br>
+x&nbsp;--&nbsp;The&nbsp;x&nbsp;location&nbsp;of&nbsp;this&nbsp;square&nbsp;(int)<br>
+y&nbsp;--&nbsp;The&nbsp;y&nbsp;location&nbsp;of&nbsp;this&nbsp;square&nbsp;(int)<br>
+z&nbsp;--&nbsp;The&nbsp;z&nbsp;location&nbsp;of&nbsp;this&nbsp;square&nbsp;(int)<br>
+&nbsp;<br>
+north&nbsp;--&nbsp;Can&nbsp;this&nbsp;square&nbsp;access&nbsp;the&nbsp;north?&nbsp;(bool)<br>
+south&nbsp;--&nbsp;Can&nbsp;this&nbsp;square&nbsp;access&nbsp;the&nbsp;south?&nbsp;(bool)<br>
+east&nbsp;--&nbsp;Can&nbsp;this&nbsp;square&nbsp;access&nbsp;the&nbsp;east?&nbsp;(bool)<br>
+west&nbsp;--&nbsp;Can&nbsp;this&nbsp;square&nbsp;access&nbsp;the&nbsp;west?&nbsp;(bool)<br>
+up&nbsp;--&nbsp;Can&nbsp;this&nbsp;square&nbsp;access&nbsp;above?&nbsp;(bool)&nbsp;&nbsp;Default:&nbsp;False<br>
+down&nbsp;--&nbsp;Can&nbsp;this&nbsp;square&nbsp;access&nbsp;below?&nbsp;(bool)&nbsp;Default:&nbsp;False</tt></dd></dl>
+
+<dl><dt><a name="Cell-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Cell-is_down"><strong>is_down</strong></a>(self, other)</dt><dd><tt>Is&nbsp;this&nbsp;cell&nbsp;below&nbsp;the&nbsp;one&nbsp;given?&nbsp;Return&nbsp;bool.</tt></dd></dl>
+
+<dl><dt><a name="Cell-is_east"><strong>is_east</strong></a>(self, other)</dt><dd><tt>Is&nbsp;this&nbsp;cell&nbsp;East&nbsp;of&nbsp;the&nbsp;one&nbsp;given?&nbsp;Return&nbsp;bool.</tt></dd></dl>
+
+<dl><dt><a name="Cell-is_north"><strong>is_north</strong></a>(self, other)</dt><dd><tt>Is&nbsp;this&nbsp;cell&nbsp;North&nbsp;of&nbsp;the&nbsp;one&nbsp;given?&nbsp;Return&nbsp;bool.</tt></dd></dl>
+
+<dl><dt><a name="Cell-is_same_location"><strong>is_same_location</strong></a>(self, other)</dt><dd><tt>Is&nbsp;this&nbsp;cell&nbsp;in&nbsp;the&nbsp;same&nbsp;location&nbsp;as&nbsp;the&nbsp;one&nbsp;given?&nbsp;(bool)</tt></dd></dl>
+
+<dl><dt><a name="Cell-is_south"><strong>is_south</strong></a>(self, other)</dt><dd><tt>Is&nbsp;this&nbsp;cell&nbsp;South&nbsp;of&nbsp;the&nbsp;one&nbsp;given?&nbsp;Return&nbsp;bool.</tt></dd></dl>
+
+<dl><dt><a name="Cell-is_up"><strong>is_up</strong></a>(self, other)</dt><dd><tt>Is&nbsp;this&nbsp;cell&nbsp;above&nbsp;the&nbsp;one&nbsp;given?&nbsp;Return&nbsp;bool.</tt></dd></dl>
+
+<dl><dt><a name="Cell-is_west"><strong>is_west</strong></a>(self, other)</dt><dd><tt>Is&nbsp;this&nbsp;cell&nbsp;West&nbsp;of&nbsp;the&nbsp;one&nbsp;given?&nbsp;Return&nbsp;bool.</tt></dd></dl>
+
+<dl><dt><a name="Cell-update"><strong>update</strong></a>(self, newer)</dt><dd><tt>Updates&nbsp;this&nbsp;cell's&nbsp;directions&nbsp;and&nbsp;item&nbsp;list&nbsp;based&nbsp;off&nbsp;the<br>
+values&nbsp;of&nbsp;another&nbsp;(newer)&nbsp;version.<br>
+Also&nbsp;updates&nbsp;the&nbsp;last_visit&nbsp;variable&nbsp;to&nbsp;the&nbsp;current&nbsp;time.<br>
+&nbsp;<br>
+Paramaters:<br>
+newer&nbsp;--&nbsp;An&nbsp;instance&nbsp;of&nbsp;a&nbsp;<a href="#Cell">Cell</a>&nbsp;whose&nbsp;direction&nbsp;and&nbsp;items<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;values&nbsp;are&nbsp;to&nbsp;be&nbsp;copied&nbsp;to&nbsp;this&nbsp;cell's.&nbsp;&nbsp;(<a href="#Cell">Cell</a>)</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>last_visit</strong> = 0.0</dl>
+
+<dl><dt><strong>parent</strong> = None</dl>
+
+<dl><dt><strong>score</strong> = 0</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Grid">class <strong>Grid</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;container&nbsp;of&nbsp;Cells.<br>
+&nbsp;<br>
+North/South&nbsp;is&nbsp;y&nbsp;&nbsp;&nbsp;&nbsp;Furthest&nbsp;north&nbsp;is&nbsp;0<br>
+East/West&nbsp;is&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Furthest&nbsp;West&nbsp;is&nbsp;0<br>
+Up/Down&nbsp;is&nbsp;z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Furthest&nbsp;up&nbsp;is&nbsp;0<br>
+&nbsp;<br>
+Variables:<br>
+grid&nbsp;--&nbsp;A&nbsp;3D&nbsp;array&nbsp;of&nbsp;Cells.<br>
+_x&nbsp;--&nbsp;The&nbsp;x&nbsp;size&nbsp;for&nbsp;the&nbsp;grid.&nbsp;(int)<br>
+_y&nbsp;--&nbsp;The&nbsp;y&nbsp;size&nbsp;for&nbsp;the&nbsp;grid.&nbsp;(int)<br>
+_z&nbsp;--&nbsp;The&nbsp;z&nbsp;size&nbsp;for&nbsp;the&nbsp;grid.&nbsp;(int)<br>
+name&nbsp;--&nbsp;A&nbsp;name&nbsp;for&nbsp;this&nbsp;grid.&nbsp;(String)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Grid-__init__"><strong>__init__</strong></a>(self, x, y, z<font color="#909090">=1</font>, fill<font color="#909090">=False</font>, name<font color="#909090">=''</font>)</dt><dd><tt>Creates&nbsp;a&nbsp;new&nbsp;grid&nbsp;with&nbsp;the&nbsp;number&nbsp;of&nbsp;elements.&nbsp;&nbsp;To&nbsp;concerve<br>
+memory&nbsp;with&nbsp;potentially&nbsp;large&nbsp;grids&nbsp;they&nbsp;are&nbsp;not&nbsp;filled&nbsp;unless&nbsp;specified<br>
+with&nbsp;the&nbsp;fill&nbsp;variable.<br>
+&nbsp;<br>
+Paramaters:<br>
+x&nbsp;--&nbsp;The&nbsp;number&nbsp;of&nbsp;x&nbsp;columns.&nbsp;&nbsp;(int)<br>
+y&nbsp;--&nbsp;The&nbsp;number&nbsp;of&nbsp;y&nbsp;rows.&nbsp;&nbsp;(int)<br>
+z&nbsp;--&nbsp;The&nbsp;number&nbsp;of&nbsp;z&nbsp;levels.&nbsp;(int)&nbsp;&nbsp;Default:&nbsp;1<br>
+fill&nbsp;--&nbsp;Should&nbsp;the&nbsp;grid&nbsp;be&nbsp;populated&nbsp;with&nbsp;cells?&nbsp;(bool)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default:&nbsp;False<br>
+name&nbsp;--&nbsp;The&nbsp;name&nbsp;of&nbsp;this&nbsp;map.&nbsp;(string)&nbsp;Default:&nbsp;""</tt></dd></dl>
+
+<dl><dt><a name="Grid-__iter__"><strong>__iter__</strong></a>(self)</dt><dd><tt>Allows&nbsp;<a href="#Grid">Grid</a>&nbsp;to&nbsp;be&nbsp;used&nbsp;in&nbsp;for&nbsp;loops.<br>
+&nbsp;<br>
+Example:<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;cell&nbsp;in&nbsp;<a href="#Grid">Grid</a>:<br>
+&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;cell</tt></dd></dl>
+
+<dl><dt><a name="Grid-accessible_neighbors"><strong>accessible_neighbors</strong></a>(self, cell)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;neighbors&nbsp;accessible&nbsp;from&nbsp;the&nbsp;cell&nbsp;at<br>
+the&nbsp;given&nbsp;point.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;neighbors&nbsp;haven't&nbsp;been&nbsp;added&nbsp;to&nbsp;the&nbsp;grid&nbsp;(unexplored)<br>
+they&nbsp;are&nbsp;ignored.<br>
+&nbsp;<br>
+Paramaters:<br>
+cell&nbsp;--&nbsp;The&nbsp;cell&nbsp;to&nbsp;get&nbsp;neighbors&nbsp;from</tt></dd></dl>
+
+<dl><dt><a name="Grid-add_cell"><strong>add_cell</strong></a>(self, cell)</dt><dd><tt>Adds&nbsp;a&nbsp;cell&nbsp;to&nbsp;the&nbsp;<a href="#Grid">Grid</a>.</tt></dd></dl>
+
+<dl><dt><a name="Grid-append"><strong>append</strong></a>(self, cell)</dt><dd><tt>Adds&nbsp;a&nbsp;cell&nbsp;to&nbsp;the&nbsp;<a href="#Grid">Grid</a>&nbsp;container.</tt></dd></dl>
+
+<dl><dt><a name="Grid-cell_at"><strong>cell_at</strong></a>(self, x, y, z<font color="#909090">=0</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;cell&nbsp;at&nbsp;the&nbsp;given&nbsp;location.&nbsp;&nbsp;Returns&nbsp;none&nbsp;if<br>
+the&nbsp;cell&nbsp;has&nbsp;not&nbsp;been&nbsp;generated&nbsp;yet.<br>
+&nbsp;<br>
+Throws:<br>
+IndexError&nbsp;--&nbsp;If&nbsp;indexes&nbsp;are&nbsp;negative&nbsp;or&nbsp;out&nbsp;of&nbsp;bounds.</tt></dd></dl>
+
+<dl><dt><a name="Grid-clear_parents"><strong>clear_parents</strong></a>(self)</dt><dd><tt>Removes&nbsp;all&nbsp;parents&nbsp;settings&nbsp;from&nbsp;the&nbsp;cells.</tt></dd></dl>
+
+<dl><dt><a name="Grid-find_closest"><strong>find_closest</strong></a>(self, itemname, othercell, quick<font color="#909090">=False</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;closest&nbsp;<a href="#Cell">Cell</a>&nbsp;to&nbsp;the&nbsp;one&nbsp;given&nbsp;that&nbsp;has&nbsp;the<br>
+given&nbsp;item&nbsp;in&nbsp;its&nbsp;item&nbsp;list.<br>
+&nbsp;<br>
+Paramaters:<br>
+itemname&nbsp;--&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;desired&nbsp;item.&nbsp;(string)<br>
+othercell&nbsp;--&nbsp;The&nbsp;cell&nbsp;to&nbsp;judge&nbsp;distances&nbsp;from.&nbsp;(<a href="#Cell">Cell</a>)<br>
+quick&nbsp;--&nbsp;True&nbsp;to&nbsp;judge&nbsp;the&nbsp;distance&nbsp;quickly&nbsp;based&nbsp;on&nbsp;the&nbsp;cells<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;relative&nbsp;position,&nbsp;False&nbsp;to&nbsp;actually&nbsp;find&nbsp;a&nbsp;route&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;each&nbsp;cell&nbsp;before&nbsp;returning&nbsp;the&nbsp;fastest.&nbsp;&nbsp;False&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;much&nbsp;more&nbsp;accurate,&nbsp;but&nbsp;much&nbsp;slower.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default:&nbsp;False&nbsp;(boolean)<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple&nbsp;(distance&nbsp;to&nbsp;closest&nbsp;cell,&nbsp;closest&nbsp;cell).<br>
+Returns&nbsp;(None,&nbsp;None)&nbsp;if&nbsp;no&nbsp;cell&nbsp;has&nbsp;the&nbsp;given&nbsp;item.</tt></dd></dl>
+
+<dl><dt><a name="Grid-find_closest_list"><strong>find_closest_list</strong></a>(self, items_list, othercell, quick<font color="#909090">=False</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;closest&nbsp;<a href="#Cell">Cell</a>&nbsp;to&nbsp;the&nbsp;one&nbsp;given&nbsp;that&nbsp;has&nbsp;the<br>
+of&nbsp;the&nbsp;given&nbsp;items&nbsp;from&nbsp;items_list&nbsp;in&nbsp;its&nbsp;item&nbsp;list.<br>
+&nbsp;<br>
+Paramaters:<br>
+items_list&nbsp;--&nbsp;A&nbsp;list&nbsp;of&nbsp;names&nbsp;of&nbsp;items&nbsp;to&nbsp;search&nbsp;for.&nbsp;(string)<br>
+othercell&nbsp;--&nbsp;The&nbsp;cell&nbsp;to&nbsp;judge&nbsp;distances&nbsp;from.&nbsp;(<a href="#Cell">Cell</a>)<br>
+quick&nbsp;--&nbsp;True&nbsp;to&nbsp;judge&nbsp;the&nbsp;distance&nbsp;quickly&nbsp;based&nbsp;on&nbsp;the&nbsp;cells<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;relative&nbsp;position,&nbsp;False&nbsp;to&nbsp;actually&nbsp;find&nbsp;a&nbsp;route&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;each&nbsp;cell&nbsp;before&nbsp;returning&nbsp;the&nbsp;fastest.&nbsp;&nbsp;False&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;much&nbsp;more&nbsp;accurate,&nbsp;but&nbsp;much&nbsp;slower.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default:&nbsp;False&nbsp;(boolean)<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple&nbsp;(distance&nbsp;to&nbsp;closest&nbsp;cell,&nbsp;closest&nbsp;cell,<br>
+item&nbsp;at&nbsp;that&nbsp;cell).<br>
+Returns&nbsp;(None,&nbsp;None,&nbsp;None)&nbsp;if&nbsp;no&nbsp;cell&nbsp;has&nbsp;the&nbsp;given&nbsp;item.</tt></dd></dl>
+
+<dl><dt><a name="Grid-find_closest_unexplored"><strong>find_closest_unexplored</strong></a>(self, here)</dt><dd><tt>Finds&nbsp;the&nbsp;closest&nbsp;cell&nbsp;with&nbsp;unexplored&nbsp;neighbors,&nbsp;returns<br>
+as&nbsp;a&nbsp;tuple&nbsp;(distance,&nbsp;closest_cell).</tt></dd></dl>
+
+<dl><dt><a name="Grid-gen_HTML"><strong>gen_HTML</strong></a>(self, z<font color="#909090">=0</font>, commands<font color="#909090">=''</font>, file_path<font color="#909090">=None</font>)</dt><dd><tt>Generates&nbsp;an&nbsp;HTML&nbsp;representation&nbsp;of&nbsp;the&nbsp;NESW&nbsp;directions<br>
+for&nbsp;the&nbsp;given&nbsp;level.<br>
+&nbsp;<br>
+Paramaters:<br>
+z&nbsp;--&nbsp;The&nbsp;level&nbsp;to&nbsp;generate&nbsp;from.<br>
+commands&nbsp;--&nbsp;The&nbsp;cell&nbsp;IDs&nbsp;to&nbsp;be&nbsp;placed&nbsp;in&nbsp;the&nbsp;javascript<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function.&nbsp;These&nbsp;correspond&nbsp;with&nbsp;cells.<br>
+&nbsp;<br>
+file_path&nbsp;--&nbsp;The&nbsp;file&nbsp;to&nbsp;write&nbsp;the&nbsp;map&nbsp;to,&nbsp;overwrites&nbsp;if<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;existing.&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="Grid-gen_inner_HTML"><strong>gen_inner_HTML</strong></a>(self, z<font color="#909090">=0</font>)</dt><dd><tt>Generates&nbsp;the&nbsp;grid&nbsp;for&nbsp;the&nbsp;gen_HTML&nbsp;function.</tt></dd></dl>
+
+<dl><dt><a name="Grid-gen_mapfile"><strong>gen_mapfile</strong></a>(self, file_path<font color="#909090">=None</font>)</dt><dd><tt>Generates&nbsp;a&nbsp;mapfile&nbsp;for&nbsp;this&nbsp;specific&nbsp;map.&nbsp;&nbsp;Returns&nbsp;it&nbsp;as&nbsp;a&nbsp;string.<br>
+Optionally&nbsp;writes&nbsp;it&nbsp;to&nbsp;a&nbsp;file.<br>
+&nbsp;<br>
+Paramaters:<br>
+file_path&nbsp;=&nbsp;The&nbsp;file&nbsp;to&nbsp;write&nbsp;the&nbsp;map&nbsp;to,&nbsp;overwrites&nbsp;if&nbsp;existing.&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="Grid-get_all_items"><strong>get_all_items</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;the&nbsp;unique&nbsp;items&nbsp;in&nbsp;the&nbsp;<a href="#Grid">Grid</a>'s&nbsp;Cells.</tt></dd></dl>
+
+<dl><dt><a name="Grid-heuristic"><strong>heuristic</strong></a>(self, here, there)</dt><dd><tt>A&nbsp;heuristic&nbsp;estimate&nbsp;of&nbsp;distance&nbsp;between&nbsp;two&nbsp;nodes.<br>
+&nbsp;<br>
+Paramaters:<br>
+here&nbsp;--&nbsp;A&nbsp;cell&nbsp;or&nbsp;a&nbsp;tuple&nbsp;with&nbsp;x,y,z&nbsp;coordinates&nbsp;for&nbsp;a&nbsp;location.<br>
+there&nbsp;--&nbsp;A&nbsp;cell&nbsp;or&nbsp;a&nbsp;tuple&nbsp;with&nbsp;x,y,z&nbsp;coordinates&nbsp;for&nbsp;a&nbsp;location.<br>
+&nbsp;<br>
+Example:<br>
+<a href="#Grid-heuristic">heuristic</a>(<a href="#Cell">Cell</a>&nbsp;c,&nbsp;(2,2,8))</tt></dd></dl>
+
+<dl><dt><a name="Grid-is_accessable"><strong>is_accessable</strong></a>(self, cellone, celltwo)</dt><dd><tt>Returns&nbsp;True&nbsp;if&nbsp;celltwo&nbsp;is&nbsp;accessable&nbsp;from&nbsp;cellone,&nbsp;note<br>
+that&nbsp;the&nbsp;reverse&nbsp;isn't&nbsp;always&nbsp;True.&nbsp;&nbsp;Cells&nbsp;in&nbsp;the&nbsp;same<br>
+location&nbsp;are&nbsp;always&nbsp;accessable&nbsp;to&nbsp;each&nbsp;other.</tt></dd></dl>
+
+<dl><dt><a name="Grid-is_touching"><strong>is_touching</strong></a>(self, cellone, celltwo)</dt><dd><tt>Returns&nbsp;True&nbsp;if&nbsp;both&nbsp;cells&nbsp;are&nbsp;touching&nbsp;(regardless&nbsp;of&nbsp;if<br>
+they&nbsp;can&nbsp;access&nbsp;one&nbsp;another&nbsp;or&nbsp;not).&nbsp;&nbsp;Cells&nbsp;in&nbsp;the&nbsp;same<br>
+location&nbsp;are&nbsp;always&nbsp;touching.</tt></dd></dl>
+
+<dl><dt><a name="Grid-neighbors"><strong>neighbors</strong></a>(self, cell)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;neighbors&nbsp;for&nbsp;the&nbsp;cell&nbsp;supplied.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;neighbors&nbsp;haven't&nbsp;been&nbsp;added&nbsp;to&nbsp;the&nbsp;grid&nbsp;(None)<br>
+they&nbsp;are&nbsp;ignored.<br>
+&nbsp;<br>
+Paramaters:<br>
+cell&nbsp;--&nbsp;The&nbsp;cell&nbsp;to&nbsp;return&nbsp;neighbors&nbsp;for.</tt></dd></dl>
+
+<dl><dt><a name="Grid-neighbors_by_location"><strong>neighbors_by_location</strong></a>(self, x, y, z)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;neighbors&nbsp;for&nbsp;the&nbsp;coordinates<br>
+supplied.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;neighbors&nbsp;haven't&nbsp;been&nbsp;added&nbsp;to&nbsp;the&nbsp;grid&nbsp;(None)<br>
+they&nbsp;are&nbsp;ignored.<br>
+&nbsp;<br>
+Paramaters:<br>
+x,y,z&nbsp;--&nbsp;The&nbsp;coordinates&nbsp;for&nbsp;the&nbsp;cell&nbsp;to&nbsp;get&nbsp;neighbors&nbsp;from.</tt></dd></dl>
+
+<dl><dt><a name="Grid-path_to"><strong>path_to</strong></a>(self, here, there)</dt><dd><tt>Returns&nbsp;the&nbsp;path&nbsp;from&nbsp;the&nbsp;first&nbsp;cell&nbsp;to&nbsp;the&nbsp;second&nbsp;using&nbsp;the&nbsp;A*<br>
+search&nbsp;algorighm.<br>
+&nbsp;<br>
+TODO:&nbsp;add&nbsp;support&nbsp;for&nbsp;terrain&nbsp;difficulty.</tt></dd></dl>
+
+<dl><dt><a name="Grid-random_accessible_neighbor"><strong>random_accessible_neighbor</strong></a>(self, cell, notin<font color="#909090">=None</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;random&nbsp;accessible&nbsp;neighbor&nbsp;for&nbsp;the&nbsp;cell&nbsp;given.</tt></dd></dl>
+
+<dl><dt><a name="Grid-random_neighbor"><strong>random_neighbor</strong></a>(self, cell, notin<font color="#909090">=None</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;random&nbsp;neighbor&nbsp;for&nbsp;the&nbsp;cell&nbsp;given.&nbsp;&nbsp;If&nbsp;supplied<br>
+the&nbsp;cell&nbsp;given&nbsp;at&nbsp;notin&nbsp;will&nbsp;not&nbsp;be&nbsp;chosen.</tt></dd></dl>
+
+<dl><dt><a name="Grid-safe_cell_at"><strong>safe_cell_at</strong></a>(self, x, y, z<font color="#909090">=0</font>)</dt><dd><tt>Returns&nbsp;the&nbsp;cell&nbsp;at&nbsp;the&nbsp;given&nbsp;location.&nbsp;&nbsp;Returns&nbsp;none&nbsp;if&nbsp;the&nbsp;cell<br>
+has&nbsp;not&nbsp;been&nbsp;generated&nbsp;yet&nbsp;or&nbsp;is&nbsp;out&nbsp;of&nbsp;bounds.</tt></dd></dl>
+
+<dl><dt><a name="Grid-set_accessible"><strong>set_accessible</strong></a>(self, cellone, celltwo, value<font color="#909090">=True</font>)</dt><dd><tt>Sets&nbsp;the&nbsp;walls&nbsp;between&nbsp;two&nbsp;cells&nbsp;to&nbsp;value.&nbsp;&nbsp;If&nbsp;the&nbsp;cells<br>
+aren't&nbsp;neighbors&nbsp;do&nbsp;nothing.&nbsp;&nbsp;The&nbsp;default&nbsp;value&nbsp;removes&nbsp;the<br>
+walls&nbsp;between&nbsp;the&nbsp;two&nbsp;cells.<br>
+&nbsp;<br>
+Paramaters:<br>
+cellone&nbsp;--&nbsp;A&nbsp;<a href="#Cell">Cell</a>&nbsp;to&nbsp;add&nbsp;or&nbsp;remove&nbsp;a&nbsp;wall&nbsp;between.<br>
+celltwo&nbsp;--&nbsp;A&nbsp;<a href="#Cell">Cell</a>&nbsp;to&nbsp;add&nbsp;or&nbsp;remove&nbsp;a&nbsp;wall&nbsp;between.<br>
+value&nbsp;--&nbsp;True&nbsp;=&nbsp;Remove&nbsp;"walls"&nbsp;False&nbsp;=&nbsp;Add&nbsp;"walls"</tt></dd></dl>
+
+<dl><dt><a name="Grid-table_width"><strong>table_width</strong></a>(self, size_of_cell)</dt></dl>
+
+<dl><dt><a name="Grid-unvisited_neighbors"><strong>unvisited_neighbors</strong></a>(self, cell)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;neighbors&nbsp;that&nbsp;are&nbsp;accessible&nbsp;but&nbsp;unvisited<br>
+for&nbsp;the&nbsp;given&nbsp;cell.</tt></dd></dl>
+
+<dl><dt><a name="Grid-update_or_add"><strong>update_or_add</strong></a>(self, cell)</dt><dd><tt>Updates&nbsp;the&nbsp;cell&nbsp;at&nbsp;the&nbsp;same&nbsp;location&nbsp;as&nbsp;the&nbsp;current&nbsp;cell&nbsp;if&nbsp;it<br>
+exists,&nbsp;adds&nbsp;it&nbsp;otherwise.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>Iterator</strong> = &lt;class mapper.Iterator&gt;</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ItemEventInterface">class <strong>ItemEventInterface</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Provides&nbsp;an&nbsp;interface&nbsp;for&nbsp;interacting&nbsp;with&nbsp;items&nbsp;on&nbsp;the&nbsp;map.<br>
+Items&nbsp;get&nbsp;registered&nbsp;with&nbsp;their&nbsp;specific&nbsp;functions.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ItemEventInterface-exists"><strong>exists</strong></a>(self, i)</dt><dd><tt>Checks&nbsp;if&nbsp;an&nbsp;item&nbsp;actually&nbsp;exists.&nbsp;Return&nbsp;true/false.<br>
+If&nbsp;i&nbsp;is&nbsp;a&nbsp;list,&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;items&nbsp;that&nbsp;exist.</tt></dd></dl>
+
+<dl><dt><a name="ItemEventInterface-fetch_news"><strong>fetch_news</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;strings&nbsp;of&nbsp;the&nbsp;news&nbsp;generated&nbsp;by&nbsp;the<br>
+actor's&nbsp;interactions&nbsp;with&nbsp;their&nbsp;environment.</tt></dd></dl>
+
+<dl><dt><a name="ItemEventInterface-interact"><strong>interact</strong></a>(self, actor, item_name)</dt><dd><tt>This&nbsp;function&nbsp;is&nbsp;called&nbsp;when&nbsp;an&nbsp;actor&nbsp;wishes&nbsp;to&nbsp;interact<br>
+with&nbsp;an&nbsp;item&nbsp;on&nbsp;the&nbsp;map.&nbsp;&nbsp;Also&nbsp;registers&nbsp;the&nbsp;action&nbsp;with&nbsp;the<br>
+Actor's&nbsp;pavlov.ResponseNetwork,&nbsp;adding&nbsp;it&nbsp;if&nbsp;necessary.<br>
+&nbsp;<br>
+Paramaters:<br>
+item_name&nbsp;--&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;item&nbsp;as&nbsp;it&nbsp;is&nbsp;found&nbsp;in&nbsp;the&nbsp;items<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;in&nbsp;Cells&nbsp;on&nbsp;a&nbsp;<a href="#Grid">Grid</a>.&nbsp;(string)</tt></dd></dl>
+
+<dl><dt><a name="ItemEventInterface-name_to_action"><strong>name_to_action</strong></a>(self, string)</dt><dd><tt>Convert&nbsp;the&nbsp;name&nbsp;of&nbsp;an&nbsp;object&nbsp;to&nbsp;an&nbsp;interaction&nbsp;name.</tt></dd></dl>
+
+<dl><dt><a name="ItemEventInterface-register"><strong>register</strong></a>(self, item_name, event)</dt><dd><tt>Adds&nbsp;the&nbsp;item_name&nbsp;and&nbsp;event&nbsp;to&nbsp;the&nbsp;interface.<br>
+&nbsp;<br>
+Paramaters:<br>
+item_name&nbsp;--&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;item&nbsp;as&nbsp;it&nbsp;is&nbsp;found&nbsp;in&nbsp;the&nbsp;items<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;in&nbsp;Cells&nbsp;on&nbsp;a&nbsp;<a href="#Grid">Grid</a>.&nbsp;(string)<br>
+event&nbsp;--&nbsp;The&nbsp;function&nbsp;that&nbsp;is&nbsp;triggered&nbsp;when&nbsp;an&nbsp;Actor<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interacts&nbsp;with&nbsp;the&nbsp;item.&nbsp;&nbsp;Takes&nbsp;a&nbsp;single&nbsp;paramater,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;Actor&nbsp;that&nbsp;is&nbsp;interacting&nbsp;with&nbsp;the&nbsp;item.&nbsp;&nbsp;Returns<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;string&nbsp;about&nbsp;what&nbsp;happened&nbsp;(for&nbsp;logging/news<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updates)&nbsp;or&nbsp;None.&nbsp;(function)</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>news</strong> = []</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-interface_from_grid"><strong>interface_from_grid</strong></a>(grid, mynameclass)</dt><dd><tt>Generates&nbsp;an&nbsp;<a href="#ItemEventInterface">ItemEventInterface</a>&nbsp;from&nbsp;the&nbsp;given&nbsp;<a href="#Grid">Grid</a>,&nbsp;grid.&nbsp;&nbsp;All<br>
+of&nbsp;the&nbsp;<a href="#Grid">Grid</a>'s&nbsp;item&nbsp;names&nbsp;are&nbsp;sought&nbsp;after&nbsp;in&nbsp;the&nbsp;given&nbsp;class<br>
+mynameclass.&nbsp;&nbsp;For&nbsp;example&nbsp;if&nbsp;you&nbsp;had&nbsp;a&nbsp;<a href="#Grid">Grid</a>&nbsp;whose&nbsp;Cells&nbsp;had&nbsp;the<br>
+following&nbsp;items:&nbsp;['food',&nbsp;'water',&nbsp;'lever']&nbsp;and&nbsp;passed&nbsp;an&nbsp;instance<br>
+of&nbsp;the&nbsp;class&nbsp;c:<br>
+&nbsp;<br>
+class&nbsp;c:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;food(self,&nbsp;actor):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;--Insert&nbsp;code&nbsp;here--&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;water(self,&nbsp;actor):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;--Insert&nbsp;code&nbsp;here--&gt;<br>
+&nbsp;<br>
+Then&nbsp;the&nbsp;items&nbsp;food&nbsp;and&nbsp;water&nbsp;would&nbsp;be&nbsp;mapped&nbsp;to&nbsp;the&nbsp;functions<br>
+with&nbsp;the&nbsp;same&nbsp;name,&nbsp;the&nbsp;final&nbsp;item&nbsp;would&nbsp;throw&nbsp;an&nbsp;exception.<br>
+&nbsp;<br>
+Paramaters:<br>
+grid&nbsp;--&nbsp;An&nbsp;instance&nbsp;of&nbsp;<a href="#Grid">Grid</a>&nbsp;to&nbsp;take&nbsp;items&nbsp;from.<br>
+mynameclass&nbsp;--&nbsp;An&nbsp;instance&nbsp;of&nbsp;a&nbsp;class&nbsp;whose&nbsp;methods&nbsp;are&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;names&nbsp;as&nbsp;the&nbsp;items.</tt></dd></dl>
+ <dl><dt><a name="-make_from_mapfile"><strong>make_from_mapfile</strong></a>(mapfile_location)</dt><dd><tt>Re-creates&nbsp;a&nbsp;maze&nbsp;from&nbsp;a&nbsp;mapfile&nbsp;at&nbsp;the&nbsp;given&nbsp;filesystem&nbsp;path.</tt></dd></dl>
+ <dl><dt><a name="-make_maze"><strong>make_maze</strong></a>(seed<font color="#909090">=None</font>, xsize<font color="#909090">=10</font>, ysize<font color="#909090">=10</font>, zsize<font color="#909090">=1</font>)</dt><dd><tt>Returns&nbsp;a&nbsp;randomized&nbsp;grid&nbsp;(a&nbsp;maze).&nbsp;&nbsp;A&nbsp;seed&nbsp;can&nbsp;be&nbsp;supplied&nbsp;to<br>
+get&nbsp;the&nbsp;same&nbsp;maze&nbsp;each&nbsp;time.<br>
+&nbsp;<br>
+Paramaters:<br>
+seed&nbsp;--&nbsp;An&nbsp;int&nbsp;to&nbsp;seed&nbsp;the&nbsp;random&nbsp;number&nbsp;generator&nbsp;with.<br>
+xsize&nbsp;--&nbsp;The&nbsp;width&nbsp;of&nbsp;the&nbsp;maze&nbsp;to&nbsp;generate.&nbsp;(int)&nbsp;Default:&nbsp;10<br>
+ysize&nbsp;--&nbsp;The&nbsp;height&nbsp;of&nbsp;the&nbsp;maze&nbsp;to&nbsp;generate.&nbsp;(int)&nbsp;Default:&nbsp;10<br>
+zsize&nbsp;--&nbsp;The&nbsp;z&nbsp;of&nbsp;the&nbsp;maze&nbsp;to&nbsp;generate.&nbsp;(int)&nbsp;Default:&nbsp;1</tt></dd></dl>
+ <dl><dt><a name="-map2HTML"><strong>map2HTML</strong></a>(mapfile_location)</dt><dd><tt>Generates&nbsp;an&nbsp;HTML&nbsp;version&nbsp;of&nbsp;the&nbsp;mapfile&nbsp;at&nbsp;the&nbsp;same&nbsp;location<br>
+as&nbsp;the&nbsp;original.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>DEBUGGING</strong> = False<br>
+<strong>__author__</strong> = 'Joseph Lewis &lt;joehms22@gmail.com&gt;'<br>
+<strong>__license__</strong> = 'Copyright (c) 2010 Joseph Lewis &lt;joehms22@gmail.com&gt; all rights reserved.'<br>
+<strong>__version__</strong> = 1.0</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Joseph&nbsp;Lewis&nbsp;&lt;joehms22@gmail.com&gt;</td></tr></table>
+</body></html>

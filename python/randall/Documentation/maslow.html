@@ -1,0 +1,229 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module maslow</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>maslow</strong></big></big> (version 1.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/joseph/alife_randall/randallai/AI/maslow.py">/home/joseph/alife_randall/randallai/AI/maslow.py</a></font></td></tr></table>
+    <p><tt>The&nbsp;maslow&nbsp;module&nbsp;provides&nbsp;a&nbsp;basic&nbsp;list&nbsp;of&nbsp;needs&nbsp;and&nbsp;the&nbsp;ability&nbsp;to<br>
+judge&nbsp;how&nbsp;well&nbsp;those&nbsp;needs&nbsp;are&nbsp;doing&nbsp;based&nbsp;off&nbsp;organs.<br>
+&nbsp;<br>
+More&nbsp;Info:&nbsp;<a href="http://en.wikipedia.org/wiki/Maslow's_hierarchy_of_needs">http://en.wikipedia.org/wiki/Maslow's_hierarchy_of_needs</a><br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Copyright&nbsp;(c)&nbsp;2011&nbsp;Joseph&nbsp;Lewis&nbsp;&lt;joehms22@gmail.com&gt;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;program&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify<br>
+&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2&nbsp;of&nbsp;the&nbsp;License,&nbsp;or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;program&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License<br>
+&nbsp;&nbsp;&nbsp;&nbsp;along&nbsp;with&nbsp;this&nbsp;program;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;Street,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MA&nbsp;02110-1301,&nbsp;USA.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="maslow.html#Heirarchy">Heirarchy</a>
+</font></dt><dt><font face="helvetica, arial"><a href="maslow.html#Need">Need</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Heirarchy">class <strong>Heirarchy</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;<a href="#Heirarchy">Heirarchy</a>&nbsp;class&nbsp;is&nbsp;used&nbsp;in&nbsp;determining&nbsp;needs.&nbsp;&nbsp;Each&nbsp;need&nbsp;has<br>
+a&nbsp;priority&nbsp;and&nbsp;an&nbsp;update&nbsp;function,&nbsp;when&nbsp;the&nbsp;<a href="#Heirarchy">Heirarchy</a>&nbsp;class&nbsp;is<br>
+polled&nbsp;for&nbsp;the&nbsp;highest&nbsp;need&nbsp;it&nbsp;updates&nbsp;itself,&nbsp;this&nbsp;can&nbsp;add&nbsp;time<br>
+but&nbsp;reduces&nbsp;latency&nbsp;between&nbsp;need&nbsp;changes&nbsp;and&nbsp;resolution.&nbsp;&nbsp;It&nbsp;also<br>
+removes&nbsp;the&nbsp;overhead&nbsp;of&nbsp;having&nbsp;an&nbsp;extra&nbsp;thread&nbsp;running&nbsp;constantly.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Heirarchy-__getitem__"><strong>__getitem__</strong></a>(self, key)</dt><dd><tt>Emulates&nbsp;a&nbsp;list&nbsp;or&nbsp;dictionary,&nbsp;called&nbsp;with&nbsp;the&nbsp;name&nbsp;of&nbsp;the<br>
+need,&nbsp;or&nbsp;an&nbsp;index.&nbsp;&nbsp;Raises&nbsp;IndexError&nbsp;if&nbsp;not&nbsp;found.<br>
+&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&lt;<a href="#Heirarchy">Heirarchy</a>&gt;['food']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;class&nbsp;<a href="#Need">Need</a>&nbsp;at&nbsp;0x0000007b&gt;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&lt;<a href="#Heirarchy">Heirarchy</a>&gt;[0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;class&nbsp;<a href="#Need">Need</a>&nbsp;at&nbsp;0x0000002a&gt;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&lt;<a href="#Heirarchy">Heirarchy</a>&gt;[None]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IndexError</tt></dd></dl>
+
+<dl><dt><a name="Heirarchy-__init__"><strong>__init__</strong></a>(self, level, updown_response_network<font color="#909090">=None</font>)</dt><dd><tt>Creates&nbsp;a&nbsp;heirarchy&nbsp;with&nbsp;the&nbsp;level&nbsp;of&nbsp;needs&nbsp;corresponding&nbsp;to<br>
+the&nbsp;given&nbsp;level.&nbsp;&nbsp;The&nbsp;update&nbsp;functions&nbsp;for&nbsp;these&nbsp;needs&nbsp;must<br>
+be&nbsp;set&nbsp;so&nbsp;they&nbsp;are&nbsp;considered&nbsp;when&nbsp;getting&nbsp;the&nbsp;most&nbsp;pressing<br>
+need.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;level&nbsp;provided&nbsp;does&nbsp;not&nbsp;correspond&nbsp;to&nbsp;any&nbsp;need&nbsp;list&nbsp;then<br>
+no&nbsp;default&nbsp;needs&nbsp;will&nbsp;be&nbsp;added.<br>
+&nbsp;<br>
+If&nbsp;updown_response_network&nbsp;is&nbsp;an&nbsp;instance&nbsp;of<br>
+pavlov.ResponseNetwork&nbsp;then&nbsp;conditions&nbsp;will&nbsp;be&nbsp;registered&nbsp;on<br>
+the&nbsp;raising&nbsp;and&nbsp;lowering&nbsp;of&nbsp;needs.&nbsp;DEFAULT:&nbsp;None<br>
+&nbsp;<br>
+Paramaters:<br>
+level&nbsp;--&nbsp;The&nbsp;level&nbsp;of&nbsp;needs&nbsp;to&nbsp;autogenerate&nbsp;(adds&nbsp;these&nbsp;needs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;all&nbsp;on&nbsp;lower&nbsp;levels).&nbsp;(int)&nbsp;Default:&nbsp;1<br>
+&nbsp;<br>
+updown&nbsp;--&nbsp;An&nbsp;instance&nbsp;of&nbsp;pavlov.Response_Network,&nbsp;if&nbsp;not&nbsp;None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;conditions&nbsp;&lt;needname&gt;_up&nbsp;and&nbsp;&lt;needname&gt;_down<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;be&nbsp;created&nbsp;for&nbsp;each&nbsp;autogenerated&nbsp;need.&nbsp;When<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;need&nbsp;value&nbsp;is&nbsp;raised&nbsp;&lt;needname&gt;_up&nbsp;will&nbsp;be&nbsp;fired<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;the&nbsp;opposite&nbsp;for&nbsp;lowering.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(pavlov.ResponseNetwork)&nbsp;Default:&nbsp;None<br>
+&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;h&nbsp;=&nbsp;<a href="#Heirarchy">Heirarchy</a>(maslow.PHYSIOLOGICAL)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;h.needs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['breathing',&nbsp;'food',&nbsp;'water',&nbsp;'sex'&nbsp;...&nbsp;'sleep']</tt></dd></dl>
+
+<dl><dt><a name="Heirarchy-__len__"><strong>__len__</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;needs&nbsp;registered.</tt></dd></dl>
+
+<dl><dt><a name="Heirarchy-clean_needs"><strong>clean_needs</strong></a>(self)</dt><dd><tt>Removes&nbsp;needs&nbsp;from&nbsp;the&nbsp;need&nbsp;list&nbsp;that&nbsp;have&nbsp;no&nbsp;update_function<br>
+This&nbsp;speeds&nbsp;up&nbsp;searches,&nbsp;updates,&nbsp;and&nbsp;clears&nbsp;memory.&nbsp;&nbsp;Needs&nbsp;such<br>
+as&nbsp;this&nbsp;may&nbsp;enter&nbsp;the&nbsp;needs&nbsp;list&nbsp;upon&nbsp;initialization.</tt></dd></dl>
+
+<dl><dt><a name="Heirarchy-most_urgent"><strong>most_urgent</strong></a>(self, threshold<font color="#909090">=80</font>, update<font color="#909090">=True</font>)</dt><dd><tt>Gets&nbsp;the&nbsp;most&nbsp;urgent&nbsp;need&nbsp;from&nbsp;the&nbsp;lowest&nbsp;possible&nbsp;need<br>
+level&nbsp;that&nbsp;breaches&nbsp;the&nbsp;threshold.&nbsp;&nbsp;Return&nbsp;None&nbsp;if&nbsp;there&nbsp;are<br>
+no&nbsp;breaches.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;threshold&nbsp;is&nbsp;None,&nbsp;just&nbsp;return&nbsp;the&nbsp;<a href="#Need">Need</a>&nbsp;with&nbsp;the&nbsp;highest<br>
+value.<br>
+&nbsp;<br>
+Paramaters:<br>
+threshold&nbsp;--&nbsp;The&nbsp;number&nbsp;the&nbsp;need's&nbsp;value&nbsp;must&nbsp;be&nbsp;over&nbsp;to&nbsp;consider<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;returning&nbsp;the&nbsp;need.&nbsp;(int/None)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default:&nbsp;80<br>
+update&nbsp;--&nbsp;Should&nbsp;the&nbsp;needs&nbsp;be&nbsp;updated&nbsp;before&nbsp;calling?&nbsp;(boolean)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default:&nbsp;True</tt></dd></dl>
+
+<dl><dt><a name="Heirarchy-update_needs"><strong>update_needs</strong></a>(self)</dt><dd><tt>Updates&nbsp;the&nbsp;value&nbsp;of&nbsp;all&nbsp;needs&nbsp;by&nbsp;having&nbsp;each&nbsp;call&nbsp;its<br>
+update_function.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>needs</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Need">class <strong>Need</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;need&nbsp;class&nbsp;represents&nbsp;a&nbsp;particular&nbsp;need&nbsp;for&nbsp;a&nbsp;creature.<br>
+&nbsp;<br>
+The&nbsp;higher&nbsp;the&nbsp;<a href="#Need">Need</a>.value&nbsp;the&nbsp;more&nbsp;pressing&nbsp;it&nbsp;is.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Need-__init__"><strong>__init__</strong></a>(self, name, importance, update_function<font color="#909090">=None</font>, updown<font color="#909090">=None</font>)</dt><dd><tt>Initializes&nbsp;a&nbsp;<a href="#Need">Need</a>.<br>
+&nbsp;<br>
+Paramaters:<br>
+name&nbsp;--&nbsp;The&nbsp;key&nbsp;used&nbsp;to&nbsp;represent&nbsp;this&nbsp;need&nbsp;in&nbsp;the&nbsp;<a href="#Heirarchy">Heirarchy</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usually&nbsp;a&nbsp;string.<br>
+importance&nbsp;--&nbsp;The&nbsp;importance&nbsp;of&nbsp;this&nbsp;need&nbsp;in&nbsp;the&nbsp;heirarchy,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;being&nbsp;the&nbsp;lowest&nbsp;(PHYSIOLOGICAL&nbsp;variable)&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;being&nbsp;the&nbsp;highest&nbsp;(SELF_ACTUALIZATION).&nbsp;(int)<br>
+update_function&nbsp;--&nbsp;The&nbsp;function&nbsp;called&nbsp;to&nbsp;update&nbsp;this&nbsp;need,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;none&nbsp;is&nbsp;provided&nbsp;the&nbsp;need&nbsp;will&nbsp;be&nbsp;ignored!<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;function&nbsp;will&nbsp;be&nbsp;passed&nbsp;one&nbsp;variable,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current&nbsp;value,&nbsp;if&nbsp;the&nbsp;function&nbsp;does&nbsp;not<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;accept&nbsp;this&nbsp;variable&nbsp;it&nbsp;will&nbsp;be&nbsp;called&nbsp;with<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;none.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;function&nbsp;should&nbsp;return&nbsp;a&nbsp;number&nbsp;between<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;and&nbsp;100&nbsp;anything&nbsp;higher&nbsp;or&nbsp;lower&nbsp;will&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;changed&nbsp;to&nbsp;it's&nbsp;respective&nbsp;min/max&nbsp;(function)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default:&nbsp;None<br>
+&nbsp;<br>
+updown&nbsp;--&nbsp;An&nbsp;instance&nbsp;of&nbsp;pavlov.Response_Network,&nbsp;if&nbsp;not&nbsp;None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;conditions&nbsp;&lt;needname&gt;_up&nbsp;and&nbsp;&lt;needname&gt;_down<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;be&nbsp;created,&nbsp;when&nbsp;the&nbsp;need&nbsp;value&nbsp;is&nbsp;raised<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;needname&gt;_up&nbsp;will&nbsp;be&nbsp;fired&nbsp;and&nbsp;the&nbsp;opposite&nbsp;for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lowering.&nbsp;(pavlov.ResponseNetwork)&nbsp;Default:&nbsp;None</tt></dd></dl>
+
+<dl><dt><a name="Need-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;name&nbsp;and&nbsp;value&nbsp;of&nbsp;this&nbsp;need&nbsp;as&nbsp;a&nbsp;string.</tt></dd></dl>
+
+<dl><dt><a name="Need-calls_to_max"><strong>calls_to_max</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;(guessed)&nbsp;number&nbsp;of&nbsp;update&nbsp;calls&nbsp;until&nbsp;this<br>
+<a href="#Need">Need</a>&nbsp;hits&nbsp;100.&nbsp;&nbsp;Uses&nbsp;past&nbsp;data,&nbsp;the&nbsp;number&nbsp;of&nbsp;past&nbsp;points&nbsp;is<br>
+defined&nbsp;by&nbsp;the&nbsp;NEED_HISTORY_LENGTH&nbsp;variable.<br>
+&nbsp;<br>
+Note:&nbsp;If&nbsp;need&nbsp;is&nbsp;going&nbsp;down&nbsp;the&nbsp;number&nbsp;of&nbsp;calls&nbsp;will&nbsp;be&nbsp;negative</tt></dd></dl>
+
+<dl><dt><a name="Need-calls_to_min"><strong>calls_to_min</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;(guessed)&nbsp;number&nbsp;of&nbsp;update&nbsp;calls&nbsp;until&nbsp;this<br>
+<a href="#Need">Need</a>&nbsp;hits&nbsp;0.&nbsp;&nbsp;Uses&nbsp;past&nbsp;data,&nbsp;the&nbsp;number&nbsp;of&nbsp;past&nbsp;points&nbsp;is<br>
+defined&nbsp;by&nbsp;the&nbsp;NEED_HISTORY_LENGTH&nbsp;varaible.<br>
+&nbsp;<br>
+Note:&nbsp;If&nbsp;need&nbsp;is&nbsp;rising&nbsp;the&nbsp;number&nbsp;of&nbsp;calls&nbsp;will&nbsp;be&nbsp;negative.</tt></dd></dl>
+
+<dl><dt><a name="Need-sortvalue"><strong>sortvalue</strong></a>(self)</dt><dd><tt>Creates&nbsp;a&nbsp;value&nbsp;to&nbsp;be&nbsp;used&nbsp;in&nbsp;sorting&nbsp;for&nbsp;importance.<br>
+The&nbsp;lower&nbsp;the&nbsp;value&nbsp;the&nbsp;more&nbsp;pressing&nbsp;this&nbsp;need.&nbsp;&nbsp;Needs&nbsp;with<br>
+a&nbsp;lower&nbsp;importance&nbsp;will&nbsp;always&nbsp;come&nbsp;in&nbsp;before&nbsp;needs&nbsp;with<br>
+a&nbsp;higher&nbsp;one,&nbsp;even&nbsp;if&nbsp;the&nbsp;need&nbsp;with&nbsp;the&nbsp;higher&nbsp;importance&nbsp;has<br>
+a&nbsp;higher&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="Need-update"><strong>update</strong></a>(self)</dt><dd><tt>Updates&nbsp;the&nbsp;<a href="#Need">Need</a>'s&nbsp;value&nbsp;by&nbsp;calling&nbsp;the&nbsp;need's<br>
+update_function.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;new&nbsp;value.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>importance</strong> = None</dl>
+
+<dl><dt><strong>name</strong> = None</dl>
+
+<dl><dt><strong>need_history</strong> = []</dl>
+
+<dl><dt><strong>update_function</strong> = None</dl>
+
+<dl><dt><strong>value</strong> = 0</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>DEBUGGING</strong> = False<br>
+<strong>ESTEEM</strong> = 3<br>
+<strong>ESTEEM_NEEDS</strong> = ['self_esteem', 'confidence', 'achivement', 'respect_of_others', 'respect_by_others']<br>
+<strong>LOVE</strong> = 2<br>
+<strong>LOVE_NEEDS</strong> = ['friendship', 'family', 'intimacy']<br>
+<strong>NEED_HISTORY_LENGTH</strong> = 5<br>
+<strong>OTHER</strong> = 5<br>
+<strong>PHYSIOLOGICAL</strong> = 0<br>
+<strong>PHYSIOLOGICAL_NEEDS</strong> = ['breathing', 'food', 'water', 'sex', 'sleep', 'homeostasis', 'excretion']<br>
+<strong>SAFETY</strong> = 1<br>
+<strong>SAFETY_NEEDS</strong> = ['body', 'employment', 'family', 'health', 'resources', 'morality', 'property']<br>
+<strong>SELF_ACTUALIZATION</strong> = 4<br>
+<strong>SELF_ACTUALIZATION_NEEDS</strong> = ['creativity', 'morality', 'spontaneity', 'problem_solving', 'lack_prejudice', 'fact_acceptance']<br>
+<strong>__author__</strong> = 'Joseph Lewis &lt;joehms22@gmail.com&gt;'<br>
+<strong>__version__</strong> = 1.0</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Joseph&nbsp;Lewis&nbsp;&lt;joehms22@gmail.com&gt;</td></tr></table>
+</body></html>

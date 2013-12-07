@@ -1,0 +1,280 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module world</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>world</strong></big></big> (version 1.0)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/joseph/alife_randall/randallai/AI/world.py">/home/joseph/alife_randall/randallai/AI/world.py</a></font></td></tr></table>
+    <p><tt>The&nbsp;world&nbsp;provides&nbsp;a&nbsp;place&nbsp;for&nbsp;actors&nbsp;to&nbsp;interact.&nbsp;&nbsp;All&nbsp;Actors&nbsp;should<br>
+have&nbsp;some&nbsp;basic&nbsp;variables&nbsp;(cheifly&nbsp;location&nbsp;and&nbsp;hunger),&nbsp;these&nbsp;can<br>
+be&nbsp;accessed&nbsp;by&nbsp;the&nbsp;organs&nbsp;so&nbsp;the&nbsp;animal&nbsp;can&nbsp;"sense"&nbsp;what&nbsp;is&nbsp;going&nbsp;on<br>
+around&nbsp;it.&nbsp;&nbsp;Having&nbsp;the&nbsp;variables&nbsp;here&nbsp;also&nbsp;ensures&nbsp;that&nbsp;the&nbsp;Actors<br>
+don't&nbsp;know&nbsp;about&nbsp;them,&nbsp;and&nbsp;therefore&nbsp;nothing&nbsp;gets&nbsp;hard&nbsp;coded&nbsp;in&nbsp;to&nbsp;an<br>
+animal.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Copyright&nbsp;(c)&nbsp;2011&nbsp;Joseph&nbsp;Lewis&nbsp;&lt;joehms22@gmail.com&gt;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;program&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify<br>
+&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2&nbsp;of&nbsp;the&nbsp;License,&nbsp;or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;program&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License<br>
+&nbsp;&nbsp;&nbsp;&nbsp;along&nbsp;with&nbsp;this&nbsp;program;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;Street,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MA&nbsp;02110-1301,&nbsp;USA.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="copy.html">copy</a><br>
+<a href="mapper.html">mapper</a><br>
+</td><td width="25%" valign=top><a href="pavlov.html">pavlov</a><br>
+<a href="threading.html">threading</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="threading.html#Thread">threading.Thread</a>(<a href="threading.html#_Verbose">threading._Verbose</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="world.html#World">World</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="world.html#Actor">Actor</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Actor">class <strong>Actor</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;simple&nbsp;instance&nbsp;of&nbsp;an&nbsp;actor.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Actor-__init__"><strong>__init__</strong></a>(self, name, world, x, y, z<font color="#909090">=0</font>, seed<font color="#909090">=100</font>)</dt><dd><tt>Initializes&nbsp;the&nbsp;actor.<br>
+&nbsp;<br>
+Arguments:<br>
+seed&nbsp;-&nbsp;The&nbsp;seed&nbsp;to&nbsp;set&nbsp;the&nbsp;<a href="#Actor">Actor</a>'s&nbsp;decision&nbsp;process&nbsp;to.&nbsp;Default:&nbsp;100<br>
+x&nbsp;-&nbsp;The&nbsp;x&nbsp;location&nbsp;of&nbsp;the&nbsp;<a href="#Actor">Actor</a>&nbsp;in&nbsp;the&nbsp;world.&nbsp;(int)<br>
+y&nbsp;-&nbsp;The&nbsp;y&nbsp;location&nbsp;of&nbsp;the&nbsp;<a href="#Actor">Actor</a>&nbsp;in&nbsp;the&nbsp;world.&nbsp;(int)<br>
+z&nbsp;-&nbsp;The&nbsp;z&nbsp;location&nbsp;of&nbsp;the&nbsp;<a href="#Actor">Actor</a>&nbsp;in&nbsp;the&nbsp;world.&nbsp;(int)&nbsp;Default:&nbsp;0<br>
+name&nbsp;-&nbsp;A&nbsp;string&nbsp;to&nbsp;be&nbsp;used&nbsp;as&nbsp;the&nbsp;<a href="#Actor">Actor</a>'s&nbsp;name.&nbsp;(String)</tt></dd></dl>
+
+<dl><dt><a name="Actor-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Actor-fetch_move_history"><strong>fetch_move_history</strong></a>(self)</dt><dd><tt>Clears&nbsp;and&nbsp;returns&nbsp;the&nbsp;move&nbsp;history&nbsp;for&nbsp;this&nbsp;actor.</tt></dd></dl>
+
+<dl><dt><a name="Actor-interact"><strong>interact</strong></a>(self, item_name)</dt><dd><tt>Call&nbsp;with&nbsp;an&nbsp;item&nbsp;in&nbsp;the&nbsp;current&nbsp;cell&nbsp;to&nbsp;interact&nbsp;with&nbsp;it.</tt></dd></dl>
+
+<dl><dt><a name="Actor-kill"><strong>kill</strong></a>(self)</dt><dd><tt>Kills&nbsp;the&nbsp;actor&nbsp;and&nbsp;its&nbsp;respective&nbsp;threads.</tt></dd></dl>
+
+<dl><dt><a name="Actor-move_down"><strong>move_down</strong></a>(self)</dt><dd><tt>Moves&nbsp;the&nbsp;actor&nbsp;down&nbsp;a&nbsp;floor&nbsp;if&nbsp;possible.</tt></dd></dl>
+
+<dl><dt><a name="Actor-move_east"><strong>move_east</strong></a>(self)</dt><dd><tt>Moves&nbsp;the&nbsp;actor&nbsp;east&nbsp;if&nbsp;possible.</tt></dd></dl>
+
+<dl><dt><a name="Actor-move_north"><strong>move_north</strong></a>(self)</dt><dd><tt>Moves&nbsp;the&nbsp;actor&nbsp;north&nbsp;if&nbsp;possible.</tt></dd></dl>
+
+<dl><dt><a name="Actor-move_south"><strong>move_south</strong></a>(self)</dt><dd><tt>Moves&nbsp;the&nbsp;actor&nbsp;south&nbsp;if&nbsp;possible.</tt></dd></dl>
+
+<dl><dt><a name="Actor-move_to"><strong>move_to</strong></a>(self, x, y, z)</dt><dd><tt>Moves&nbsp;the&nbsp;actor&nbsp;to&nbsp;the&nbsp;given&nbsp;x,&nbsp;y,&nbsp;z&nbsp;if&nbsp;possible.<br>
+&nbsp;<br>
+Errors&nbsp;Raised:<br>
+AssertionError&nbsp;--&nbsp;The&nbsp;Cell&nbsp;at&nbsp;x,y,z&nbsp;is&nbsp;not&nbsp;accessable&nbsp;from&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current&nbsp;location.<br>
+&nbsp;<br>
+IndexError&nbsp;--&nbsp;The&nbsp;cell&nbsp;at&nbsp;the&nbsp;supplied&nbsp;x,y,z&nbsp;is&nbsp;beyond&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edge&nbsp;of&nbsp;the&nbsp;world!<br>
+&nbsp;<br>
+RuntimeWarning&nbsp;--&nbsp;The&nbsp;<a href="#Actor">Actor</a>&nbsp;has&nbsp;moved&nbsp;too&nbsp;recently&nbsp;and&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unable&nbsp;to&nbsp;do&nbsp;it&nbsp;again&nbsp;at&nbsp;this&nbsp;time.</tt></dd></dl>
+
+<dl><dt><a name="Actor-move_to_cell"><strong>move_to_cell</strong></a>(self, cell)</dt><dd><tt>Move&nbsp;to&nbsp;the&nbsp;location&nbsp;at&nbsp;the&nbsp;given&nbsp;cell&nbsp;if&nbsp;possible.</tt></dd></dl>
+
+<dl><dt><a name="Actor-move_up"><strong>move_up</strong></a>(self)</dt><dd><tt>Moves&nbsp;the&nbsp;actor&nbsp;up&nbsp;a&nbsp;floor&nbsp;if&nbsp;possible.</tt></dd></dl>
+
+<dl><dt><a name="Actor-move_west"><strong>move_west</strong></a>(self)</dt><dd><tt>Moves&nbsp;the&nbsp;actor&nbsp;west&nbsp;if&nbsp;possible.</tt></dd></dl>
+
+<dl><dt><a name="Actor-setup"><strong>setup</strong></a>(self)</dt><dd><tt>Sets&nbsp;up&nbsp;the&nbsp;<a href="#Actor">Actor</a>'s&nbsp;basic&nbsp;systems,&nbsp;this&nbsp;in&nbsp;turn&nbsp;calls&nbsp;the&nbsp;setup<br>
+functions,&nbsp;after&nbsp;this&nbsp;is&nbsp;run&nbsp;all&nbsp;threads&nbsp;should&nbsp;be&nbsp;started.</tt></dd></dl>
+
+<dl><dt><a name="Actor-setup_emotions"><strong>setup_emotions</strong></a>(self)</dt><dd><tt>Set&nbsp;up&nbsp;your&nbsp;emotions&nbsp;by&nbsp;overriding&nbsp;this&nbsp;class.&nbsp;&nbsp;At&nbsp;the&nbsp;end&nbsp;set<br>
+self.<strong>emotions</strong>&nbsp;to&nbsp;an&nbsp;instance&nbsp;of&nbsp;limbic.Limbic.</tt></dd></dl>
+
+<dl><dt><a name="Actor-setup_map"><strong>setup_map</strong></a>(self)</dt><dd><tt>Override&nbsp;me&nbsp;if&nbsp;needed.&nbsp;&nbsp;Sets&nbsp;up&nbsp;a&nbsp;blank&nbsp;mapper.Map&nbsp;with&nbsp;the&nbsp;same<br>
+size&nbsp;as&nbsp;the&nbsp;world&nbsp;map,&nbsp;just&nbsp;filled&nbsp;with&nbsp;Nones.&nbsp;&nbsp;This&nbsp;is&nbsp;the&nbsp;one&nbsp;the<br>
+<a href="#Actor">Actor</a>&nbsp;uses&nbsp;in&nbsp;it's&nbsp;brain.<br>
+&nbsp;<br>
+Sets:&nbsp;internal_map</tt></dd></dl>
+
+<dl><dt><a name="Actor-setup_mind"><strong>setup_mind</strong></a>(self)</dt><dd><tt>Set&nbsp;up&nbsp;the&nbsp;mind&nbsp;by&nbsp;overriding&nbsp;this&nbsp;class.&nbsp;&nbsp;At&nbsp;the&nbsp;end&nbsp;set<br>
+self.<strong>mind</strong>&nbsp;to&nbsp;an&nbsp;instance&nbsp;of&nbsp;logos.Mind</tt></dd></dl>
+
+<dl><dt><a name="Actor-setup_needs"><strong>setup_needs</strong></a>(self)</dt><dd><tt>Sets&nbsp;up&nbsp;the&nbsp;needs&nbsp;system&nbsp;for&nbsp;this&nbsp;creature,&nbsp;the&nbsp;self.<strong>needs</strong>&nbsp;should&nbsp;be<br>
+an&nbsp;instance&nbsp;of&nbsp;maslow.Heirarchy&nbsp;by&nbsp;the&nbsp;end&nbsp;of&nbsp;this&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="Actor-setup_organs"><strong>setup_organs</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Actor-setup_pavlov"><strong>setup_pavlov</strong></a>(self)</dt><dd><tt>Override&nbsp;me&nbsp;if&nbsp;needed.&nbsp;&nbsp;Sets&nbsp;up&nbsp;a&nbsp;blank&nbsp;pavlov.ResponseNetwork&nbsp;and<br>
+stores&nbsp;it&nbsp;to&nbsp;the&nbsp;response_network&nbsp;variable.&nbsp;The&nbsp;response_network&nbsp;has<br>
+been&nbsp;started.<br>
+&nbsp;<br>
+Sets:&nbsp;response_network</tt></dd></dl>
+
+<dl><dt><a name="Actor-setup_special"><strong>setup_special</strong></a>(self)</dt><dd><tt>Put&nbsp;anything&nbsp;here&nbsp;that&nbsp;you&nbsp;need&nbsp;called&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;setup.</tt></dd></dl>
+
+<dl><dt><a name="Actor-setup_threads"><strong>setup_threads</strong></a>(self)</dt><dd><tt>Starts&nbsp;the&nbsp;threads&nbsp;on&nbsp;all&nbsp;of&nbsp;the&nbsp;classes,&nbsp;if&nbsp;they&nbsp;are&nbsp;allready<br>
+started&nbsp;does&nbsp;nothing.</tt></dd></dl>
+
+<dl><dt><a name="Actor-view_terrain"><strong>view_terrain</strong></a>(self)</dt><dd><tt>Acts&nbsp;as&nbsp;a&nbsp;kind&nbsp;of&nbsp;eyes&nbsp;for&nbsp;an&nbsp;actor,&nbsp;returns&nbsp;the&nbsp;cell&nbsp;in&nbsp;the&nbsp;world<br>
+where&nbsp;the&nbsp;actor&nbsp;is&nbsp;located.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>can_move</strong> = False</dl>
+
+<dl><dt><strong>emotions</strong> = None</dl>
+
+<dl><dt><strong>image</strong> = None</dl>
+
+<dl><dt><strong>internal_map</strong> = None</dl>
+
+<dl><dt><strong>mind</strong> = None</dl>
+
+<dl><dt><strong>my_body</strong> = None</dl>
+
+<dl><dt><strong>needs</strong> = None</dl>
+
+<dl><dt><strong>response_network</strong> = None</dl>
+
+<dl><dt><strong>world</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="World">class <strong>World</strong></a>(<a href="threading.html#Thread">threading.Thread</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;simple&nbsp;3d&nbsp;world&nbsp;for&nbsp;actors&nbsp;to&nbsp;reside&nbsp;in.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="world.html#World">World</a></dd>
+<dd><a href="threading.html#Thread">threading.Thread</a></dd>
+<dd><a href="threading.html#_Verbose">threading._Verbose</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="World-__getitem__"><strong>__getitem__</strong></a>(self, key)</dt><dd><tt>Emulates&nbsp;a&nbsp;list&nbsp;or&nbsp;dictionary,&nbsp;called&nbsp;with&nbsp;the&nbsp;name&nbsp;of<br>
+the&nbsp;actor.&nbsp;&nbsp;Raises&nbsp;IndexError&nbsp;if&nbsp;not&nbsp;found.</tt></dd></dl>
+
+<dl><dt><a name="World-__init__"><strong>__init__</strong></a>(self, map_grid, item_event_interface, move_time<font color="#909090">=1</font>, autostart<font color="#909090">=True</font>)</dt><dd><tt>Creates&nbsp;the&nbsp;world&nbsp;from&nbsp;a&nbsp;mapfile&nbsp;and&nbsp;class&nbsp;containing<br>
+instructions&nbsp;for&nbsp;that&nbsp;mapfile.<br>
+&nbsp;<br>
+Paramaters:<br>
+map_grid&nbsp;--<br>
+item_event_interface&nbsp;--<br>
+move_time&nbsp;--&nbsp;The&nbsp;amount&nbsp;of&nbsp;time&nbsp;to&nbsp;wait&nbsp;between&nbsp;<a href="#Actor">Actor</a>&nbsp;moves<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;can&nbsp;be&nbsp;a&nbsp;function&nbsp;or&nbsp;float&nbsp;or&nbsp;int.&nbsp;&nbsp;If&nbsp;it&nbsp;is&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;the&nbsp;function&nbsp;should&nbsp;either&nbsp;wait&nbsp;for&nbsp;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;certain&nbsp;amount&nbsp;of&nbsp;time&nbsp;then&nbsp;return&nbsp;0&nbsp;or&nbsp;return<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;number&nbsp;of&nbsp;seconds&nbsp;to&nbsp;wait.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default:&nbsp;0.1&nbsp;(Function,&nbsp;float,&nbsp;int)<br>
+&nbsp;<br>
+autostart&nbsp;--&nbsp;Should&nbsp;the&nbsp;<a href="#World">World</a>&nbsp;start&nbsp;as&nbsp;soon&nbsp;as&nbsp;it&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instanciated?&nbsp;&nbsp;If&nbsp;not&nbsp;the&nbsp;Actors&nbsp;will&nbsp;not&nbsp;be&nbsp;able<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;move&nbsp;until&nbsp;its&nbsp;thread&nbsp;is&nbsp;started&nbsp;using&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#World-start">start</a>()&nbsp;function.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default:&nbsp;True&nbsp;(boolean)</tt></dd></dl>
+
+<dl><dt><a name="World-__len__"><strong>__len__</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;actors.</tt></dd></dl>
+
+<dl><dt><a name="World-add_actor"><strong>add_actor</strong></a>(self, actor)</dt><dd><tt>Depreciated,&nbsp;use&nbsp;<a href="#World">World</a>.append&nbsp;instead</tt></dd></dl>
+
+<dl><dt><a name="World-append"><strong>append</strong></a>(self, actor)</dt><dd><tt>Appends&nbsp;an&nbsp;actor&nbsp;to&nbsp;the&nbsp;list.</tt></dd></dl>
+
+<dl><dt><a name="World-keys"><strong>keys</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;the&nbsp;names&nbsp;of&nbsp;the&nbsp;actors.</tt></dd></dl>
+
+<dl><dt><a name="World-kill"><strong>kill</strong></a>(self)</dt><dd><tt>Kills&nbsp;the&nbsp;world&nbsp;and&nbsp;all&nbsp;actors&nbsp;within.</tt></dd></dl>
+
+<dl><dt><a name="World-run"><strong>run</strong></a>(self)</dt><dd><tt>Waits&nbsp;for&nbsp;the&nbsp;amount&nbsp;of&nbsp;time&nbsp;specified&nbsp;by&nbsp;move_time&nbsp;then<br>
+resets&nbsp;the&nbsp;<a href="#Actor">Actor</a>'s&nbsp;can_move&nbsp;to&nbsp;True&nbsp;allowing&nbsp;their&nbsp;bodies<br>
+to&nbsp;move&nbsp;again,&nbsp;that&nbsp;way&nbsp;they&nbsp;don't&nbsp;buzz&nbsp;around&nbsp;the&nbsp;world.</tt></dd></dl>
+
+<dl><dt><a name="World-sleep"><strong>sleep</strong></a>(self)</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>actors</strong> = []</dl>
+
+<dl><dt><strong>item_event_interface</strong> = None</dl>
+
+<dl><dt><strong>map_grid</strong> = None</dl>
+
+<dl><dt><strong>terrain</strong> = 'Depreciated, use map_grid instead'</dl>
+
+<hr>
+Methods inherited from <a href="threading.html#Thread">threading.Thread</a>:<br>
+<dl><dt><a name="World-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="World-getName"><strong>getName</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="World-isAlive"><strong>isAlive</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="World-isDaemon"><strong>isDaemon</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="World-is_alive"><strong>is_alive</strong></a> = isAlive(self)</dt></dl>
+
+<dl><dt><a name="World-join"><strong>join</strong></a>(self, timeout<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="World-setDaemon"><strong>setDaemon</strong></a>(self, daemonic)</dt></dl>
+
+<dl><dt><a name="World-setName"><strong>setName</strong></a>(self, name)</dt></dl>
+
+<dl><dt><a name="World-start"><strong>start</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="threading.html#Thread">threading.Thread</a>:<br>
+<dl><dt><strong>daemon</strong></dt>
+</dl>
+<dl><dt><strong>ident</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<hr>
+Data descriptors inherited from <a href="threading.html#_Verbose">threading._Verbose</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>DEBUGGING</strong> = False<br>
+<strong>__version__</strong> = 1.0</td></tr></table>
+</body></html>

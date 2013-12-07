@@ -1,0 +1,252 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module body</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>body</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/joseph/alife_randall/randallai/AI/body.py">/home/joseph/alife_randall/randallai/AI/body.py</a></font></td></tr></table>
+    <p><tt>Copyright&nbsp;(c)&nbsp;2011&nbsp;Joseph&nbsp;Lewis&nbsp;&lt;joehms22@gmail.com&gt;<br>
+&nbsp;<br>
+This&nbsp;program&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify<br>
+it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by<br>
+the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2&nbsp;of&nbsp;the&nbsp;License,&nbsp;or<br>
+(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.<br>
+&nbsp;<br>
+This&nbsp;program&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,<br>
+but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of<br>
+MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the<br>
+GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.<br>
+&nbsp;<br>
+You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License<br>
+along&nbsp;with&nbsp;this&nbsp;program;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software<br>
+Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;Street,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,<br>
+MA&nbsp;02110-1301,&nbsp;USA.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pavlov.html">pavlov</a><br>
+</td><td width="25%" valign=top><a href="threading.html">threading</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="body.html#Organ">Organ</a>
+</font></dt><dt><font face="helvetica, arial"><a href="threading.html#Thread">threading.Thread</a>(<a href="threading.html#_Verbose">threading._Verbose</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="body.html#Body">Body</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Body">class <strong>Body</strong></a>(<a href="threading.html#Thread">threading.Thread</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;simple&nbsp;container&nbsp;for&nbsp;organs.<br>
+&nbsp;<br>
+To&nbsp;add&nbsp;organs,&nbsp;just&nbsp;append&nbsp;them&nbsp;to&nbsp;the&nbsp;variable&nbsp;"organs".<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="body.html#Body">Body</a></dd>
+<dd><a href="threading.html#Thread">threading.Thread</a></dd>
+<dd><a href="threading.html#_Verbose">threading._Verbose</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Body-__getitem__"><strong>__getitem__</strong></a>(self, key)</dt><dd><tt>Emulates&nbsp;a&nbsp;list&nbsp;or&nbsp;dictionary,&nbsp;called&nbsp;with&nbsp;the&nbsp;name&nbsp;of&nbsp;the<br>
+organ,&nbsp;or&nbsp;an&nbsp;index.&nbsp;&nbsp;Raises&nbsp;IndexError&nbsp;if&nbsp;not&nbsp;found.<br>
+&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&lt;<a href="#Body">Body</a>&gt;['eyes']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;class&nbsp;<a href="#Organ">Organ</a>&nbsp;at&nbsp;0x0000007b&gt;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&lt;<a href="#Body">Body</a>&gt;[0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;class&nbsp;<a href="#Organ">Organ</a>&nbsp;at&nbsp;0x0000002a&gt;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&lt;<a href="#Body">Body</a>&gt;[None]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IndexError</tt></dd></dl>
+
+<dl><dt><a name="Body-__init__"><strong>__init__</strong></a>(self, update_time<font color="#909090">=1</font>, begin<font color="#909090">=True</font>)</dt><dd><tt>Sets&nbsp;up&nbsp;the&nbsp;body.<br>
+&nbsp;<br>
+Paramaters:<br>
+update_time&nbsp;--&nbsp;A&nbsp;function&nbsp;that&nbsp;returns&nbsp;a&nbsp;float&nbsp;as&nbsp;the&nbsp;number&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seconds&nbsp;until&nbsp;the&nbsp;organs&nbsp;update&nbsp;and&nbsp;fire&nbsp;events,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;just&nbsp;a&nbsp;float.&nbsp;|&nbsp;DEFAULT:1&nbsp;|&nbsp;(function,&nbsp;float)<br>
+&nbsp;<br>
+begin&nbsp;--&nbsp;Whether&nbsp;or&nbsp;not&nbsp;to&nbsp;start&nbsp;the&nbsp;thred&nbsp;as&nbsp;soon&nbsp;as&nbsp;done<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initializing.&nbsp;&nbsp;If&nbsp;false,&nbsp;the&nbsp;thread&nbsp;won't&nbsp;ever&nbsp;trigger<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;events&nbsp;or&nbsp;check&nbsp;for&nbsp;value&nbsp;correctness&nbsp;unless&nbsp;you<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manually&nbsp;start&nbsp;it&nbsp;by&nbsp;calling&nbsp;<a href="#Body-start">start</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEFAULT:&nbsp;True&nbsp;(boolean)</tt></dd></dl>
+
+<dl><dt><a name="Body-__len__"><strong>__len__</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;organs&nbsp;registered.</tt></dd></dl>
+
+<dl><dt><a name="Body-append"><strong>append</strong></a>(self, o)</dt><dd><tt>Adds&nbsp;the&nbsp;given&nbsp;organ&nbsp;(o)&nbsp;to&nbsp;the&nbsp;body.</tt></dd></dl>
+
+<dl><dt><a name="Body-run"><strong>run</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Body-sleep"><strong>sleep</strong></a>(self)</dt><dd><tt>Kills&nbsp;the&nbsp;thread.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>organs</strong> = []</dl>
+
+<hr>
+Methods inherited from <a href="threading.html#Thread">threading.Thread</a>:<br>
+<dl><dt><a name="Body-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Body-getName"><strong>getName</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Body-isAlive"><strong>isAlive</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Body-isDaemon"><strong>isDaemon</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Body-is_alive"><strong>is_alive</strong></a> = isAlive(self)</dt></dl>
+
+<dl><dt><a name="Body-join"><strong>join</strong></a>(self, timeout<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Body-setDaemon"><strong>setDaemon</strong></a>(self, daemonic)</dt></dl>
+
+<dl><dt><a name="Body-setName"><strong>setName</strong></a>(self, name)</dt></dl>
+
+<dl><dt><a name="Body-start"><strong>start</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="threading.html#Thread">threading.Thread</a>:<br>
+<dl><dt><strong>daemon</strong></dt>
+</dl>
+<dl><dt><strong>ident</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<hr>
+Data descriptors inherited from <a href="threading.html#_Verbose">threading._Verbose</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Organ">class <strong>Organ</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;organ&nbsp;class&nbsp;represents&nbsp;a&nbsp;bodily&nbsp;need&nbsp;in&nbsp;a&nbsp;creature,&nbsp;for&nbsp;example<br>
+hunger,&nbsp;it's&nbsp;value&nbsp;is&nbsp;between&nbsp;0&nbsp;and&nbsp;100&nbsp;and&nbsp;updated&nbsp;using&nbsp;the<br>
+update_function&nbsp;supplied.<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;can&nbsp;trigger&nbsp;events&nbsp;when&nbsp;the&nbsp;value&nbsp;reaches&nbsp;certain&nbsp;levels.<br>
+These&nbsp;levels&nbsp;must&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;dictionary&nbsp;"events"&nbsp;with&nbsp;the&nbsp;key<br>
+being&nbsp;the&nbsp;condition&nbsp;sent&nbsp;to&nbsp;the&nbsp;pavlov.ResponseNetwork&nbsp;class<br>
+supplied&nbsp;and&nbsp;value&nbsp;being&nbsp;a&nbsp;tuple&nbsp;of&nbsp;size&nbsp;2&nbsp;.<br>
+&nbsp;<br>
+For&nbsp;example:<br>
+&nbsp;&nbsp;&nbsp;"hello":(2,20)<br>
+&nbsp;<br>
+Would&nbsp;trigger&nbsp;the&nbsp;event&nbsp;"hello"&nbsp;when&nbsp;this&nbsp;particular&nbsp;emotion&nbsp;was<br>
+between&nbsp;(and&nbsp;including)&nbsp;2&nbsp;and&nbsp;20.<br>
+&nbsp;<br>
+Alternatively&nbsp;you&nbsp;could&nbsp;use&nbsp;the&nbsp;add_event&nbsp;function.<br>
+&nbsp;<br>
+WARNING:<br>
+If&nbsp;you&nbsp;see&nbsp;warnings&nbsp;from&nbsp;this&nbsp;class&nbsp;something&nbsp;has&nbsp;gone&nbsp;horribly<br>
+wrong,&nbsp;but&nbsp;it&nbsp;will&nbsp;continue&nbsp;to&nbsp;function,&nbsp;albeit&nbsp;probably&nbsp;wrongly.<br>
+The&nbsp;creature&nbsp;may&nbsp;begin&nbsp;to&nbsp;act&nbsp;sporatically&nbsp;or&nbsp;even&nbsp;violently,&nbsp;or&nbsp;may<br>
+even&nbsp;commit&nbsp;suicide.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Organ-__init__"><strong>__init__</strong></a>(self, name, update_function, pavlovrn)</dt><dd><tt>Initializes&nbsp;the&nbsp;<a href="#Organ">Organ</a>.<br>
+&nbsp;<br>
+Paramaters:<br>
+name&nbsp;--&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;organ&nbsp;for&nbsp;identification&nbsp;and&nbsp;warning<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;purposes.&nbsp;(String)<br>
+update_function&nbsp;--&nbsp;The&nbsp;function&nbsp;called&nbsp;when&nbsp;the&nbsp;organ&nbsp;needs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it's&nbsp;value&nbsp;updated,&nbsp;should&nbsp;return&nbsp;a&nbsp;number<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;between&nbsp;0&nbsp;and&nbsp;100&nbsp;inclusive.&nbsp;(Function)<br>
+pavlovrn&nbsp;--&nbsp;An&nbsp;implementation&nbsp;of&nbsp;the&nbsp;pavlov.ResponseNetwork&nbsp;class.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(pavlov.ResponseNetwork)<br>
+&nbsp;<br>
+Raises:<br>
+TypeError&nbsp;"ERROR:&nbsp;Wrong&nbsp;type&nbsp;of&nbsp;pavlov.ResponseNetwork&nbsp;class",&nbsp;this<br>
+happens&nbsp;if&nbsp;the&nbsp;pavlov.ResponseNetwork&nbsp;class&nbsp;is&nbsp;not&nbsp;an&nbsp;instance<br>
+of&nbsp;pavlov.ResponseNetwork.</tt></dd></dl>
+
+<dl><dt><a name="Organ-add_event"><strong>add_event</strong></a>(self, low, high, event_name)</dt><dd><tt>A&nbsp;convenience&nbsp;function&nbsp;for&nbsp;adding&nbsp;events&nbsp;to&nbsp;the&nbsp;emotion.<br>
+&nbsp;<br>
+Paramaters:<br>
+low&nbsp;--&nbsp;The&nbsp;low&nbsp;number&nbsp;to&nbsp;trigger&nbsp;the&nbsp;event.<br>
+high&nbsp;--&nbsp;The&nbsp;high&nbsp;number&nbsp;to&nbsp;stop&nbsp;triggering&nbsp;the&nbsp;event&nbsp;at.<br>
+event_name&nbsp;--&nbsp;The&nbsp;event&nbsp;sent&nbsp;to&nbsp;the&nbsp;pavlov.ResponseNetwork&nbsp;class.</tt></dd></dl>
+
+<dl><dt><a name="Organ-autogen_events"><strong>autogen_events</strong></a>(self, step<font color="#909090">=10</font>, start<font color="#909090">=0</font>, stop<font color="#909090">=101</font>)</dt><dd><tt>Autogenerates&nbsp;events&nbsp;for&nbsp;ranges&nbsp;starting&nbsp;at&nbsp;start&nbsp;ending&nbsp;at&nbsp;stop<br>
+every&nbsp;stop&nbsp;numbers&nbsp;and&nbsp;adds&nbsp;them&nbsp;to&nbsp;the&nbsp;response_network&nbsp;neuron<br>
+list.&nbsp;&nbsp;Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;these&nbsp;events.<br>
+&nbsp;<br>
+Example:<br>
+&gt;&gt;&gt;&nbsp;<a href="#Organ-autogen_events">autogen_events</a>(10,&nbsp;20,&nbsp;50)<br>
+['name_20','name_30','name_40']<br>
+&nbsp;<br>
+Where&nbsp;name&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;this&nbsp;emotion.<br>
+&nbsp;<br>
+Event&nbsp;name_20&nbsp;would&nbsp;be&nbsp;triggered&nbsp;from&nbsp;20-29,&nbsp;name_30&nbsp;30-49&nbsp;and<br>
+name_40&nbsp;from&nbsp;40-49.</tt></dd></dl>
+
+<dl><dt><a name="Organ-get_value"><strong>get_value</strong></a>(self)</dt><dd><tt>A&nbsp;getter&nbsp;that&nbsp;is&nbsp;used&nbsp;by&nbsp;any&nbsp;function&nbsp;that&nbsp;needs&nbsp;a&nbsp;dynamic&nbsp;way<br>
+to&nbsp;get&nbsp;the&nbsp;value.&nbsp;(I'm&nbsp;looking&nbsp;at&nbsp;you&nbsp;maslow!)</tt></dd></dl>
+
+<dl><dt><a name="Organ-send_events"><strong>send_events</strong></a>(self)</dt><dd><tt>Sends&nbsp;events&nbsp;for&nbsp;values&nbsp;set&nbsp;in&nbsp;the&nbsp;events&nbsp;dictionary&nbsp;by&nbsp;the<br>
+user.<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;can&nbsp;trigger&nbsp;events&nbsp;when&nbsp;the&nbsp;value&nbsp;reaches&nbsp;certain&nbsp;levels.<br>
+These&nbsp;levels&nbsp;must&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;dictionary&nbsp;"events"&nbsp;with&nbsp;the&nbsp;key<br>
+being&nbsp;the&nbsp;condition&nbsp;sent&nbsp;to&nbsp;the&nbsp;pavlov.ResponseNetwork&nbsp;class<br>
+supplied&nbsp;and&nbsp;value&nbsp;being&nbsp;a&nbsp;tuple&nbsp;of&nbsp;size&nbsp;2&nbsp;.<br>
+&nbsp;<br>
+For&nbsp;example:<br>
+&nbsp;&nbsp;&nbsp;"hello":(2,20)<br>
+&nbsp;<br>
+Would&nbsp;trigger&nbsp;the&nbsp;event&nbsp;"hello"&nbsp;when&nbsp;this&nbsp;particular&nbsp;emotion&nbsp;was<br>
+between&nbsp;(and&nbsp;including)&nbsp;2&nbsp;and&nbsp;20.<br>
+&nbsp;<br>
+Alternatively&nbsp;you&nbsp;could&nbsp;use&nbsp;the&nbsp;add_event&nbsp;function.<br>
+&nbsp;<br>
+NOTE:<br>
+This&nbsp;function&nbsp;is&nbsp;called&nbsp;periodically&nbsp;by&nbsp;the&nbsp;<a href="#Body">Body</a>&nbsp;class,&nbsp;it<br>
+does&nbsp;not&nbsp;need&nbsp;to&nbsp;be&nbsp;done&nbsp;manually&nbsp;unless&nbsp;desired.</tt></dd></dl>
+
+<dl><dt><a name="Organ-update"><strong>update</strong></a>(self)</dt><dd><tt>Updates&nbsp;the&nbsp;value&nbsp;of&nbsp;this&nbsp;<a href="#Organ">Organ</a>&nbsp;by&nbsp;calling&nbsp;the&nbsp;update<br>
+function.&nbsp;&nbsp;If&nbsp;the&nbsp;value&nbsp;is&nbsp;less&nbsp;than&nbsp;0&nbsp;it&nbsp;will&nbsp;be&nbsp;made&nbsp;to&nbsp;be<br>
+equal&nbsp;to&nbsp;0&nbsp;and&nbsp;if&nbsp;it&nbsp;is&nbsp;&gt;&nbsp;100&nbsp;the&nbsp;value&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;100.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>events</strong> = {}</dl>
+
+<dl><dt><strong>last_value</strong> = 0</dl>
+
+<dl><dt><strong>name</strong> = 'Defined at init'</dl>
+
+<dl><dt><strong>value</strong> = 0</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

@@ -1,0 +1,188 @@
+<html> 
+    <head> 
+        <meta charset="utf-8" /> 
+        <title>WikiWrite</title>
+        
+        <!--Other Libraries-->
+        <script type='text/javascript' src='assets/phonegap-1.0.0.js'></script>
+        <script type='text/javascript' src='assets/wiki2html.js'></script>
+
+        <!--This page's stuff--> 
+        <link rel='stylesheet' href='assets/main.css' />
+        <script type='text/javascript' src='assets/main.js'></script>        
+
+        <!--jQuery Stuff-->
+        <script type='text/javascript' src='assets/jquery-1.6.2.min.js'></script>
+        <script type='text/javascript' src='assets/jquery.mobile-1.0b1.min.js'></script>
+        <link rel='stylesheet' href='assets/jquery.mobile-1.0b1.min.css' />
+
+    </head>
+    
+    <body onload='init()' onbeforeunload='alert("unload");'> 
+
+        <!--The first page the user sees, a menu for the documents on
+        the system -->
+        <div data-role='page' id='index' data-theme='b'>
+            
+            <div data-role='header'> 
+                <a href='javascript:new_note()' data-role='button' data-icon='star'>New</a>
+                <h1>WikiWrite</h1>
+                <a href='#about' data-role='button' data-icon='info' data-iconpos='right'>About</a>
+            </div>
+            
+            <div data-role='content'>   
+                <ul id='doclist' data-role='listview' data-filter='true' data-split-icon="delete" data-filter-placeholder='Search WikiWrite...'>
+
+                </ul>
+            </div><!-- /content -->
+        </div>
+        
+        
+        <!--The wiki editor-->
+        <div data-role='page' id='editor' data-theme='b'>
+            <div data-role="header"> 
+                <!--Document name is inserted here-->
+                <h1><a href='javascript:renameOpenDocument()'>WikiWrite - <span id='document_name' /></a></h1> 
+                <a href='javascript:closeNote()' data-role="button" data-icon="arrow-l">Save &amp; Close</a>
+                <a href='#mc' data-role="button" data-icon="info" data-iconpos="right">Help</a>
+
+            </div><!-- /header -->
+            <div data-role="content">
+                <div id='input_area'><textarea id='wiki_in'></textarea></div>
+                <div id='output_wrap'><div id='output_area'></div></div>
+            </div><!-- /content -->
+        </div>
+        
+        
+        <!--The help page-->
+        <div data-role='page' id='mc' data-theme='b'>
+            <div data-role="header"> 
+                <h1>WikiMarkup Cheat Sheet</h1> 
+                <a href='#editor' data-role="button" data-icon="arrow-l" data-rel="back">Back to Editing</a>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                <h2>General</h2>
+                <p>Press the name of the document to change it.</p>
+                <p>Unsaved changes will be discarded.</p>
+                <h2>Wiki Syntax</h2>
+                <p>This is the supported syntax: (MediaWiki style)</p>
+                <p>Other markup can be added through the use of HTML tags.</p>
+                <table style='width:100%'>
+                <tr>
+                    <td>Description</td>
+                    <td>Input</td>
+                    <td>Output</td>
+                </tr>
+                
+                <tr>
+                    <td>Italics</td>
+                    <td>''Hello''</td>
+                    <td><i>Hello</i></td>
+                </tr>
+                <tr>
+                    <td>Bold</td>
+                    <td>'''Hello'''</td>
+                    <td><b>Hello</b></td>
+                </tr>
+                <tr>
+                    <td>Headings</td>
+                    <td>=h1=<br>==h2==<br>===h3===<br>====h4====<br>=====h5=====<br>======h6======</td>
+                    <td><h1>h1</h1><h2>h2</h2><h3>h3</h3><h4>h4</h4><h5>h5</h5><h6>h6</h6></td>
+                </tr>
+                <tr>
+                    <td>Bullets</td>
+                    <td>* One<br>* Two<br>** Two A<br>* Three</td>
+                    <td><ul><li>One</li><li>Two</li><ul><li>Two A</li></ul><li>Three</li></ul></td>
+                </tr>
+                <tr>
+                    <td>Numbers</td>
+                    <td># One<br># Two<br>## Two A<br># Three</td>
+                    <td><ol><li>One</li><li>Two</li><ol><li>Two A</li></ol><li>Three</li></ol></td>
+                </tr>
+                </table>
+            </div><!-- /content -->
+        </div>
+        
+        
+        <!--The about page.-->
+        <div data-role='page' id='about' data-theme='b'>
+            <div data-role="header" data-theme='b'> 
+                <h1>About WikiWrite</h1> 
+                <a href='#index' data-role="button" data-icon="arrow-l" data-rel="back">Back</a>
+            </div><!-- /header -->
+            
+            <div data-role="content" data-theme="b">
+                <h2>Developers</h2>
+                <ul><li>Joseph Lewis &lt;joe@josephlewis.net&gt;</li></ul>
+                
+                <h2>Libraries Used</h2>
+                <table style='background-color:#fff; font-family:arial,helvetica,sans-serif; text-shadow:none;'>
+                    <tr>
+                        <td>Name</td>
+                        <td>License</td>
+                        <td>Developer</td>
+                    </tr>
+                    <tr>
+                        <td>PhoneGap</td>
+                        <td>MIT License</td>
+                        <td>Nitobi Software</td>
+                    </tr>
+                    <tr>
+                        <td>jQuery</td>
+                        <td>MIT License</td>
+                        <td>John Resig</td>
+                    </tr>
+                    <tr>
+                        <td>wiki2html</td>
+                        <td>Creative Commons Share Alike</td>
+                        <td>Remy Sharp</td>
+                    </tr>
+                </table>
+                
+                <p>My thanks to the author of these great libraries, 
+                note that none of them specifically endorse this 
+                project.</p>
+                
+                
+                <h2>License</h2>
+                
+                <p>Copyright (c) 2011 Joseph Lewis</p>
+                
+                <p>Permission is hereby granted, free of charge, to 
+                any person obtaining a copy of this software and 
+                associated documentation files (the "Software"), to 
+                deal in the Software without restriction, including 
+                without limitation the rights to use, copy, modify, 
+                merge, publish, distribute, sublicense, and/or sell 
+                copies of the Software, and to permit persons to whom 
+                the Software is furnished to do so, subject to the 
+                following conditions:</p>
+
+                <p>The above copyright notice and this permission 
+                notice shall be included in all copies or substantial 
+                portions of the Software.</p>
+
+                <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY 
+                OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT 
+                LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS 
+                FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO 
+                EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+                FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN 
+                AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM
+                , OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+                OR OTHER DEALINGS IN THE SOFTWARE.</p>
+                
+                <h2>Debugging</h2>
+                <a href='javascript:toggleDebug();'>Toggle Debugging Mode</a>
+                <p>This mode will turn all of the data normally sent
+                to the ADB to alert() dialogs.</p>
+
+            </div><!-- /content -->
+        </div>
+        
+        
+
+    </body>
+
+</html>

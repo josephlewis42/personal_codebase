@@ -1,0 +1,1 @@
+{"revision_control": {}, "name": "Conway's Game of Life", "license": "MIT license", "notes": "An implementation of Conway's game of life in Python.", "languages": ["python"], "date": "2011-09-30", "downloads": [{"Date": "2011-09-30", "Notes": "", "name": "Main File", "location": "conway.py"}]}

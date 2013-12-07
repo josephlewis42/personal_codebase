@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE carddeck [
+<!ELEMENT carddeck (card*)>
+<!ATTLIST carddeck version CDATA #REQUIRED>
+<!ELEMENT card (title,front,back)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT front (#PCDATA)>
+<!ELEMENT back (#PCDATA)>
+]>
+
+<carddeck version="1.0">
+	<card>
+		<title>Blank</title>
+		<front>Find the tutorials in the help menu under Tutorials</front>
+		<back>You may remove me.</back>
+	</card>
+</carddeck>
